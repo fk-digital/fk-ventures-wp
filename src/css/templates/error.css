@@ -1,0 +1,8 @@
+body.error404 {
+  & .HomeHero {
+    background-color: var(--palette-dark);
+    &::before {
+      display: none;
+    }
+  }
+}

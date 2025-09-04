@@ -1,0 +1,28 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    <h2 class="CaseStudies__Title">Case Studies</h2>
+    <div class="CaseStudies__List">
+      {% set postObj = get_posts(fields.case_study.ID) %}
+      {% include 'post-types/case-study.twig' with {
+        post: postObj
+      } %}
+      <a
+        class="CtaLink CtaLink--1 AppearFadeIn Delay"
+        href="{{ fn('get_post_type_archive_link', 'case-study') }}"
+      >
+        <h3 class="CtaLink__Heading">
+          We've had succeses with the first two rounds
+        </h3>
+        <span class="Button">Prove It</span>
+      </a>
+
+      <a class="CtaLink CtaLink--2 AppearFadeIn Delay" href="/apply">
+        <h3 class="CtaLink__Heading">
+          Applications for the 2025-26 programme are open.
+        </h3>
+        <span class="Button">Apply today</span>
+      </a>
+    </div>
+  </div>
+{% endblock %}

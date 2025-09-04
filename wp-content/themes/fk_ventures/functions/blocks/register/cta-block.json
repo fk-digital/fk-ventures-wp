@@ -1,0 +1,27 @@
+{
+  "name": "acf/cta",
+  "title": "CTA",
+  "description": "Call to action banner",
+  "category": "fk_ventures-blocks",
+  "icon": "button",
+  "apiVersion": 2,
+  "keywords": [
+      "cta",
+      "fk_ventures"
+  ],
+  "acf": {
+      "mode": "edit",
+      "renderCallback": "fk_ventures_acf_block_render_callback"
+  },
+  "supports": {
+      "align": false,
+      "anchor": true,
+      "alignContent": false,
+      "alignText": false,
+      "defaultStylePicker": false,
+      "color": {
+        "background": false,
+        "text": false
+      }
+  }
+}

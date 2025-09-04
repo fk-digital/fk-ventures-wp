@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="Container">
+    <h1 class="AppearFadeIn Delay">
+      Error 404
+      <span>Page Not Found</span>
+    </h1>
+    <p class="HomeHero__Copy AppearFadeIn Delay">
+      We are sorry, but the page you are looking for cannot be found. Please
+      double check the URL you are looking for, or visting our <a href="{{
+        site.url
+        }}">
+        home page
+      </a>.
+    </p>
+    <a class="Button AppearFadeIn Delay" href="{{ site.url }}">
+      Return to home
+    </a>
+  </div>
+{% endblock %}

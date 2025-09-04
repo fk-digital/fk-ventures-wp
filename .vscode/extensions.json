@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "mikestead.dotenv",
+    "whatwedo.twig",
+    "esbenp.prettier-vscode"
+  ]
+}

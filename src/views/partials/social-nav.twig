@@ -1,0 +1,10 @@
+{% for item in options.social_links %}
+  <a href="{{ item.url }}"
+    aria-label="{{ item.name }}"
+    class="Social__Link"
+    target="_blank">
+    {% set image = get_image(item.icon) %}
+    {{ loadSvgContents(image.src()) }}
+    <span class="sr-only">{{ item.name }}</span>
+  </a>
+{% endfor %}

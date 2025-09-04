@@ -1,0 +1,14 @@
+.Block {
+  position: relative;
+  padding: var(--flow) 0 0 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+/* Remove margin top */
+.Block.Block--has-background {
+  & + .Block.Block--has-background {
+    margin-top: 0;
+  }
+}

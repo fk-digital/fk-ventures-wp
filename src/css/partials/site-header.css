@@ -1,0 +1,132 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--spacing--s) 0;
+  z-index: 888;
+  transition: all var(--global-transition);
+}
+
+.Header__Container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__Title {
+  display: block;
+  height: var(--spacing--m);
+  width: auto;
+  color: var(--palette-light);
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.MenuToggle,
+.MenuToggleClose {
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  z-index: 200;
+  background: transparent;
+  border: 0;
+
+  & b {
+    display: block;
+    width: 22px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    transform-origin: 50% 50%;
+    transition: var(--global-transition);
+    pointer-events: none;
+    background-color: var(--palette-light);
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 10px;
+    }
+
+    &:nth-child(4) {
+      top: 20px;
+    }
+  }
+
+  &:hover b {
+    background-color: var(--palette-action);
+  }
+
+  &[aria-expanded='true'] b {
+    &:nth-child(1),
+    &:nth-child(4) {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+    &:nth-child(3) {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.MenuToggleClose[aria-expanded='true'] {
+  & b {
+    background-color: var(--palette-dark);
+    &:nth-child(1),
+    &:nth-child(2) {
+      top: 10px;
+      opacity: 1;
+    }
+    &:nth-child(1) {
+      transform: rotate(-45deg) scaleX(1);
+    }
+    &:nth-child(2) {
+      transform: rotate(45deg) scaleX(1);
+    }
+  }
+
+  &:hover b {
+    background-color: var(--palette-action);
+  }
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .Header {
+    padding: var(--spacing--m) 0;
+  }
+
+  .Header__Container {
+    justify-content: flex-end;
+    gap: var(--spacing--s);
+  }
+
+  .Header__Title {
+    margin-right: auto;
+  }
+}
+
+/* Body Scrolled */
+body.is-scrolled {
+  & .Header {
+    background-color: var(--palette-dark);
+    color: var(--palette-light);
+    padding: var(--spacing--xs) 0;
+  }
+
+  .Header__Title {
+    color: var(--palette-light);
+  }
+
+  .MenuToggle b {
+    background-color: var(--palette-light);
+  }
+}

@@ -1,0 +1,51 @@
+{% extends 'base.twig' %}
+{% block content %}
+  <div class="Container">
+    <div class="Grid">
+      <div class="News__Header">
+        <h1 class="News__Title h2 AppearFadeIn Delay">
+          {{ options.blog_title ? options.blog_title : 'News & Views' }}
+        </h1>
+        {% if options.blog_copy %}
+          <p class="News__Intro AppearFadeIn Delay">
+            {{ options.blog_copy }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <nav class="CatList AppearFadeIn Delay">
+      <a
+        href="{{ fn('get_post_type_archive_link', 'post') }}"
+        class="current Pill"
+      >
+        All Categories
+      </a>
+      {% for cat in categories %}
+        <a
+          href="{{ cat.link }}"
+          data-service="{{ cat.title|slugify }}"
+          class="Pill"
+        >
+          {{ cat.title }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    <div class="News__List Grid Grid--mobile">
+      {% for post in posts %}
+        {% include 'post-types/post.twig' %}
+        {% if loop.index == 8 %}
+          {% include 'newsletter-cta.twig' %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% include 'partials/pagination.twig' with {
+      pagination: posts.pagination({
+        show_all: false,
+        mid_size: 3,
+        end_size: 2
+      })
+    } %}
+  </div>
+{% endblock %}

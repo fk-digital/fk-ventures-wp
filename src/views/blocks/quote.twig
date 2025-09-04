@@ -1,0 +1,37 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container Quote__Container Quote--{{ fields.layout }}">
+    <div class="Grid">
+      <div class="Quote__Wrapper">
+        {% if fields.quote %}
+          <blockquote class="Quote__Quote AppearFadeMoveIn Delay">
+            <p>
+              {{ fields.quote }}
+            </p>
+          </blockquote>
+        {% endif %}
+
+        {% if fields.author %}
+          <p class="Quote__Author SmallCaps AppearFadeMoveIn Delay">
+            {{ fields.author }}
+          </p>
+        {% endif %}
+
+        {% if fields.button %}
+          {% include 'partials/button.twig' with {
+            button: fields.button,
+            buttonArrow: true,
+            buttonHollow: false,
+            class: 'AppearFadeMoveIn Delay'
+          } %}
+        {% endif %}
+      </div>
+      {% if fields.media %}
+        {% include 'partials/media.twig' with {
+          media: fields.media,
+          class: 'Quote__Media AppearFadeMoveIn Delay'
+        } %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

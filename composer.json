@@ -1,0 +1,59 @@
+{
+  "name": "fk_ventures/website",
+  "description": "FK Ventures",
+  "type": "project",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^1.0.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.gravity.io"
+    }
+  ],
+  "require": {
+    "johnpbloch/wordpress": "*",
+    "timber/timber": "*",
+    "twig/twig": "*",
+    "vlucas/phpdotenv": "*",
+    "wpengine/advanced-custom-fields-pro": "*",
+    "gravity/gravityforms": "*",
+    "wpackagist-plugin/acf-gravityforms-add-on": "*"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "install-codestandards": [
+      "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    ],
+    "phpcs-dev": "\"vendor/bin/phpcs\"",
+    "run-phpcs": [
+      "@phpcs-dev"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "platform": {
+      "php": "8.0"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "extra": {
+    "wordpress-install-dir": "wp"
+  }
+}

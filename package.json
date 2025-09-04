@@ -1,0 +1,58 @@
+{
+  "name": "fk_ventures",
+  "version": "1.0.0",
+  "description": "Website for FK Ventures",
+  "main": "webpack.config.js",
+  "scripts": {
+    "db-setup": "node scripts/db-setup.js",
+    "dev": "webpack --mode production --watch",
+    "build": "webpack --mode production",
+    "format": "prettier --write **/*.{js,php}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fk-digital/fk_ventures.git"
+  },
+  "author": "FK Ventures",
+  "license": "ISC",
+  "homepage": "https://github.com/fk-digital/fk_ventures",
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@csstools/postcss-global-data": "^3.0.0",
+    "@zackad/prettier-plugin-twig": "^0.15.3",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^10.0.0",
+    "browser-sync": "^3.0.3",
+    "browser-sync-v3-webpack-plugin": "^0.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "dotenv": "^16.4.7",
+    "extract-loader": "^4.0.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.3",
+    "postcss-custom-media": "^11.0.5",
+    "postcss-import": "^16.1.0",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.1.5",
+    "prettier": "^3.5.3",
+    "shelljs": "^0.8.5",
+    "terser-webpack-plugin": "^5.3.12",
+    "twig-html-loader": "^0.1.9",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "a11y-tabs": "^0.1.2",
+    "countup.js": "^2.8.0",
+    "glightbox": "^3.3.1",
+    "gsap": "^3.12.7",
+    "normalize.css": "^8.0.1"
+  }
+}

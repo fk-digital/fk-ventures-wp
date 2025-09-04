@@ -1,0 +1,40 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    <div class="Articles__Header">
+      {% if fields.eyebrow %}
+        <span class="Articles__Eyebrow SmallCaps AppearFadeMoveIn Delay">
+          {{ fields.eyebrow }}
+        </span>
+      {% endif %}
+      {% if fields.heading %}
+        <h2 class="Articles__Title AppearFadeMoveIn Delay">
+          {{ fields.heading }}
+        </h2>
+      {% endif %}
+      {% if fields.copy %}
+        <div class="Articles__Copy AppearFadeMoveIn Delay ugc">
+          {{ fields.copy }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="News__List Grid Grid--mobile">
+      {% for post in articles_posts %}
+        {% include 'post-types/post.twig' %}
+      {% endfor %}
+    </div>
+
+    <div class="CenterButtonWrapper AppearFadeMoveIn Delay">
+      {% set buttonObj = {
+        url: fn('get_post_type_archive_link', 'post'),
+        title: 'View all articles'
+      } %}
+      {% include 'partials/button.twig' with {
+        button: buttonObj,
+        buttonArrow: true,
+        buttonHollow: false
+      } %}
+    </div>
+  </div>
+{% endblock %}

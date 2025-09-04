@@ -1,0 +1,28 @@
+{
+  "name": "acf/content-panel",
+  "title": "Content Panel",
+  "description": "Panel with mixed used columns of text and media.",
+  "category": "fk_ventures-blocks",
+  "icon": "id",
+  "apiVersion": 2,
+  "keywords": [
+      "content",
+      "panel",
+      "fk_ventures"
+  ],
+  "acf": {
+      "mode": "edit",
+      "renderCallback": "fk_ventures_acf_block_render_callback"
+  },
+  "supports": {
+      "align": false,
+      "anchor": true,
+      "alignContent": false,
+      "alignText": false,
+      "defaultStylePicker": false,
+      "color": {
+        "background": false,
+        "text": false
+      }
+  }
+}

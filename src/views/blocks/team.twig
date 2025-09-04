@@ -1,0 +1,68 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    <div class="Team__Header">
+      {% if fields.eyebrow %}
+        <span class="Team__Eyebrow SmallCaps AppearFadeMoveIn Delay">
+          {{ fields.eyebrow }}
+        </span>
+      {% endif %}
+
+      {% if fields.heading %}
+        <h2 class="Team__Title AppearFadeMoveIn Delay">{{ fields.heading }}</h2>
+      {% endif %}
+
+      {% if fields.copy %}
+        <div class="Team__Copy ugc AppearFadeMoveIn Delay">
+          {% if fields.copy %}{{ fields.copy }}{% endif %}
+        </div>
+      {% endif %}
+
+      {% if fields.button %}
+        {% include 'partials/button.twig' with {
+          button: fields.button,
+          buttonArrow: false,
+          buttonHollow: false,
+          class: 'AppearFadeMoveIn Delay'
+        } %}
+      {% endif %}
+    </div>
+
+    <ul class="Team__List Grid">
+      {% for person in team %}
+        {% set personObj = get_post(person) %}
+        <li
+          class="Team__Member Team__Member--{{
+          loop.index
+          }} AppearFadeMoveIn Delay"
+        >
+          <div class="Person">
+            <div class="Person__Header">
+              <div class="Person__ImageWrapper">
+                {% if personObj.thumbnail %}
+                  <img
+                    src="{{ personObj.thumbnail.src('person') }}"
+                    width="80"
+                    height="80"
+                    alt="{{ personObj.thumbnail.alt }}"
+                    loading="lazy"
+                    title="{{ personObj.thumbnail.alt }}"
+                  />
+                {% endif %}
+              </div>
+              <div class="Person__Info">
+                <h3 class="Person__Name h4">{{ personObj.title }}</h3>
+                <p class="Person__JobTitle">
+                  {{ personObj.meta('job_title') }}
+                </p>
+              </div>
+            </div>
+            <div class="Person__Bio">
+              {{ personObj.meta('bio') }}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

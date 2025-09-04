@@ -1,0 +1,10 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    {% include 'partials/media.twig' with {
+      media: fields.media,
+      class: 'Media__Media',
+      imageSize: 'hero'
+    } %}
+  </div>
+{% endblock %}

@@ -1,0 +1,175 @@
+.MainNav,
+.MainNav .SubNav,
+.MainNav .SubSubNav {
+  display: block;
+  background-color: var(--palette-action);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  top: 0;
+  right: 0;
+  transition: transform 350ms ease-out;
+  transform: translateX(101%);
+  z-index: 997;
+  box-shadow: -1px 0px 16px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  padding: var(--spacing--l) var(--spacing--s);
+  &[aria-expanded='true'] {
+    transform: translateX(0);
+  }
+}
+
+.MainNavOverlay {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 350ms ease-out;
+  z-index: 996;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  &[aria-expanded='true'] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.MainNav .SubNav {
+  z-index: 998;
+}
+.MainNav .SubSubNav {
+  z-index: 999;
+}
+
+.MainNav__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing--l);
+}
+
+.MenuToggleClose {
+  order: 2;
+}
+
+.MainNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.MainNav__Item,
+.SubNav__Item {
+  border-bottom: solid var(--border-width) var(--palette-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MainNav__Item a {
+  font-size: var(--font-size--default);
+  color: var(--palette-dark);
+  display: block;
+  padding: var(--spacing--s) 0;
+  text-decoration: none;
+  &:hover {
+    color: var(--palette-light);
+  }
+}
+
+.SubToggle {
+  display: flex;
+  flex: 0 0 44px;
+  padding: 24px 10px;
+  justify-content: center;
+  align-items: center;
+  color: var(--palette-dark);
+  cursor: pointer;
+  transition: all var(--global-transition);
+  & svg {
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+  }
+  &:hover {
+    color: var(--palette-action);
+    transform: translateX(5px);
+  }
+}
+
+.SubNav__Back {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.BackButton {
+  border: 0;
+  background-color: transparent;
+  appearance: none;
+  color: var(--palette-dark);
+  display: block;
+  padding: 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing--xs);
+  & svg {
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    transform: rotate(-180deg);
+    transition: all var(--global-transition);
+    transform-origin: 50% 50%;
+  }
+  &:hover {
+    color: var(--palette-action);
+    & svg {
+      transform: rotate(-180deg) translateX(5px);
+    }
+  }
+}
+
+.MainNav .SearchFrom {
+  margin-top: auto;
+  padding-top: var(--spacing--s);
+  margin-bottom: var(--spacing--s);
+}
+
+.MainNav__Menu--mobile {
+  display: block;
+}
+.MainNav__Menu--desktop {
+  display: none;
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .MainNav,
+  .MainNav .SubNav,
+  .MainNav .SubSubNav {
+    padding: var(--spacing--l);
+  }
+
+  .MainNav__Menu--desktop {
+    display: block;
+  }
+
+  .MainNav__Menu--mobile {
+    display: none;
+  }
+}
+
+/* Menu Open */
+body.nav-open {
+  overflow: hidden;
+  @media (--mq-landscape-lap-and-up) {
+    overflow: visible;
+  }
+}

@@ -1,0 +1,56 @@
+{% if posts.pagination.pages is not empty %}
+  <ul class="Pagination">
+    {# Previous #}
+    {% if posts.pagination.prev %}
+      <li class="Pagination__ListItem Pagination__ListItem--previous">
+        <a class="Pagination__ArrowLink Pagination__ArrowLink--previous"
+          href="{{ posts.pagination.prev.link }}">
+          {{ source(directory ~ 'images/chrevron-down.svg') }}
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+    {% else %}
+      <li class="Pagination__ListItem Pagination__ListItem--previous">
+        <button class="Pagination__ArrowLink Pagination__ArrowLink--previous"
+          disabled>
+          {{ source(directory ~ 'images/chrevron-down.svg') }}
+          <span class="sr-only">Previous</span>
+        </button>
+      </li>
+    {% endif %}
+
+    {# Pages #}
+    {% for page in posts.pagination.pages %}
+      {% if page.link %}
+        <li class="Pagination__ListItem">
+          <a href="{{ page.link }}" class="{{ page.class }}">
+            {{ page.title }}
+          </a>
+        </li>
+      {% else %}
+        <li class="Pagination__ListItem">
+          <span class="{{ page.class }}">{{ page.title }}</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    {# Next #}
+    {% if posts.pagination.next %}
+      <li class="Pagination__ListItem Pagination__ListItem--next">
+        <a class="Pagination__ArrowLink Pagination__ArrowLink--next"
+          href="{{ posts.pagination.next.link }}">
+          <span class="sr-only">Next</span>
+          {{ source(directory ~ 'images/chrevron-down.svg') }}
+        </a>
+      </li>
+    {% else %}
+      <li class="Pagination__ListItem Pagination__ListItem--next">
+        <button class="Pagination__ArrowLink Pagination__ArrowLink--next"
+          disabled>
+          <span class="sr-only">Next</span>
+          {{ source(directory ~ 'images/chrevron-down.svg') }}
+        </button>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

@@ -1,0 +1,93 @@
+.Footer {
+  padding: var(--spacing--m) 0;
+}
+
+.FooterContainer {
+  border-top: solid var(--border-width) var(--mid-grey);
+  padding-top: var(--spacing--m);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+
+a.Footer__Logo {
+  width: 136px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  display: block;
+  color: var(--palette-light);
+  & svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.Footer__Contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.Footer__Name {
+  font-weight: 700;
+}
+
+.Footer__JobTitle {
+  padding-bottom: 0.25em;
+}
+
+.Footer__Tel,
+.Footer__Email {
+  text-decoration-color: transparent;
+  &:hover {
+    color: var(--palette-light);
+    text-decoration-color: var(--palette-action);
+  }
+}
+
+.Footer__Menu {
+  display: flex;
+  gap: 1em;
+  font-size: var(--font-size--tiny);
+  & a {
+    text-decoration-color: transparent;
+    &:hover {
+      color: var(--palette-light);
+      text-decoration-color: var(--palette-action);
+    }
+  }
+}
+
+.Social {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing--xs);
+}
+
+.Social__Link {
+  text-decoration: none;
+  & svg {
+    width: 33px;
+    display: block;
+    height: auto;
+  }
+}
+
+.Footer__Legal {
+  font-size: var(--font-size--tiny);
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .FooterContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+  }
+  .Footer__Menu {
+    grid-column: 1 / span 2;
+  }
+  .Footer__Legal {
+    text-align: right;
+  }
+}

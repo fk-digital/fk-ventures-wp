@@ -1,0 +1,82 @@
+:root {
+  /* Brand Colo(u)rs */
+  --white: #ffffff;
+  --black: #212121;
+  --yellow: #ffd95a;
+  --dark-grey: #53585f;
+  --mid-grey: #83878b;
+  --light-grey: #dcdee0;
+
+  /* Palettes */
+  --palette-body: var(--white);
+  --palette-bg: var(--black);
+  --palette-heading: var(--yellow);
+  --palette-action: var(--yellow);
+  --palette-hover: var(--mid-grey);
+
+  --palette-light: var(--white);
+  --palette-mid: var(--mid-grey);
+  --palette-dark: var(--black);
+
+  --palette-success: #00ff00;
+  --palette-error: #ff0000;
+  --palette-warning: #ffbf00;
+
+  /* Sizing */
+  --spacing--xxs: calc((10 / 16) * 1rem);
+  --spacing--xs: calc((16 / 16) * 1rem);
+  --spacing--s: calc((24 / 16) * 1rem);
+  --spacing--m: calc((40 / 16) * 1rem);
+  --spacing--l: calc((60 / 16) * 1rem);
+  --spacing--xl: calc((70 / 16) * 1rem);
+  --spacing--xxl: calc((272 / 16) * 1rem);
+  --spacing--xxxl: calc((376 / 16) * 1rem);
+
+  --flow: calc((70 / 16) * 1rem);
+
+  /* Grid */
+  --max-width: 1400px;
+  --gap: 24px;
+  --page-padding: 24px;
+  --col-width: calc((100% - (11 * var(--gap))) / 12);
+
+  /* Borders */
+  --border-width: 1px;
+  --border: solid var(--border-width) var(--light-grey);
+
+  /* Border Radius */
+  --border-radius: 4px;
+
+  /* A11y */
+  --a11y-outline: dashed 1px var(--palette-light);
+  --a11y-outline-light: dashed 1px var(--palette-mid);
+
+  /* Type */
+  --typeface-heading: 'ParaSupreme', serif;
+  --typeface-body: 'F37Jagger', sans-serif;
+
+  /* Font Sizes */
+  /* --px-to-rem: calc((var(--pixels) / 16) * 1rem); */
+  --font-size--mega: calc((64 / 16) * 1rem);
+  --font-size--jumbo: calc((38 / 16) * 1rem);
+  --font-size--extra-large: calc((30 / 16) * 1rem);
+  --font-size--large: calc((24 / 16) * 1rem);
+  --font-size--medium: calc((21 / 16) * 1rem);
+  --font-size--default: calc((18 / 16) * 1rem);
+  --font-size--small: calc((14 / 16) * 1rem);
+  --font-size--tiny: calc((12 / 16) * 1rem);
+  --font-size--micro: calc((10 / 16) * 1rem);
+
+  /* Line height */
+  --line-height--heading: 1.2;
+  --line-height--body: 1.2;
+
+  /* Transitions */
+  --global-timing: cubic-bezier(0.2, 1, 0.3, 1);
+  --global-duration: 0.5s;
+  --global-transition: var(--global-duration) var(--global-timing);
+
+  @media (--mq-landscape-tablet-and-up) {
+    --flow: calc((140 / 16) * 1rem);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "http-basic": {
+    "connect.advancedcustomfields.com": {
+      "username": "b3JkZXJfaWQ9MTIyMDg5fHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wMS0wOCAxMDoxMjo0Nw==",
+      "password": "http://fk-ventures-wp.localdev"
+    },
+    "composer.gravity.io": {
+      "username": "2aeb140115cc645c9a2b3beb56cbe677",
+      "password": "http://fk-ventures-wp.localdev"
+    }
+  }
+}

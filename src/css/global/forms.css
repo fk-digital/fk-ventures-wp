@@ -1,0 +1,71 @@
+/* Graviuty Forms Overwrites */
+
+/* Labels */
+.gform-field-label:not(.gform-field-label--type-sub),
+.gform_button.button,
+.gform_button_select_files.button {
+  font-family: var(--typeface-body) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  leading-trim: both !important;
+  text-edge: cap !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--color-mid-grey) !important;
+}
+
+/* Buttons */
+.gform_button.button,
+.gform_button_select_files.button {
+  background-color: transparent !important;
+  border: solid var(--border-width) var(--palette-action) !important;
+  color: var(--palette-action) !important;
+  padding: 0 var(--spacing--s) !important;
+  height: 40px !important;
+  transition: all var(--global-transition) !important;
+  border-radius: 9999em !important;
+
+  &:hover {
+    background-color: var(--palette-action) !important;
+    border-color: var(--palette-action) !important;
+    color: var(--palette-dark) !important;
+  }
+}
+
+.gform_button_select_files.button {
+  border: solid var(--border-width) var(--palette-dark) !important;
+  color: var(--palette-dark) !important;
+  &:hover {
+    background-color: var(--palette-action) !important;
+    border-color: var(--palette-action) !important;
+    color: var(--palette-dark) !important;
+  }
+}
+
+/* Errors */
+.gform-theme--framework .gform_validation_errors {
+  background: #c02b0a50 !important;
+}
+
+.gform-theme--framework .gform_validation_errors .gform_submission_error,
+.gform-theme--framework .gform_validation_errors ol,
+.gform-theme--framework .gform_validation_errors ol a,
+.gform-icon.gform-icon--circle-error {
+  color: var(--palette-light) !important;
+}
+
+.gform-theme--framework .gform_validation_errors ol a:hover {
+  text-decoration-color: transparent !important;
+}
+
+.gform-icon.gform-icon--circle-error {
+  border-color: var(--palette-light) !important;
+}
+
+/* Requiered */
+.gform_required_legend {
+  text-align: right;
+  font-size: var(--font-size--tiny);
+}

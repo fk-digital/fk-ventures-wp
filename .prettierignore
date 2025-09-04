@@ -1,0 +1,7 @@
+# Vendor
+/vendor
+/node_modules/*
+
+# Build
+/wp-content/*
+/wp/*

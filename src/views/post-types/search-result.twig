@@ -1,0 +1,22 @@
+<article class="Post Post--{{post.type}}" id="{{ post.id }}">
+  <a href="{{ post.link }}" aria-label="{{ post.title }}" class="Post__Link">
+    <div class="Post__Content">
+      <span class="Post__Date Date">
+        {% if post.type == 'post' %}
+          Post
+        {% else %}
+          Page
+        {% endif %}
+      </span>
+
+      <h2 class="Post__Title h3">
+        {{ post.title }}
+      </h2>
+      {% if post.type == 'post' %}
+        <time class="Post__Date Date" datetime="{{ post.date('Y-m-d') }}">
+          {{ post.date('d-m-y') }}
+        </time>
+      {% endif %}
+    </div>
+  </a>
+</article>

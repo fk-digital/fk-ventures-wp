@@ -1,0 +1,17 @@
+.Card {
+  display: block;
+  border: solid var(--border-width) var(--palette-dark);
+  padding: var(--spacing--s);
+  border-radius: var(--border-radius);
+}
+
+.Card__Header {
+  margin-bottom: var(--spacing--xs);
+  > * + * {
+    margin-top: var(--spacing--xs);
+  }
+}
+
+.Card__Media {
+  margin-bottom: var(--spacing--xs);
+}

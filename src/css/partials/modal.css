@@ -1,0 +1,53 @@
+.Modal {
+  border: 0;
+  border-radius: var(--border-radius);
+  max-width: 600px;
+  outline: 0;
+  padding: var(--spacing--m);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+  &::focus {
+    outline: 0;
+  }
+}
+
+.Modal {
+  display: block;
+  inset: 0;
+  z-index: var(--layer-important);
+  overflow: hidden;
+  transition: opacity 0.5s;
+  animation: slide-out-down 750ms var(--global-timing) forwards;
+}
+
+.Modal[open] {
+  animation: slide-in-up 750ms var(--global-timing) forwards;
+}
+
+.Modal:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.Modal::backdrop {
+  backdrop-filter: blur(0.25rem);
+  background-color: var(--palette-dark);
+  opacity: 0.7;
+}
+
+.Modal__Header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing--s);
+}
+
+@keyframes slide-in-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-out-down {
+  to {
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,40 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    {% if fields.heading %}
+      <h2 class="MediaCarousel__Title AppearFadeMoveIn Delay">
+        {{ fields.heading }}
+      </h2>
+    {% endif %}
+    {% if fields.slides %}
+      <div class="splide MediaCarousel__List" aria-label="Media">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for slide in fields.slides %}
+              <li
+                class="MediaCarousel__Slide MediaCarousel__Slide--{{
+                loop.index
+                }} splide__slide"
+              >
+                {% include 'partials/media.twig' with {
+                  media: slide.media,
+                  class: 'MediaCarousel__Media',
+                  imageSize: 'hero'
+                } %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+            {{ source(directory ~ 'images/chrevron-down.svg') }}
+          </button>
+          <ul class="splide__pagination"></ul>
+          <button class="splide__arrow splide__arrow--next">
+            {{ source(directory ~ 'images/chrevron-down.svg') }}
+          </button>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

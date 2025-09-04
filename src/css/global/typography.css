@@ -1,0 +1,270 @@
+/* Text */
+p,
+ul,
+ol,
+small {
+  font-size: var(--font-size--base);
+  line-height: 1;
+  margin: 0;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: var(--typeface-body);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  & b,
+  & strong {
+    font-weight: 700;
+  }
+  & span {
+    color: var(--color-yellow);
+  }
+}
+
+h1,
+.h1 {
+  font-size: var(--font-size--mega);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size--jumbo);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size--extra-large);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size--large);
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size--medium);
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size--default);
+}
+
+small,
+.small {
+  font-size: 80%;
+}
+
+.strikethough {
+  text-decoration: line-through;
+}
+
+.is-centered {
+  text-align: center;
+}
+
+.SmallCaps,
+.Tag,
+.Button,
+.gfield_label,
+.gform-field-label,
+.gfield_label.gform-field-label {
+  font-family: var(--typeface-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  leading-trim: both;
+  text-edge: cap;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-mid-grey);
+}
+
+.Tag {
+  line-height: 12px;
+  border: var(--border);
+  padding: 0 15px;
+  background-color: transparent;
+  border-radius: 999em;
+  display: inline-block;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.SmallCaps {
+  margin-bottom: var(--spacing--xs);
+}
+
+.Tag--filled {
+  background-color: var(--color-dark-grey);
+  border-color: var(--color-dark-grey);
+  color: var(--color-white);
+}
+
+.Tag--yellow {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.TagList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing--xxs);
+  line-height: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.TagList--center {
+  justify-content: center;
+}
+
+.Tag.active,
+a.Tag.active,
+a.Tag.active:hover {
+  background-color: var(--color-dark-grey);
+  border-color: var(--color-dark-grey);
+  color: var(--theme-foreground);
+}
+
+a.Tag.active:hover {
+  pointer-events: none;
+}
+
+a.Tag,
+button.Tag,
+summary.Tag {
+  transition: all var(--global-transition);
+  background-color: transparent;
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  text-decoration: none;
+  &:hover {
+    background-color: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: var(--theme-background);
+  }
+}
+
+a.Tag--grey,
+button.Tag--grey,
+summary.Tag--grey {
+  background-color: transparent;
+  color: var(--color-mid-grey);
+  border-color: var(--color-mid-grey);
+  text-decoration: none;
+  &:hover {
+    background-color: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: var(--theme-background);
+  }
+}
+
+details[open] summary.Tag {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+/* Lists */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+/* Blockquote */
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: var(--typeface-body);
+  font-style: normal;
+  & p {
+    font-style: normal;
+    font-size: var(--font-size--extra-large);
+    line-height: 1.2;
+    + p {
+      margin-top: 1em;
+    }
+  }
+
+  cite {
+    font-size: var(--font-size--large);
+    font-weight: 700;
+  }
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+/* UGC */
+.ugc {
+  hanging-punctuation: first allow-end last;
+
+  & ul,
+  & ol {
+    padding-inline-start: 1em;
+    margin-left: 1em;
+  }
+
+  & ul {
+    list-style-type: disc;
+  }
+
+  & ol {
+    list-style-type: decimal;
+  }
+
+  & * + *,
+  & * + .Button {
+    margin-block-start: 1em;
+  }
+
+  & * + h1,
+  & * + h2,
+  & * + h3,
+  & * + h4,
+  & * + h5,
+  & * + h6 {
+    margin-block-start: 2em;
+  }
+
+  & li + li {
+    margin-block-start: 0.25em;
+  }
+
+  & p,
+  & ul,
+  & ol {
+    line-height: 1.2;
+    font-size: var(--font-size--large);
+  }
+}

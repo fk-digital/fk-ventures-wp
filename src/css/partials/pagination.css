@@ -1,0 +1,61 @@
+.Pagination {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing--xs);
+  margin-top: var(--spacing--l);
+}
+
+.Pagination__ListItem a,
+.Pagination__ListItem button,
+.Pagination__ListItem span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: solid var(--border-width) transparent;
+  color: var(--light-grey);
+  text-decoration: none !important;
+  transition: all var(--global-transition);
+  border-radius: var(--border-radius);
+  &:hover {
+    background-color: transparent !important;
+    border-color: var(--mid-grey) !important;
+    color: var(--palette-light) !important;
+  }
+
+  &.current {
+    background-color: var(--mid-grey) !important;
+    border-color: var(--mid-grey) !important;
+    color: var(--palette-dark) !important;
+  }
+
+  &[disabled],
+  &[disabled]:hover {
+    cursor: no-drop;
+    pointer-events: none;
+  }
+}
+
+.Pagination__ListItem .Pagination__ArrowLink {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: var(--light-grey);
+  & svg {
+    width: 14px;
+    height: 7px;
+    transform: rotate(-90deg);
+  }
+  &:hover {
+    color: var(--palette-light) !important;
+    border-color: transparent !important;
+  }
+}
+.Pagination__ListItem
+  .Pagination__ArrowLink.Pagination__ArrowLink--previous
+  svg {
+  transform: rotate(90deg);
+}

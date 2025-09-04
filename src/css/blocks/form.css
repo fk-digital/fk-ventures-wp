@@ -1,0 +1,6 @@
+.Form .Container {
+  padding: 0;
+  @media (--mq-landscape-tablet-and-up) {
+    padding: 0 clamp(var(--spacing--s), 2.5vw, var(--spacing--xl));
+  }
+}

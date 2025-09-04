@@ -1,0 +1,37 @@
+# Dependencenices
+##############################################################################
+node_modules/**
+package.json
+package-lock.json
+composer.json
+composer.lock
+
+# Tools
+##############################################################################
+setup/**
+scripts/**
+config.sample.js
+config.js
+gulpfile.babel.js
+sprite-template.html
+webpack.config.js
+debug.log
+
+# Source
+##############################################################################
+src/
+src/**
+
+# dotfiles
+##############################################################################
+.nvmrc
+.gitignore
+.env.example
+.env
+.babelrc
+.editorconfig
+.prettierrc
+
+# Docs
+##############################################################################
+README.md

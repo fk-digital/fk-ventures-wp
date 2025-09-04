@@ -1,0 +1,74 @@
+.Button,
+.wp-block-button__link {
+  border: solid var(--border-width) var(--palette-action);
+  background-color: var(--palette-action);
+  color: var(--palette-light);
+  padding: 0 var(--spacing--s);
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  line-height: 1;
+  height: 40px;
+  transition: all var(--global-transition);
+  border-radius: 9999em;
+
+  & svg {
+    transition: all var(--global-transition);
+  }
+
+  &:hover {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+/* Hollow Button */
+.Button--arrow {
+  gap: 0.5rem;
+  & svg {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    transform-origin: 100% 50%;
+  }
+  &:hover svg {
+    transform: translateX(5px);
+  }
+}
+
+/* Hollow Button */
+.Button.Button--hollow {
+  background-color: transparent;
+  border-color: var(--palette-dark);
+  color: var(--palette-dark);
+  &:hover {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+}
+
+/* Wrap */
+.ButtonsWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing--s);
+  flex-wrap: wrap;
+  .Button {
+    margin: 0;
+  }
+}
+
+.ButtonsWrap--center {
+  justify-content: center;
+}

@@ -1,0 +1,17 @@
+<a
+  class="Button {{ buttonArrow ? 'Button--arrow' : '' }} {{
+  buttonHollow
+    ? 'Button--hollow'
+    : ''
+  }} {{ class ? class }}"
+  href="{{ button.url }}"
+  target="{{ button.target ? '_blank' : '_self' }}"
+>
+  {{ button.title }}
+  {% if buttonArrow %}
+    {{ source(directory ~ 'images/arrow-right.svg') }}
+  {% endif %}
+  {% if button.target %}
+    <span class="sr-only">- opens in new tab</span>
+  {% endif %}
+</a>

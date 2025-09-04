@@ -1,0 +1,27 @@
+{
+  "name": "acf/articles",
+  "title": "Articles",
+  "description": "Latest articles from the blog",
+  "category": "fk_ventures-blocks",
+  "icon": "list-view",
+  "apiVersion": 2,
+  "keywords": [
+      "articles",
+      "fk_ventures"
+  ],
+  "acf": {
+      "mode": "edit",
+      "renderCallback": "fk_ventures_acf_block_render_callback"
+  },
+  "supports": {
+      "align": false,
+      "anchor": true,
+      "alignContent": false,
+      "alignText": false,
+      "defaultStylePicker": false,
+      "color": {
+        "background": false,
+        "text": false
+      }
+  }
+}

@@ -1,0 +1,29 @@
+.editor-styles-wrapper.block-editor-writing-flow {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  background-color: #f9f9f9;
+}
+
+.block-editor-block-list__block.wp-block.acf-block-component {
+  margin-bottom: 30px;
+}
+
+.p--large {
+  font-size: 24px;
+}
+
+.p--small {
+  font-size: 14px;
+}
+
+.wp-block-button__link {
+  background-color: var(--mid-grey);
+  color: var(--palette-dark);
+  padding: var(--spacing--xxs);
+  border-radius: 0;
+  border: 0;
+  &:hover {
+    background-color: var(--theme-foreground);
+    color: var(--theme-background);
+  }
+}

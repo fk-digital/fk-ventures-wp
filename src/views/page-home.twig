@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+  <section class="Block HomeSpiral">
+    <div class='Container SpiralDemo'>
+      <section class='Spiral' data-spiral>
+        {{ source(directory ~ 'images/spiral.svg') }}
+        <h1 class='Sprial__Text'>
+          <span class='Spiral__Text--1'>Are you a cash-strapped founder that needs a clearly defined brand to help secure investment?</span>
+          <span class='Spiral__Text--2'>A banging investor deck? a compelling story to tell friends, family and fools?</span>
+          <span class='Spiral__Text--3'>A pitch deck to wow investors?</span>
+        </h1>
+      </section>
+    </div>
+  </section>
+
+  {{ post.content }}
+{% endblock %}

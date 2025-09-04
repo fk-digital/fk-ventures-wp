@@ -1,0 +1,30 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    <div class="ButtonsWrap ButtonsWrap--center AppearFadeMoveIn">
+      {% for buttonItem in fields.buttons %}
+        {% if buttonItem.button %}
+          {% if buttonItem.style == 'hollow' %}
+            {% set arrowState = false %}
+            {% set hollowState = true %}
+          {% elseif buttonItem.style == 'hollow-arrow' %}
+            {% set arrowState = true %}
+            {% set hollowState = true %}
+          {% elseif buttonItem.style == 'arrow' %}
+            {% set arrowState = true %}
+            {% set hollowState = false %}
+          {% else %}
+            {% set arrowState = false %}
+            {% set hollowState = false %}
+          {% endif %}
+
+          {% include 'partials/button.twig' with {
+            button: buttonItem.button,
+            buttonArrow: arrowState,
+            buttonHollow: hollowState
+          } %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

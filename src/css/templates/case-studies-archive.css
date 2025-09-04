@@ -1,0 +1,15 @@
+.CaseStudies__List {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing--s);
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .CaseStudies__List {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .CaseStudies__List .Post--double {
+    grid-column: span 2;
+  }
+}

@@ -1,0 +1,10 @@
+{% extends 'base.twig' %}
+{% block content %}
+  <div class="Container">
+    <div class="CaseStudies__List">
+      {% for post in posts %}
+        {% include 'post-types/case-study.twig' %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

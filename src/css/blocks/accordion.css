@@ -1,0 +1,80 @@
+.Accordion__Header {
+  margin-bottom: var(--spacing--m);
+  > * + * {
+    margin-top: 24px;
+  }
+}
+
+.Accordion__Item {
+  margin-bottom: var(--spacing--s);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.Accordion__Row {
+  overflow: hidden;
+}
+
+.Accordion__Title {
+  display: block;
+  & ::-webkit-details-marker {
+    display: none;
+  }
+  & span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: var(--spacing--xs);
+    background-color: var(--palette-mid);
+    color: var(--palette-light);
+    cursor: pointer;
+    padding: var(--spacing--xs);
+    gap: 0.5rem;
+    & svg {
+      transition: all var(--global-transition);
+    }
+  }
+
+  &:hover span {
+    color: var(--palette-action);
+  }
+}
+
+.Accordion__Description {
+  background-color: var(--palette-mid);
+  color: var(--brown-mid);
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 300ms ease-out;
+}
+
+.Accordion__DescriptionContent {
+  padding-left: var(--spacing--xs);
+  padding-right: var(--spacing--xs);
+  min-height: 0;
+  transition: visibility 1s;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 300ms ease-out;
+  & p {
+    color: var(--palette-light) !important;
+  }
+}
+
+.Accordion__Row[open] + .Accordion__Description {
+  grid-template-rows: 1fr;
+}
+
+.Accordion__Row[open] + .Accordion__Description .Accordion__DescriptionContent {
+  visibility: visible;
+  opacity: 1;
+  padding-top: var(--spacing--xs);
+  padding-bottom: var(--spacing--xs);
+}
+
+.Accordion__Row[open] .Accordion__Title span svg {
+  rotate: 90deg;
+  transition: rotate 300ms ease-out;
+}

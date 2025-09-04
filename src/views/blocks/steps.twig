@@ -1,0 +1,52 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    <div class="Steps__Header">
+      {% if fields.eyebrow %}
+        <span class="Steps__Eyebrow SmallCaps AppearFadeMoveIn Delay">
+          {{ fields.eyebrow }}
+        </span>
+      {% endif %}
+      {% if fields.heading %}
+        <h2 class="Steps__Title AppearFadeMoveIn Delay">
+          {{ fields.heading }}
+        </h2>
+      {% endif %}
+      {% if fields.copy %}
+        <div class="Steps__Copy AppearFadeMoveIn Delay ugc">
+          {{ fields.copy }}
+        </div>
+      {% endif %}
+    </div>
+
+    <ul class="StepsList">
+      {% for step in fields.steps %}
+        <li class="Steps__Item AppearFadeMoveIn Delay">
+          <div class="Step">
+            <p class="Step__Number h1">
+              {{ loop.index }}
+            </p>
+            {% if step.heading %}
+              <h3 class="Step__Title h4">{{ step.heading }}</h3>
+            {% endif %}
+            {% if step.description %}
+              <p class="Stat__Desc">
+                {{ step.description }}
+              </p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if fields.button %}
+      <div class="CenterButtonWrapper">
+        {% include 'partials/button.twig' with {
+          button: fields.button,
+          buttonArrow: true,
+          buttonHollow: false
+        } %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

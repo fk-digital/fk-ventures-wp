@@ -1,0 +1,49 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    {% if fields.heading %}
+      <h2 class="Badges__Title AppearFadeMoveIn">{{ fields.heading }}</h2>
+    {% endif %}
+    {% if fields.badge_row %}
+      {% set badgeRow = get_post(fields.badge_row) %}
+      {% if badgeRow.meta('badges') %}
+        <article class="MarqueesWrapper wrapper AppearFadeMoveIn Delay">
+          <div class="Marquee">
+            <div class="Marquee__group">
+              {% for badge in badgeRow.meta('badges') %}
+                <div class="Badges__Badge Marquee Item">
+                  {% set image = get_image(badge.logo) %}
+                  <img
+                    src="{{ image.src() }}"
+                    width="{{ image.width }}"
+                    height="{{ image.height }}"
+                    alt="{{ badge.name }}"
+                    loading="lazy"
+                    style="max-width: {{ image.width }}px;"
+                    class="Badges__Image"
+                  />
+                </div>
+              {% endfor %}
+            </div>
+            <div aria-hidden="true" class="Marquee__group">
+              {% for badge in badgeRow.meta('badges') %}
+                <div class="Badges__Badge Marquee Item">
+                  {% set image = get_image(badge.logo) %}
+                  <img
+                    src="{{ image.src() }}"
+                    width="{{ image.width }}"
+                    height="{{ image.height }}"
+                    alt="{{ badge.name }}"
+                    loading="lazy"
+                    style="max-width: {{ image.width }}px;"
+                    class="Badges__Image"
+                  />
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}

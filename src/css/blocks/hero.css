@@ -1,0 +1,37 @@
+.Hero .Container {
+  padding: 0;
+  @media (--mq-landscape-tablet-and-up) {
+    padding: 0 clamp(var(--spacing--s), 2.5vw, var(--spacing--xl));
+  }
+}
+
+.Hero__Container {
+  background-color: var(--palette-action);
+  min-height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--palette-dark);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.Hero__Content {
+  margin: 0 var(--spacing--s);
+  @media (--mq-landscape-tablet-and-up) {
+    max-width: 50%;
+    margin: 0 var(--spacing--xl);
+  }
+}
+
+.Hero__Copy {
+  font-size: var(--font-size--jumbo);
+  font-weight: 700;
+  padding-top: var(--spacing--xs);
+}
+
+.ButtonsWrap {
+  padding-top: var(--spacing--m);
+  justify-content: center;
+}

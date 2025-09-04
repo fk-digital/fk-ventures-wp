@@ -1,0 +1,40 @@
+<head>
+  <meta charset="{{ site.charset }}" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="pingback" href="{{ site.pingback_url }}" />
+  <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+  {# Favicon #}
+  <link rel="icon"
+    type="image/png"
+    href="{{ theme.link }}/assets/images/favicon/favicon-96x96.png"
+    sizes="96x96" />
+  <link rel="icon"
+    type="image/svg+xml"
+    href="{{ theme.link }}/assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon"
+    href="{{ theme.link }}/assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ theme.link }}/assets/images/favicon/apple-touch-icon.png" />
+  <link rel="manifest"
+    href="{{ theme.link }}/assets/images/favicon/site.webmanifest" />
+
+  {# Performance Stuff #}
+  <link rel="preconnect" href="//www.google-analytics.com" crossorigin />
+  <link rel="preconnect" href="//stats.g.doubleclick.net" crossorigin />
+  <link rel="preconnect" href="//www.google.com" crossorigin />
+  <link rel="preconnect" href="//www.googletagmanager.com" crossorigin />
+  {# <link rel="preload" href="{{theme.link}}/assets/fonts/FKGrotesk-Regular.woff2" as="font" type="font/woff2" crossorigin> #}
+
+  {{ function('wp_head') }}
+
+  {% block head %}
+
+  {% endblock %}
+
+  {% if options.head_scripts %}{{ options.head_scripts }}{% endif %}
+</head>

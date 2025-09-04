@@ -1,0 +1,27 @@
+{
+  "name": "acf/downloads",
+  "title": "Downloads",
+  "description": "A list of downloads",
+  "category": "fk_ventures-blocks",
+  "icon": "download",
+  "apiVersion": 2,
+  "keywords": [
+      "downloads",
+      "fk_ventures"
+  ],
+  "acf": {
+      "mode": "edit",
+      "renderCallback": "fk_ventures_acf_block_render_callback"
+  },
+  "supports": {
+      "align": false,
+      "anchor": true,
+      "alignContent": false,
+      "alignText": false,
+      "defaultStylePicker": false,
+      "color": {
+        "background": false,
+        "text": false
+      }
+  }
+}

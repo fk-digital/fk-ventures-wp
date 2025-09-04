@@ -1,0 +1,31 @@
+.Gallery__Text {
+  margin-bottom: var(--spacing--m);
+  > * + * {
+    margin-top: var(--spacing--xs);
+  }
+}
+
+.Gallery__Images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
+  gap: var(--gap);
+}
+
+.Gallery__Link {
+  display: block;
+  & img {
+    display: block;
+  }
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .Gallery__Text {
+    grid-row: 1;
+    grid-column: 1 / span 6;
+    margin-bottom: 0;
+  }
+  .Gallery__Images {
+    grid-row: 1;
+    grid-column: 7 / span 6;
+  }
+}

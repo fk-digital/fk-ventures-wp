@@ -1,0 +1,14 @@
+/* media queries */
+@custom-media --mq-phone screen and (max-width: 640px);
+@custom-media --mq-phablet-and-up screen and (min-width: 560px);
+@custom-media --mq-tablet-and-up screen and (min-width: 768px);
+@custom-media --mq-big-tablet-and-up screen and (min-width: 810px);
+@custom-media --mq-landscape-tablet-and-up screen and (min-width: 960px);
+@custom-media --mq-lap-and-up screen and (min-width: 1008px);
+@custom-media --mq-landscape-ipad-and-up screen and (min-width: 1025px);
+@custom-media --mq-desk-and-up screen and (min-width: 1081px);
+@custom-media --mq-widescreen-and-up screen and (min-width: 1242px);
+@custom-media --mq-max-width-and-up screen and (min-width: 1440px);
+
+/* Mins */
+@custom-media --mq-less-than-landscape screen and (max-width: 959px);

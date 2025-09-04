@@ -1,0 +1,12 @@
+.Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--gap);
+  @media (--mq-landscape-tablet-and-up) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.Grid--mobile {
+  grid-template-columns: repeat(12, 1fr);
+}

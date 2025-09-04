@@ -1,0 +1,30 @@
+.SearchFrom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: var(--palette-light); */
+  border-radius: var(--border-radius);
+}
+
+input[type='search'].SearchFrom__Input {
+  background-color: var(--palette-light);
+  border-color: var(--palette-light);
+  color: var(--palette-dark);
+  min-height: 64px;
+  border-radius: var(--border-radius);
+}
+
+.SearchFrom__Button {
+  flex: 0 0 64px;
+  min-height: 64px;
+  appearance: none;
+  border: 0;
+  background-color: var(--palette-light);
+  color: var(--palette-dark);
+  border-radius: var(--border-radius);
+  transition: all var(--global-transition);
+  &:hover {
+    background-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+}
