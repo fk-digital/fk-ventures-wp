@@ -100,22 +100,14 @@ class FutureKingsSite extends Timber\Site {
       'posts_per_page' => '5',
     ]);
 
-    // Categories
-    $cats = Timber::get_terms( 'category' );
-    $context['categories']  = $cats;
+    // Latest Posts
+    $context['all_case_studies'] = Timber::get_posts([
+      'post_type' => 'case-study',
+      'posts_per_page' => '-1',
+      'order' => 'ASC'
+    ]);
 
-    // Case Study Cats
-    $csCats = Timber::get_terms( 'case-study-category' );
-    $context['csCategories']  = $csCats;
 
-    // Services
-    $services = Timber::get_terms([
-      'taxonomy' => 'service',
-      'hide_empty' => false,
-     ]);
-    $context['services']  = $services;
-
-    $context['aboutPage'] = Timber::get_post_by( 'slug', 'about-us' );
 
     // First Block
     function sg_get_first_block() {

@@ -64,6 +64,6 @@
 @import 'templates/single';
 @import 'templates/error';
 /* @import 'templates/search'; */
-@import 'templates/front-page';
+@import 'templates/home';
 @import 'templates/case-studies-archive';
 @import 'templates/case-study';

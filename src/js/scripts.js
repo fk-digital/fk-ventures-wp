@@ -7,13 +7,15 @@ import countup from './modules/countup'
 // import lightbox from './modules/lightbox'
 // import modal from './modules/modal'
 import spiral from './modules/spiral'
+import home from './modules/home'
 
 skipLinkFocusFix()
 menu()
-scroll()
-carousel()
-tabs()
-countup()
+home()
+// scroll()
+// carousel()
+// tabs()
+// countup()
 // lightbox()
 // modal()
 spiral()

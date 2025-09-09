@@ -1,0 +1,223 @@
+:root {
+  --bgTransition: cubic-bezier(0.72, 0, 0.28, 1) 650ms !important;
+}
+
+.HomeSection {
+  min-height: 100vh;
+}
+
+.HomeSection--centered,
+.HomeSection--text {
+  .Container * + * {
+    margin-top: 0.5em;
+  }
+}
+
+.HomeSection--centered,
+.HomeSection--text,
+.HomeSection--portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & > * {
+    transition: color var(--bgTransition);
+    will-change: color;
+  }
+
+  p {
+    font-size: var(--font-size--jumbo);
+    line-height: 1.2;
+
+    @media (--mq-landscape-tablet-and-up) {
+      max-width: 75%;
+      font-size: var(--font-size--mega);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.HomeSection--text {
+  p {
+    font-size: var(--font-size--large);
+    line-height: 1.2;
+    color: var(--palette-dark);
+
+    @media (--mq-landscape-tablet-and-up) {
+      font-size: var(--font-size--extra-large);
+    }
+  }
+}
+
+.HomeSection--spiral {
+  background-color: var(--light-grey);
+  color: var(--palette-dark);
+  position: relative;
+  overflow: hidden;
+  & svg {
+    fill: var(---mid-grey);
+    opacity: 0.25;
+    width: 105%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Home Portfolio */
+.HomePortfolio {
+  display: grid;
+  gap: var(--spacing--s);
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: var(--spacing--s);
+}
+
+.HomePortfolio__Item {
+  display: block;
+  aspect-ratio: 1/1;
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark-grey);
+  padding: 0;
+  margin: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &:hover .HomePortfolio__Info {
+    transform: translateY(0);
+  }
+}
+
+.HomePortfolio__Info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--palette-action);
+  color: var(--palette-dark);
+  padding: var(--spacing--s);
+  transform: translateY(101%);
+  transition: all var(--global-transition);
+  will-change: transform;
+  margin: 0;
+  & p {
+    font-size: var(--font-size--extra-large);
+  }
+}
+
+.HomeWho {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  & .Cell {
+    display: block;
+    padding: var(--spacing--m);
+    color: var(--palette-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+    & svg {
+      width: auto;
+      height: 40px;
+      display: block;
+    }
+
+    @media (--mq-landscape-tablet-and-up) {
+      padding: var(--spacing--xl);
+    }
+
+    @media (--mq-widescreen-and-up) {
+      padding: var(--spacing--xxl);
+    }
+  }
+
+  & .Cell--one {
+    background-color: var(--palette-light);
+  }
+  & .Cell--two {
+    background-color: var(--palette-action);
+    & .logo-ventures {
+      fill: var(--palette-dark) !important;
+    }
+  }
+
+  .HomeWho__Title {
+    color: var(--palette-dark);
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+}
+
+.HomeSection--pannels {
+  padding: var(--spacing--xxl);
+}
+
+.HomePannels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing--m);
+}
+
+.HomePannel {
+  height: 100%;
+  border-radius: var(--border-radius);
+  border: solid 1px var(--palette-light);
+  padding: var(--spacing--m);
+  min-height: calc(100vh - var(--spacing--xxl) - var(--spacing--xxl));
+}
+
+/* Background BG */
+body {
+  transition: all var(--bgTransition);
+  will-change: background-color, color;
+  & .BodyBg svg {
+    transition: all var(--bgTransition);
+  }
+
+  &[data-bg='yellow'] {
+    background-color: var(--palette-action);
+    color: var(--palette-dark);
+
+    & .Header__Progress {
+      background-color: var(--palette-dark);
+    }
+
+    & .logo-fk {
+      fill: var(--palette-dark);
+    }
+    & .logo-ventures {
+      fill: var(--palette-light);
+    }
+  }
+  &[data-bg='white'] {
+    background-color: var(--palette-light);
+    color: var(--palette-dark);
+
+    & .Header__Progress {
+      background-color: var(--palette-dark);
+    }
+
+    & .logo-fk {
+      fill: var(--palette-dark);
+    }
+    & .logo-ventures {
+      fill: var(--palette-action);
+    }
+  }
+}

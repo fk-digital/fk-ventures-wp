@@ -29,8 +29,7 @@
   --spacing--m: calc((40 / 16) * 1rem);
   --spacing--l: calc((60 / 16) * 1rem);
   --spacing--xl: calc((70 / 16) * 1rem);
-  --spacing--xxl: calc((272 / 16) * 1rem);
-  --spacing--xxxl: calc((376 / 16) * 1rem);
+  --spacing--xxl: calc((140 / 16) * 1rem);
 
   --flow: calc((70 / 16) * 1rem);
 

@@ -29,6 +29,27 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_68c0389cd6274",
+            "label": "Short Stat",
+            "name": "short_stat",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "visual",
+            "toolbar": "future_kings_options",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
             "key": "field_68b85a6832d99",
             "label": "Intro",
             "name": "intro",
@@ -128,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1756975044
+    "modified": 1757428315
 }

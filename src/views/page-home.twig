@@ -1,18 +1,192 @@
 {% extends 'base.twig' %}
 {% block content %}
-
-  <section class="Block HomeSpiral">
-    <div class='Container SpiralDemo'>
-      <section class='Spiral' data-spiral>
-        {{ source(directory ~ 'images/spiral.svg') }}
-        <h1 class='Sprial__Text'>
-          <span class='Spiral__Text--1'>Are you a cash-strapped founder that needs a clearly defined brand to help secure investment?</span>
-          <span class='Spiral__Text--2'>A banging investor deck? a compelling story to tell friends, family and fools?</span>
-          <span class='Spiral__Text--3'>A pitch deck to wow investors?</span>
-        </h1>
-      </section>
+  <div
+    class="HomeSection HomeSection--centered HomeSection--One"
+    data-bg="black"
+    data-appear
+  >
+    <div class="Container">
+      <p class="AppearFadeMoveIn">
+        <strong>90% of startups fail.</strong>
+      </p>
+      <p class="AppearFadeMoveIn Delay">
+        Of those that do survive, 60% never pass year three.
+      </p>
     </div>
-  </section>
+  </div>
+  <div
+    class="HomeSection HomeSection--centered HomeSection--Two"
+    data-bg="yellow"
+    data-appear
+  >
+    <div class="Container">
+      <p class="AppearFadeMoveIn">
+        Going to market with a <strong>
+          clear proposition that carries emotional value
+        </strong> — beyond the functional—can dramatically improve those odds.
+      </p>
+    </div>
+  </div>
+  <div
+    class="HomeSection HomeSection--centered HomeSection--three"
+    data-bg="yellow"
+    data-appear
+  >
+    <div class="Container">
+      <p class="AppearFadeMoveIn">
+        It’s the difference between having a product, and inspiring people with
+        your story.
+      </p>
+      <p class="AppearFadeMoveIn Delay">
+        <strong>It’s the difference between winning and losing.</strong>
+      </p>
+    </div>
+  </div>
 
-  {{ post.content }}
+  <div
+    class="HomeSection HomeSection--text HomeSection--spiral HomeSection--four"
+    data-bg="white"
+    data-appear
+  >
+    {{ source(directory ~ 'images/spiral.svg') }}
+
+    <div class="Container">
+      <h2 class="AppearFadeMoveIn">The power of brand</h2>
+      <p class="AppearFadeMoveIn Delay">
+        A well-defined brand has a drastic impact on a startup’s ability to
+        attract and secure investment. Investors are evaluating not just the
+        business model, but also how well the company can stand out, scale, and
+        build trust in the market.
+      </p>
+      <p class="AppearFadeMoveIn Delay">
+        A clear brand turns an early-stage company from “just another startup”
+        into a recognisable, investable business.
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="HomeSection HomeSection--portfolio HomeSection--five"
+    data-bg="black"
+    data-appear
+  >
+    <div class="Container">
+      <h2>Results</h2>
+      <ul class="HomePortfolio">
+        {% for post in all_case_studies %}
+          {% set image = get_image(post.thumbnail) %}
+          <li
+            class="HomePortfolio__Item AppearFadeMoveIn Delay"
+            style="background-image: url({{ image.src() }});"
+          >
+            <h2 class="sr-only">{{ post.title }}</h2>
+
+            <div class="HomePortfolio__Info">
+              {{ post.meta('short_stat') }}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="HomeSection HomeSection--six" data-bg="white" data-appear>
+    <div class="HomeWho">
+      <h2 class="HomeWho__Title">Whos Invovled</h2>
+      <div class="Cell Cell--one ugc">
+        <h3 title="FutureKings" class="AppearFadeMoveIn">
+          {{ source(directory ~ 'images/logo-fk.svg') }}
+        </h3>
+        <p class="AppearFadeMoveIn Delay">
+          Established in 2016, an independent creative agency specialising in
+          brand strategy, brand identity and brand experience.
+        </p>
+        <p class="AppearFadeMoveIn Delay">
+          We partner with owner and founder-led companies to use brand as a
+          business tool to drive growth.
+        </p>
+        <p class="AppearFadeMoveIn Delay">
+          We do this across all life stages, from early stage investment to
+          series funding rounds, and have a decade of case studies, proven
+          processes and an industry-leading team in place to support this
+          FutureKings Ventures proposition.
+        </p>
+        <a
+          href="https://futurekings.co.uk"
+          class="Button AppearFadeMoveIn Delay"
+          target="_blank"
+        >
+          Visit FutureKings
+        </a>
+      </div>
+      <div class="Cell Cell--two ugc">
+        <h3 title="FutureKings Ventures" class="AppearFadeMoveIn">
+          {{ source(directory ~ 'images/logo.svg') }}
+        </h3>
+        <p class="AppearFadeMoveIn Delay">
+          A company set up by <strong>Ben Mott</strong>, founder &amp; CEO of
+          FutureKings, and <strong>Harry Bailey</strong>, an experienced
+          business and marketing leader, with 20 years experience of working in
+          leading branding agencies.
+        </p>
+        <p class="AppearFadeMoveIn Delay">
+          Designed to help cash-strapped founders dramatically improve their
+          chances of securing investment, by using brand as a business tool.
+        </p>
+        <p class="AppearFadeMoveIn Delay">
+          This is the third FKV funding round, and has been optimised based on
+          learnings and insights from Funds 1 &amp; 2 through which we have
+          secured equity in 10 startups.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="HomeSection HomeSection--pannels HomeSection--seven"
+    data-bg="black"
+    data-appear
+  >
+    <div class="Container">
+      <div class="HomePannels">
+        <div class="HomePannel ugc">
+          <h2>The problem</h2>
+          <p>
+            Startup founders are cash-strapped. Most boot- strapping where they
+            can, cutting corners at every turn.
+          </p>
+          <p>
+            Investing in brand before securing funding can feel daunting, seen
+            more as a cost for later than a critical value driver.
+          </p>
+        </div>
+        <div class="HomePannel ugc">
+          <h2>The solution</h2>
+          <p>
+            We remove the cash barrier by equipping startups with their brand:
+            the proposition, identity and assets needed.
+          </p>
+          <p>
+            This work, done properly, is game changing for the startup, and is
+            paid for by the FKV fund.
+          </p>
+        </div>
+        <div class="HomePannel ugc">
+          <h2>The model</h2>
+          <p>
+            The FKV fund covers the cost of the brand work and pays FK to
+            deliver the work.
+          </p>
+
+          <p>
+            FKV offer the founder a “no win no fee” deal in exchange for equity.
+          </p>
+
+          <p>
+            When they raise, FKV gets paid and retains the equity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

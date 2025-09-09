@@ -19,14 +19,16 @@
     <span class="BodyBg">{{ source(directory ~ 'images/bg.svg') }}</span>
 
     {% include 'template-parts/site-header.twig' %}
-    <main id="MainContent" role="main" class="MainContent">
-      {% block content %}
-        Sorry, no content
-      {% endblock %}
+    <main id="smooth-wrapper" role="main" class="MainContent">
+      <div id="smooth-content">
+        {% block content %}
+          Sorry, no content
+        {% endblock %}
+        {% block footer %}
+          {% include 'site-footer.twig' %}
+        {% endblock %}
+      </div>
     </main>
-    {% block footer %}
-      {% include 'site-footer.twig' %}
-    {% endblock %}
 
     {# Scripts #}
     {% if options.before_last_body_tag %}{{
