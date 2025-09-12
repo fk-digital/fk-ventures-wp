@@ -1,0 +1,43 @@
+<div
+  class="HomeSection HomeSection--centered"
+  id="pre-results"
+  data-bg="black"
+  data-appear
+>
+  <div class="Container">
+    <p class="AppearFadeMoveIn">
+      We’ve helped <strong>dozens</strong> of founders build a brand that’s helped
+      them secure investment, drive growth and align their teams.
+    </p>
+    <p class="AppearFadeMoveIn Delay">
+      Many of which we have further supporting with funding through our Ventures
+      programme.
+    </p>
+  </div>
+</div>
+
+<div
+  class="HomeSection HomeSection--portfolio"
+  id="portfolio"
+  data-bg="black"
+  data-appear
+>
+  <div class="Container">
+    <h2>Results</h2>
+    <ul class="HomePortfolio">
+      {% for post in all_case_studies %}
+        {% set image = get_image(post.thumbnail) %}
+        <li
+          class="HomePortfolio__Item AppearFadeMoveIn Delay"
+          style="background-image: url({{ image.src() }});"
+        >
+          <h2 class="sr-only">{{ post.title }}</h2>
+
+          <div class="HomePortfolio__Info">
+            {{ post.meta('short_stat') }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

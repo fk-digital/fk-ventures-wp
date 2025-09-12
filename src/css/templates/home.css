@@ -194,6 +194,17 @@ body {
     background-color: var(--palette-action);
     color: var(--palette-dark);
 
+    a.Button {
+      background-color: var(--palette-dark);
+      border-color: var(--palette-dark);
+      color: var(--palette-light);
+      &:hover {
+        background-color: var(--palette-light);
+        border-color: var(--palette-light);
+        color: var(--palette-dark);
+      }
+    }
+
     & .Header__Progress {
       background-color: var(--palette-dark);
     }

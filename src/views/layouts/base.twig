@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!-- [if lt IE 9]><html class= ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif] -->
-<!-- [if IE 9]><html class="ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif] -->
-<!-- [if gt IE 9]><! -->
 <html {{ site.language_attributes }}>
-  <!-- <![endif] -->
-
   {% include 'template-parts/html-header.twig' %}
 
   <body class="{{ body_class }}">
@@ -16,17 +11,16 @@
       {{ _e('Skip to content') }}
     </a>
 
-    <span class="BodyBg">{{ source(directory ~ 'images/bg.svg') }}</span>
+    {{ source(directory ~ 'images/bg.svg') }}
 
     {% include 'template-parts/site-header.twig' %}
+
     <main id="smooth-wrapper" role="main" class="MainContent">
       <div id="smooth-content">
         {% block content %}
           Sorry, no content
         {% endblock %}
-        {% block footer %}
-          {% include 'site-footer.twig' %}
-        {% endblock %}
+        {% include 'site-footer.twig' %}
       </div>
     </main>
 

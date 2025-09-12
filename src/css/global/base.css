@@ -116,22 +116,15 @@ mark {
 }
 
 /* Base */
-
-.BodyBg {
-  display: flex;
-  pointer-events: none;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+svg.Body__BG {
+  display: block;
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: auto;
+  opacity: 0.2;
+  color: var(--palette-light);
   z-index: 1;
-  top: 65%;
-  left: 0;
-  color: var(--plaette--mid);
-  & svg {
-    width: 100%;
-    height: auto;
-    opacity: 0.2;
-  }
 }

@@ -2,7 +2,7 @@
 .wp-block-button__link {
   border: solid var(--border-width) var(--palette-action);
   background-color: var(--palette-action);
-  color: var(--palette-light);
+  color: var(--palette-dark);
   padding: 0 var(--spacing--s);
   appearance: none;
   cursor: pointer;

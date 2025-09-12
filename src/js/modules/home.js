@@ -1,28 +1,44 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 
 export default function () {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
 
   const body = document.body
   const headerProgress = document.querySelector('.Header__Progress')
 
+  const bgLineUp = document.querySelector('#line-goes-up')
+  const bgLineFlat = document.querySelector('#line-goes-flat')
+  const bgLineDown = document.querySelector('#line-goes-down')
+
   // create the smooth scroller FIRST!
-  let smoother = ScrollSmoother.create({
+  const smoother = ScrollSmoother.create({
     smooth: 1,
     effects: true,
-    smooth: 1,
+    smoothTouch: 0.1,
     onUpdate: (self) =>
       (headerProgress.style.width = `${Math.round(self.progress * 100)}%`),
   })
 
-  // Home Sections
+  // Fix Anchor Links
+  const anchorLinks = document.querySelectorAll("a[href^='#']")
+  anchorLinks.forEach((anchorLink) => {
+    const href = anchorLink.getAttribute('href')
+    anchorLink.addEventListener('click', (e) => {
+      e.preventDefault()
+      smoother.scrollTo(`${href}`, true, 'top 100px')
+    })
+  })
+
+  // Pin + Snap Home Sections
   const homeSections = gsap.utils.toArray('.HomeSection')
 
   homeSections.forEach((section) => {
     gsap.from(section, {
       scrollTrigger: {
+        id: section.id,
         trigger: section,
         pin: true,
         start: 'center center',
@@ -36,7 +52,6 @@ export default function () {
         snap: {
           snapTo: 1 / (homeSections.length - 1),
           duration: { min: 0.3, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-          delay: 0.5, // wait 0.2 seconds from the last scroll event before doing the snapping
           inertia: false,
         },
         onEnter: (self) => {
@@ -59,7 +74,6 @@ export default function () {
         start: 'center center',
         end: () => `+=${panels.length * 1000}`,
         scrub: true,
-        // markers: true,
       },
     })
 
@@ -72,13 +86,15 @@ export default function () {
     })
   }
 
+  // Background Colours
   homeSections.forEach((section) => {
     gsap.from(section, {
       scrollTrigger: {
         trigger: section,
-        start: 'top+=100 center',
-        end: 'bottom-=100 center',
-        markers: true,
+        start: 'top+=100 80%',
+        end: 'bottom-=100 20%',
+
+        id: `${section.id}-color`,
         onEnter: () => {
           setBackgroundColour(section.dataset.bg)
         },
@@ -88,6 +104,32 @@ export default function () {
       },
     })
   })
+
+  // Draw Lines
+  gsap.set(bgLineUp, { drawSVG: '0% 0%' })
+  gsap.set(bgLineDown, { drawSVG: '0% 0%' })
+
+  const lineDrwingTLUp = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '#one',
+        scrub: true,
+        start: 'center center',
+        end: 'bottom center',
+      },
+    })
+    .to(bgLineUp, { drawSVG: '100% 0%' }, 0)
+
+  const lineDrwingTLDown = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '#two',
+        scrub: true,
+        start: 'top center',
+        end: 'bottom center',
+      },
+    })
+    .to(bgLineDown, { drawSVG: '100% 0%' }, 0)
 
   // Spiral
   const svg = document.querySelector('.HomeSection--spiral svg')

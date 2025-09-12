@@ -7,82 +7,9 @@
     >
       {{ source(directory ~ 'images/logo.svg') }}
     </a>
-    <button
-      aria-haspopup="true"
-      aria-expanded="false"
-      aria-controls="MainNav"
-      data-button="menu-toggle"
-      title="Site Navigation"
-      class="MenuToggle"
-      id="MenuToggle"
-    >
-      <b></b>
-      <b></b>
-      <b></b>
-      <b></b>
-    </button>
+
+    <a href="#apply" class="Button">Apply now</a>
   </div>
 
   <b class="Header__Progress"></b>
 </header>
-
-<div class="MainNavOverlay"></div>
-<nav
-  id="MainNav"
-  class="MainNav"
-  aria-expanded="false"
-  aria-labelledby="menu-toggle"
->
-  <div class="MainNav__Header">
-    <button
-      aria-haspopup="true"
-      aria-expanded="true"
-      aria-controls="MainNav"
-      title="Close Site Navigation"
-      class="MenuToggleClose"
-    >
-      <b></b>
-      <b></b>
-    </button>
-  </div>
-
-  <ul class="MainNav__Menu MainNav__Menu--desktop">
-    {% for item in main_menu.items %}
-      {% include 'nav-items.twig' with {
-        item_classes: 'MainNav__Item',
-        type: 'dekstop'
-      } %}
-    {% endfor %}
-  </ul>
-
-  <ul class="MainNav__Menu MainNav__Menu--mobile">
-    {# About #}
-    <li class="MainNav__Item">
-      <a href="/about-us/">About</a>
-      <span
-        class="SubToggle SubToggle--sub-nav"
-        data-sub-menu="about--child-nav"
-      >
-        {{ source(directory ~ 'images/arrow-right.svg') }}
-      </span>
-      <ul
-        class="SubNav"
-        id="about--child-nav"
-        aria-expanded="false"
-        aria-label="About Sub Pages"
-      >
-        <li class="SubNav__Back">
-          <button class="BackButton" data-sub-menu="about--child-nav">
-            {{ source(directory ~ 'images/arrow-right.svg') }} Back
-          </button>
-        </li>
-        {% for item in aboutPage.children %}
-          {% include 'nav-items.twig' with {
-            item_classes: 'MainNav__Item',
-            type: 'mobile'
-          } %}
-        {% endfor %}
-      </ul>
-    </li>
-  </ul>
-</nav>
