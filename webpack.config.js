@@ -108,13 +108,6 @@ module.exports = {
             'wp-content/themes/' + config.themeSlug + '/assets/images/',
           ),
         },
-        {
-          from: 'src/animations/',
-          to: path.join(
-            __dirname,
-            'wp-content/themes/' + config.themeSlug + '/assets/animations/',
-          ),
-        },
       ],
     }),
     new BrowserSyncPlugin({

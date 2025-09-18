@@ -1,58 +1,35 @@
 {% extends 'base.twig' %}
 {% block content %}
-  <div
-    class="HomeSection HomeSection--centered"
-    id="one"
-    data-bg="black"
-    data-appear
-  >
-    <div class="Container">
-      <p class="AppearFadeMoveIn" data-speed="clamp(0.5)">
-        <strong>90% of startups fail.</strong>
-      </p>
-      <p class="AppearFadeMoveIn Delay" data-speed="1.5">
-        Of those that do survive, 60% never pass year three.
-      </p>
-    </div>
-  </div>
+  {% include 'home/help.twig' %}
 
-  <div
-    class="HomeSection HomeSection--centered"
-    id="two"
-    data-bg="yellow"
-    data-appear
-  >
-    <div class="Container">
-      <p class="AppearFadeMoveIn">
-        Going to market with a <strong>
-          clear proposition that carries emotional value
-        </strong> — beyond the functional—can dramatically improve those odds.
-      </p>
-    </div>
-  </div>
+  {% include 'home/investment.twig' %}
 
-  <div
-    class="HomeSection HomeSection--centered"
-    id="three"
-    data-bg="yellow"
-    data-appear
-  >
-    <div class="Container">
-      <p class="AppearFadeMoveIn">
-        It’s the difference between having a product, and inspiring people with
-        your story.
-      </p>
-      <p class="AppearFadeMoveIn Delay">
-        <strong>It’s the difference between winning and losing.</strong>
-      </p>
-    </div>
-  </div>
-
-  {% include 'home/power.twig' %}
+  {% include 'home/funded.twig' %}
 
   {% include 'home/portfolio.twig' %}
 
+  {% include 'home/what.twig' %}
+
   {% include 'home/who.twig' %}
+
+  {% include 'home/why.twig' %}
+
+  {% include 'home/quote.twig' with {
+    id: 'vern-carifit',
+    client: 'Carifit',
+    sector: 'HealthTech',
+    program: 'OFG',
+    success: 'Crowdfund + Seed - 1m',
+    logo: 'carifit.png',
+    name: 'Vern Hill',
+    quote: 'Investors said no until I got a logo. This gave me a logo. Then I started winning. Get a logo, loser.',
+    jobTitle: 'founder, Carifit',
+    url: 'https://futurekings.co.uk/work/carifit/',
+    image1: 'quote-carifit-1.png',
+    image2: 'quote-carifit-2.png',
+    image3: 'quote-carifit-3.png',
+    image4: 'quote-carifit-4.png'
+  } %}
 
   {% include 'home/how.twig' %}
 

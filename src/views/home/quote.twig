@@ -1,0 +1,108 @@
+<div
+  class="HomeSection HomeSection--quote"
+  id="{{ id }}"
+  data-bg="black"
+  data-appear
+>
+  <div class="Container">
+    <div class="Quote">
+      <div class="Quote__Images Quote__Images--top">
+        <img
+          src="{{ theme.link }}/assets/images/{{ image1 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+        <img
+          src="{{ theme.link }}/assets/images/{{ image2 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+        <img
+          src="{{ theme.link }}/assets/images/{{ image3 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+        <img
+          src="{{ theme.link }}/assets/images/{{ image4 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+      </div>
+      <div class="Quote__Header">
+        <img
+          src="{{ theme.link }}/assets/images/logos/{{ logo }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="100"
+          height="100"
+        />
+        <div>
+          {% if sector %}
+            <p class="Qoute__Sector SmallCaps">
+              <span class="Qoute__Heading">Sector:</span> {{ sector }}
+            </p>
+          {% endif %}
+          {% if program %}
+            <p class="Qoute__Program SmallCaps">
+              <span class="Qoute__Heading">Program:</span> {{ program }}
+            </p>
+          {% endif %}
+          {% if success %}
+            <p class="Qoute__Success SmallCaps">
+              <span class="Qoute__Heading">Success:</span> {{ success }}
+            </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <blockquote>
+        <p class="Quote__Quote">
+          {{ quote }}
+        </p>
+        <footer>
+          <cite class="Quote__Author">{{ name }}</cite><span class="Quote__JobTitle SmallCaps">{{
+              jobTitle
+            }}</span>
+        </footer>
+      </blockquote>
+      <div class="Quote__Images Quote__Images--bottom">
+        <img
+          src="{{ theme.link }}/assets/images/{{ image1 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+        <img
+          src="{{ theme.link }}/assets/images/{{ image2 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+        <img
+          src="{{ theme.link }}/assets/images/{{ image3 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+        <img
+          src="{{ theme.link }}/assets/images/{{ image4 }}"
+          alt="{{ client }}"
+          loading="lazy"
+          width="280"
+          height="158"
+        />
+      </div>
+    </div>
+  </div>
+</div>

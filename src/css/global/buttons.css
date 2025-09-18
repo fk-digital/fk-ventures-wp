@@ -48,12 +48,12 @@
 /* Hollow Button */
 .Button.Button--hollow {
   background-color: transparent;
-  border-color: var(--palette-dark);
-  color: var(--palette-dark);
+  border-color: var(--palette-action);
+  color: var(--palette-light);
   &:hover {
-    background-color: var(--palette-dark);
-    border-color: var(--palette-dark);
-    color: var(--palette-light);
+    background-color: var(--palette-action);
+    border-color: var(--palette-action);
+    color: var(--palette-dark);
   }
 }
 

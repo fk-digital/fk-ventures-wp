@@ -1,0 +1,38 @@
+<li class="PortfolioItem">
+  <a
+    href="{{ url }}"
+    target="_blank"
+    style="
+  background-color: {{
+    backgroundColour
+    }};
+  {% if textColor %}color: {{ textColor }};{% endif %}
+  "
+  >
+    <h3 class="PortfolioItem__Logo">
+      <span class="sr-only">{{ name }}</span>
+      <img
+        src="{{ theme.link }}/assets/images/logos/{{ logo }}"
+        alt="{{ name }}"
+        loading="lazy"
+        width="100"
+        height="100"
+      />
+    </h3>
+    {% if sector %}
+      <p class="PortfolioItem__Sector SmallCaps">
+        <span class="PortfolioItem__Heading">Sector:</span> {{ sector }}
+      </p>
+    {% endif %}
+    {% if program %}
+      <p class="PortfolioItem__Program SmallCaps">
+        <span class="PortfolioItem__Heading">Program:</span> {{ program }}
+      </p>
+    {% endif %}
+    {% if success %}
+      <p class="PortfolioItem__Success SmallCaps">
+        <span class="PortfolioItem__Heading">Success:</span> {{ success }}
+      </p>
+    {% endif %}
+  </a>
+</li>

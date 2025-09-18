@@ -24,7 +24,7 @@
 
   /* Sizing */
   --spacing--xxs: calc((10 / 16) * 1rem);
-  --spacing--xs: calc((16 / 16) * 1rem);
+  --spacing--xs: calc((18 / 16) * 1rem);
   --spacing--s: calc((24 / 16) * 1rem);
   --spacing--m: calc((40 / 16) * 1rem);
   --spacing--l: calc((60 / 16) * 1rem);
@@ -35,6 +35,7 @@
 
   /* Grid */
   --max-width: 1400px;
+  --max-width--thin: 1060px;
   --gap: 24px;
   --page-padding: 24px;
   --col-width: calc((100% - (11 * var(--gap))) / 12);
@@ -44,7 +45,7 @@
   --border: solid var(--border-width) var(--light-grey);
 
   /* Border Radius */
-  --border-radius: 4px;
+  --border-radius: 8px;
 
   /* A11y */
   --a11y-outline: dashed 1px var(--palette-light);

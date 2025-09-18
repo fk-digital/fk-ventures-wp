@@ -1,5 +1,0 @@
-.Media__Image,
-.Media__Video {
-  border-radius: var(--border-radius);
-  overflow: hidden;
-}

@@ -1,17 +1,22 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import { CountUp } from 'countup.js'
 
 export default function () {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin)
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
   const body = document.body
   const headerProgress = document.querySelector('.Header__Progress')
+  const homeSections = gsap.utils.toArray('.HomeSection')
 
-  const bgLineUp = document.querySelector('#line-goes-up')
-  const bgLineFlat = document.querySelector('#line-goes-flat')
-  const bgLineDown = document.querySelector('#line-goes-down')
+  // Hoizontal Scroll of Portfolio
+  const portfolioContainer = document.querySelector('.HomeSection--portfolio')
+  const portfolioWrapper = document.querySelector('.HomePortfolio')
+  const scrollAmount = portfolioWrapper.offsetWidth - window.innerWidth
+
+  // Quote
+  const quoteSections = gsap.utils.toArray('.HomeSection--quote')
 
   // create the smooth scroller FIRST!
   const smoother = ScrollSmoother.create({
@@ -32,9 +37,6 @@ export default function () {
     })
   })
 
-  // Pin + Snap Home Sections
-  const homeSections = gsap.utils.toArray('.HomeSection')
-
   homeSections.forEach((section) => {
     gsap.from(section, {
       scrollTrigger: {
@@ -42,24 +44,91 @@ export default function () {
         trigger: section,
         pin: true,
         start: 'center center',
+        scrub: true,
+        // markers: true,
         end: () => {
-          if (section.classList.contains('HomeSection--pannels')) {
+          if (
+            section.classList.contains('HomeSection--pannels') ||
+            section.classList.contains('HomeSection--quote')
+          ) {
             return '+=3000'
+          } else if (section.classList.contains('HomeSection--portfolio')) {
+            return `+=${scrollAmount}`
           } else {
             return 'bottom center'
           }
         },
-        snap: {
-          snapTo: 1 / (homeSections.length - 1),
-          duration: { min: 0.3, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-          inertia: false,
-        },
+        // snap: {
+        //   snapTo: 1 / (homeSections.length - 1),
+        //   duration: { min: 0.3, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+        //   inertia: false,
+        // },
         onEnter: (self) => {
           section.classList.add('is-visible')
         },
-        // snap: 1 / (homeSections.length - 1),
+        onEnterBack: () => {},
       },
     })
+  })
+
+  // Bg Colour
+  homeSections.forEach((section) => {
+    gsap.from(section, {
+      scrollTrigger: {
+        id: section.id,
+        trigger: section,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => {
+          setBackgroundColour(section.dataset.bg)
+        },
+        onEnterBack: () => {
+          setBackgroundColour(section.dataset.bg)
+        },
+      },
+    })
+  })
+
+  // Portfolio
+  const portfolioTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: portfolioContainer,
+      start: 'center center',
+      end: `+=${scrollAmount}`,
+      scrub: true,
+    },
+  })
+
+  portfolioTl.to(portfolioWrapper, {
+    x: -scrollAmount,
+  })
+
+  // Quote
+
+  quoteSections.forEach((section) => {
+    const sectionRow1 = section.querySelector('.Quote__Images--top')
+    const sectionRow2 = section.querySelector('.Quote__Images--bottom ')
+
+    const quoteTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'center center',
+        end: `+=3000`,
+        scrub: true,
+        markers: true,
+      },
+    })
+    quoteTl
+      .to(sectionRow1, {
+        x: '50%',
+      })
+      .to(
+        sectionRow2,
+        {
+          x: '-50%',
+        },
+        '<',
+      )
   })
 
   // Pin Panels section and fade panels in sequentially
@@ -86,65 +155,20 @@ export default function () {
     })
   }
 
-  // Background Colours
-  homeSections.forEach((section) => {
-    gsap.from(section, {
-      scrollTrigger: {
-        trigger: section,
-        start: 'top+=100 80%',
-        end: 'bottom-=100 20%',
-
-        id: `${section.id}-color`,
-        onEnter: () => {
-          setBackgroundColour(section.dataset.bg)
-        },
-        onEnterBack: () => {
-          setBackgroundColour(section.dataset.bg)
-        },
-      },
-    })
-  })
-
-  // Draw Lines
-  gsap.set(bgLineUp, { drawSVG: '0% 0%' })
-  gsap.set(bgLineDown, { drawSVG: '0% 0%' })
-
-  const lineDrwingTLUp = gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '#one',
-        scrub: true,
-        start: 'center center',
-        end: 'bottom center',
-      },
-    })
-    .to(bgLineUp, { drawSVG: '100% 0%' }, 0)
-
-  const lineDrwingTLDown = gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '#two',
-        scrub: true,
-        start: 'top center',
-        end: 'bottom center',
-      },
-    })
-    .to(bgLineDown, { drawSVG: '100% 0%' }, 0)
-
   // Spiral
-  const svg = document.querySelector('.HomeSection--spiral svg')
-  if (!svg) return
+  const spiralSvg = document.querySelector('#SpiralBG')
+  if (!spiralSvg) return
 
-  const inner = svg.querySelector('#inner')
-  const mid = svg.querySelector('#mid')
-  const outer = svg.querySelector('#outer')
+  const inner = spiralSvg.querySelector('#inner')
+  const mid = spiralSvg.querySelector('#mid')
+  const outer = spiralSvg.querySelector('#outer')
   if (!inner || !mid || !outer) return
 
   gsap.set([inner, mid, outer], {
     transformOrigin: '50% 50%',
   })
 
-  // Continuous subtle wobble (-10deg to 10deg)
+  //Continuous subtle wobble (-10deg to 10deg)
   gsap.set([inner, mid, outer], { rotation: -10 })
   gsap.to(inner, {
     rotation: 10,
@@ -172,10 +196,29 @@ export default function () {
   function setBackgroundColour(bg) {
     if (bg == 'yellow') {
       body.dataset.bg = 'yellow'
-    } else if (bg == 'white') {
-      body.dataset.bg = 'white'
     } else {
       body.dataset.bg = 'black'
     }
   }
+
+  function setBackgroundColourReverse(bg) {
+    if (bg == 'yellow') {
+      body.dataset.bg = 'black'
+    } else {
+      body.dataset.bg = 'yellow'
+    }
+  }
+
+  // Countup
+  const CountUpNumbers = document.querySelectorAll('.CountUp__Number')
+  CountUpNumbers.forEach((CountUpNumber) => {
+    const CountUpNumberTarget = CountUpNumber.dataset.number
+    const countUp = new CountUp(CountUpNumber, CountUpNumberTarget, {
+      duration: 2.5,
+      decimalPlaces: 0,
+      enableScrollSpy: true,
+      scrollSpyDelay: 400,
+      scrollSpyOnce: true,
+    })
+  })
 }

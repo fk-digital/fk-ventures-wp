@@ -1,5 +1,0 @@
-<svg class="Body__BG" width="1389" height="2898" viewBox="0 0 1389 2898" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path id="line-goes-up" d="M1368.96 -0.000119678C1368.96 756.05 756.06 1368.96 0 1368.96" stroke="currentColor" stroke-width="40" stroke-miterlimit="10"/>
-  <path id="line-goes-flat" d="M0 1448.95L1368.96 1448.95" stroke="currentColor" stroke-width="40" stroke-miterlimit="10"/>
-  <path id="line-goes-down" d="M1368.96 2897.9C1368.96 2141.85 756.06 1528.94 0.000368603 1528.94" stroke="currentColor" stroke-width="40" stroke-miterlimit="10"/>
-</svg>

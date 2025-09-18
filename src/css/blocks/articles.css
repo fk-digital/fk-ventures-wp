@@ -1,6 +1,0 @@
-.Articles__Header {
-  margin-bottom: var(--spacing--m);
-  > * + * {
-    margin-top: var(--spacing--xs);
-  }
-}

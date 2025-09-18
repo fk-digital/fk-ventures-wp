@@ -1,43 +1,90 @@
 <div
-  class="HomeSection HomeSection--centered"
-  id="pre-results"
-  data-bg="black"
-  data-appear
->
-  <div class="Container">
-    <p class="AppearFadeMoveIn">
-      We’ve helped <strong>dozens</strong> of founders build a brand that’s helped
-      them secure investment, drive growth and align their teams.
-    </p>
-    <p class="AppearFadeMoveIn Delay">
-      Many of which we have further supporting with funding through our Ventures
-      programme.
-    </p>
-  </div>
-</div>
-
-<div
   class="HomeSection HomeSection--portfolio"
   id="portfolio"
   data-bg="black"
   data-appear
 >
-  <div class="Container">
-    <h2>Results</h2>
-    <ul class="HomePortfolio">
-      {% for post in all_case_studies %}
-        {% set image = get_image(post.thumbnail) %}
-        <li
-          class="HomePortfolio__Item AppearFadeMoveIn Delay"
-          style="background-image: url({{ image.src() }});"
-        >
-          <h2 class="sr-only">{{ post.title }}</h2>
+  <ul class="HomePortfolio">
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Chetwood',
+      logo: 'chetwood-bank.png',
+      url: 'https://futurekings.co.uk/work/chetwood/',
+      backgroundColour: '#5AC5C6',
+      sector: 'Fintech',
+      program: 'OFG',
+      success: 'Series A + B- £150m'
+    } %}
 
-          <div class="HomePortfolio__Info">
-            {{ post.meta('short_stat') }}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Huboo',
+      logo: 'huboo.svg',
+      url: 'https://futurekings.co.uk/work/huboo/',
+      backgroundColour: '#6b49bf',
+      textColor: '#fff',
+      sector: 'B2B',
+      program: 'OFG',
+      success: 'Series A - 29m'
+    } %}
+
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Carifit',
+      logo: 'carifit.png',
+      url: 'https://futurekings.co.uk/work/carifit/',
+      backgroundColour: '#148C82',
+      sector: 'HealthTech',
+      program: 'OFG',
+      success: 'Crowdfund + Seed - 1m'
+    } %}
+
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Gretel',
+      logo: 'gretel.png',
+      url: 'https://futurekings.co.uk/work/gretel/',
+      backgroundColour: '#1D1C49',
+      textColor: '#fff',
+      sector: 'insuretech',
+      program: 'MVB',
+      success: 'Pre-Seed - 1m'
+    } %}
+
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Peppercorn',
+      logo: 'peppercorn.svg',
+      url: 'https://www.peppercornai.com/',
+      backgroundColour: 'hsl(160.85,100%,53.92%)',
+      sector: 'AI',
+      program: 'MVB',
+      success: 'Series A - 6.5m'
+    } %}
+
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'DNAPal',
+      logo: 'dnapal.svg',
+      url: 'https://dnapal.me/',
+      backgroundColour: '#fff',
+      sector: 'HealthTech',
+      program: 'MVB',
+      success: 'Crowdfund + Seed - 100k'
+    } %}
+
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Zeus',
+      logo: 'zeus.png',
+      url: 'https://futurekings.co.uk/work/zeus/',
+      backgroundColour: '#CCB2FF',
+      sector: 'HealthTech',
+      program: 'OFG',
+      success: 'Seed - 1m'
+    } %}
+
+    {% include 'partials/portfolio-item.twig' with {
+      name: 'Market Row',
+      logo: 'market-row.png',
+      url: 'https://futurekings.co.uk/work/market-row/',
+      backgroundColour: '#F6EFE7',
+      sector: 'Retail',
+      program: 'MVB',
+      success: 'Seed - 500k'
+    } %}
+  </ul>
 </div>
