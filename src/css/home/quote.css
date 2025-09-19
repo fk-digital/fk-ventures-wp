@@ -1,0 +1,95 @@
+/* Quote */
+
+.Quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 96px 64px;
+  gap: 32px;
+  border: 2px solid var(--dark-grey);
+  border-radius: var(--border-radius);
+  max-width: var(--max-width--thin);
+  margin: 0 auto;
+  position: relative;
+}
+
+.Quote__Images {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  width: 1181px;
+  & img {
+    display: block;
+    border-radius: var(--border-radius);
+    width: 280px;
+    height: 159px;
+    object-fit: cover;
+  }
+}
+
+.Quote__Images--top {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -85%);
+}
+
+.Quote__Images--bottom {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 85%);
+}
+
+.Quote__Quote {
+  font-weight: 700;
+  font-size: var(--font-size--extra-large);
+  line-height: 120%;
+  border-top: solid 1px var(--dark-grey);
+  margin-top: 32px;
+  padding-top: 32px;
+}
+
+.Quote__Author {
+  font-weight: 700;
+  font-size: var(--font-size--large);
+  font-style: normal;
+  display: block;
+  color: var(--palette-action);
+  margin-top: 32px;
+}
+.Quote__JobTitle {
+  display: block;
+  margin-top: 0;
+  margin-top: var(--spacing--xs);
+}
+
+.Quote__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Quote__Header img {
+  width: 133px;
+  height: auto;
+}
+
+.Quote__Header div {
+  text-align: right;
+  & p {
+    margin: 0;
+    & span {
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (--mq-max-width-and-up) {
+  .Quote__Quote {
+    font-size: var(--font-size--jumbo);
+  }
+  .Quote__Author {
+    font-size: var(--font-size--extra-large);
+  }
+}

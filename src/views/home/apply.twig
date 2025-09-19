@@ -1,19 +1,25 @@
 <div class="HomeSection" data-bg="black" id="apply" data-appear>
   <div class="Container">
-    <h2>Apply</h2>
-    <p class="Lead">
-      Applications for the 2025-26 programme are open.
-    </p>
-    <p>
-      Please submit the following information and Harry will be in touch within
-      24 hours.
-    </p>
+    <div class="Apply__Container">
+      <div class="Apply__Header">
+        <p class="SmallCaps">
+          Apply
+        </p>
+        <h1 class="Apply__Title h2">
+          Applications for the 2025-26 programme are open.
+        </h1>
+        <p class="Apply__Copy">
+          Please submit the following information and Harry will be in touch
+          within 24 hours.
+        </p>
+      </div>
 
-    {{
-      function(
-        'do_shortcode',
-        '[gravityform id="1" title="false" description="false" ajax="true"]'
-      )
-    }}
+      {{
+        function(
+          'do_shortcode',
+          '[gravityform id="1" title="false" description="false" ajax="true"]'
+        )
+      }}
+    </div>
   </div>
 </div>

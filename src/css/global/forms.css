@@ -13,7 +13,13 @@
   text-edge: cap !important;
   letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  color: var(--color-mid-grey) !important;
+  color: var(--palette-mid) !important;
+}
+
+/* Fields */
+.gfield input,
+.gfield select {
+  border-radius: var(--border-radius) !important;
 }
 
 /* Buttons */

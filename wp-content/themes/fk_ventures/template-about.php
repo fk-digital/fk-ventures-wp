@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About
+ * Template Name: Contact
  *
  * The template for displaying a styleguide
  *
@@ -27,4 +27,4 @@ $context = Timber::context();
 
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
-Timber::render( array( 'page-about.twig', 'page.twig' ), $context );
+Timber::render( array( 'page-contact.twig', 'page.twig' ), $context );

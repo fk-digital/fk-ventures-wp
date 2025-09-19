@@ -1,0 +1,74 @@
+.HomeSection--subnav {
+  outline: solid 1px blue;
+}
+
+.Subnav__Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--gap);
+  position: relative;
+  @media (--mq-landscape-tablet-and-up) {
+    grid-template-columns: 266px 1fr;
+    gap: 80px;
+  }
+}
+
+.Subnav__Section {
+  min-height: 100vh;
+  padding-top: 250px;
+}
+
+.Subnav__Menu {
+  padding: 60px 0;
+}
+
+.Subnav__Menu a {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-decoration: none;
+  color: var(--palette-action);
+  &:hover,
+  &.active {
+    color: var(--palette-light);
+  }
+}
+
+.Subnav__Menu ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  & li {
+    display: block;
+    padding: 40px 0;
+    border-top: solid 1px #11111120;
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.Subnav__Heading {
+  font-size: 38px;
+  line-height: 120%;
+}
+
+/* Section Gird */
+.Subnav__SectionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--gap);
+  position: relative;
+  @media (--mq-landscape-tablet-and-up) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing--m);
+  }
+}
+
+.Subnav__SectionCell p {
+  font-size: 24px;
+  line-height: 120%;
+  & + * {
+    margin-top: 0.5em;
+  }
+}

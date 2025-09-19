@@ -29,7 +29,7 @@ h6,
     font-weight: 700;
   }
   & span {
-    color: var(--color-yellow);
+    color: var(--palette-action);
   }
 }
 
@@ -91,7 +91,7 @@ small,
   text-edge: cap;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-mid-grey);
+  color: var(--palette-mid);
 }
 
 .Tag {
@@ -113,15 +113,15 @@ small,
 }
 
 .Tag--filled {
-  background-color: var(--color-dark-grey);
-  border-color: var(--color-dark-grey);
-  color: var(--color-white);
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
+  color: var(--palette-light);
 }
 
 .Tag--yellow {
-  background-color: var(--color-yellow);
-  border-color: var(--color-yellow);
-  color: var(--color-black);
+  background-color: var(--palette-action);
+  border-color: var(--palette-action);
+  color: var(--palette-dark);
 }
 
 .TagList {
@@ -141,8 +141,8 @@ small,
 .Tag.active,
 a.Tag.active,
 a.Tag.active:hover {
-  background-color: var(--color-dark-grey);
-  border-color: var(--color-dark-grey);
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
   color: var(--theme-foreground);
 }
 
@@ -155,12 +155,12 @@ button.Tag,
 summary.Tag {
   transition: all var(--global-transition);
   background-color: transparent;
-  color: var(--color-yellow);
-  border-color: var(--color-yellow);
+  color: var(--palette-action);
+  border-color: var(--palette-action);
   text-decoration: none;
   &:hover {
-    background-color: var(--color-yellow);
-    border-color: var(--color-yellow);
+    background-color: var(--palette-action);
+    border-color: var(--palette-action);
     color: var(--theme-background);
   }
 }
@@ -169,20 +169,20 @@ a.Tag--grey,
 button.Tag--grey,
 summary.Tag--grey {
   background-color: transparent;
-  color: var(--color-mid-grey);
-  border-color: var(--color-mid-grey);
+  color: var(--palette-mid);
+  border-color: var(--palette-mid);
   text-decoration: none;
   &:hover {
-    background-color: var(--color-yellow);
-    border-color: var(--color-yellow);
+    background-color: var(--palette-action);
+    border-color: var(--palette-action);
     color: var(--theme-background);
   }
 }
 
 details[open] summary.Tag {
-  background-color: var(--color-yellow);
-  border-color: var(--color-yellow);
-  color: var(--color-black);
+  background-color: var(--palette-action);
+  border-color: var(--palette-action);
+  color: var(--palette-dark);
 }
 
 /* Lists */

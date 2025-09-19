@@ -1,21 +1,22 @@
 import skipLinkFocusFix from './modules/skip-link-focus-fix'
-// import { menu } from './modules/menu'
-// import { scroll } from './modules/scroll'
-// import carousel from './modules/carousel'
-// import { tabs } from './modules/tabs'
-// import countup from './modules/countup'
-// import lightbox from './modules/lightbox'
-// import modal from './modules/modal'
-// import spiral from './modules/spiral'
+import spiral from './modules/spiral'
+import smooth from './modules/smooth'
 import home from './modules/home'
+import countup from './modules/count-up'
+
+import scrollBg from './modules/scroll-bg'
+import scrollCentered from './modules/scroll-centered'
+import scrollPortfolio from './modules/scroll-portfolio'
+import scrollSubnav from './modules/scroll-subnav'
 
 skipLinkFocusFix()
-home()
-// menu()
-// scroll()
-// carousel()
-// tabs()
+smooth()
+spiral()
 // countup()
-// lightbox()
-// modal()
-// spiral()
+
+// Scroll
+// home()
+scrollBg()
+scrollCentered()
+scrollPortfolio()
+scrollSubnav()

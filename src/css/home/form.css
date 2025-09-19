@@ -1,0 +1,13 @@
+.Apply__Container {
+  max-width: var(--max-width--thin);
+  margin: 0 auto;
+  padding-top: 230px;
+}
+
+.Apply__Title {
+  margin-bottom: 32px;
+}
+
+.Apply__Container .gform_wrapper {
+  margin-top: 80px;
+}

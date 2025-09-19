@@ -112,15 +112,15 @@ add_filter( 'gform_default_styles', function( $styles ) {
   return '{
   "theme":"",
   "inputSize":"lg",
-  "inputBorderRadius":"4",
-  "inputBorderColor":"#53585f",
-  "inputBackgroundColor":"#ffffff",
-  "inputColor":"#212121",
+  "inputBorderRadius":"8px",
+  "inputBorderColor":"#ffffff",
+  "inputBackgroundColor":"transparent",
+  "inputColor":"#ffffff",
   "inputPrimaryColor":"#ffd95a",
   "labelColor":"#ffffff",
-  "descriptionColor":"#dcdee0",
-  "buttonPrimaryBackgroundColor":"#ffd95a",
-  "buttonPrimaryColor":"#212121"
+  "descriptionColor":"#83878B",
+  "buttonPrimaryBackgroundColor":"transparent",
+  "buttonPrimaryColor":"#ffffff"
   }';
 } );
 
@@ -128,3 +128,6 @@ add_filter( 'gform_default_styles', function( $styles ) {
 // Gutenberg Editor Styles
 add_theme_support('editor-styles');
 add_editor_style(get_template_directory_uri() . '/assets/editor.min.css');
+
+
+

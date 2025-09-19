@@ -1,0 +1,38 @@
+/* Who */
+.Who__Grid {
+  display: grid;
+  row-gap: var(--spacing--l);
+  column-gap: var(--spacing--xl);
+  grid-template-columns: 1fr;
+  padding-top: var(--flow);
+  @media (--mq-landscape-tablet-and-up) {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 120px;
+  }
+}
+
+.Who__Cell {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: var(--spacing--s);
+  align-items: start;
+}
+
+.Who__Content {
+  margin: 0 !important;
+}
+
+.Who__Image {
+  border-radius: var(--border-radius);
+}
+
+.Who__JobTitle {
+  font-size: var(--font-size--small) !important;
+  margin: 0 !important;
+  opacity: 0.3;
+  padding: 10px 0 0 0;
+}
+
+p.Who__Bio {
+  font-size: var(--font-size--default) !important;
+}
