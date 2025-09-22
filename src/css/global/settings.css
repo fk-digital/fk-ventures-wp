@@ -57,6 +57,7 @@
 
   /* Font Sizes */
   /* --px-to-rem: calc((var(--pixels) / 16) * 1rem); */
+  --font-size--super-mega: calc((84 / 16) * 1rem);
   --font-size--mega: calc((64 / 16) * 1rem);
   --font-size--jumbo: calc((38 / 16) * 1rem);
   --font-size--extra-large: calc((30 / 16) * 1rem);

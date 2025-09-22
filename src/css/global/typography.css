@@ -225,6 +225,10 @@ b {
   font-weight: 700;
 }
 
+.Lead {
+  font-size: var(--font-size--large);
+}
+
 /* UGC */
 .ugc {
   hanging-punctuation: first allow-end last;
@@ -265,6 +269,6 @@ b {
   & ul,
   & ol {
     line-height: 1.2;
-    font-size: var(--font-size--large);
+    font-size: var(--font-size--default);
   }
 }

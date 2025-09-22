@@ -33,7 +33,6 @@ export default function () {
           trigger: sectionSubSection,
           start: 'top center',
           end: 'bottom center',
-          markers: true,
           onEnter: () => {
             const sectionSubSectionId = sectionSubSection.id
             sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
@@ -66,8 +65,7 @@ export default function () {
         end: 'bottom center',
         pin: sectionSubMenu,
         pinSpacing: false,
-        // anticipatePin: 1,
-        // markers: true,
+        anticipatePin: 1,
       },
     })
   })

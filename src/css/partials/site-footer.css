@@ -11,16 +11,12 @@
 }
 
 a.Footer__Logo {
-  width: 136px;
   display: block;
   position: relative;
   z-index: 2;
   display: block;
   color: var(--palette-light);
-  & svg {
-    width: 100%;
-    height: auto;
-  }
+  text-decoration: none;
 }
 
 .Footer__Contact {
@@ -31,13 +27,9 @@ a.Footer__Logo {
 
 .Footer__Name {
   font-weight: 700;
+  margin-top: 32px;
 }
 
-.Footer__JobTitle {
-  padding-bottom: 0.25em;
-}
-
-.Footer__Tel,
 .Footer__Email {
   text-decoration-color: transparent;
   &:hover {
@@ -81,11 +73,8 @@ a.Footer__Logo {
 
 @media (--mq-landscape-tablet-and-up) {
   .FooterContainer {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
-  }
-  .Footer__Menu {
-    grid-column: 1 / span 2;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
   .Footer__Legal {
     text-align: right;

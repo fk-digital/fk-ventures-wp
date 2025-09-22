@@ -1,5 +1,5 @@
 .HomeSection--subnav {
-  outline: solid 1px blue;
+  /* outline: solid 1px blue; */
 }
 
 .Subnav__Grid {
@@ -70,5 +70,98 @@
   line-height: 120%;
   & + * {
     margin-top: 0.5em;
+  }
+}
+
+/* Icon List */
+.IconList {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  margin-top: 64px;
+}
+
+.IconList__Item svg {
+  width: 60px;
+  height: auto;
+  margin-bottom: 18px;
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .IconList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .IconList__Item {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -20px;
+      height: 100%;
+      width: 1px;
+      background-color: var(--palette-dark);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+    &:first-child::before {
+      display: none;
+    }
+  }
+  .IconList__Item p {
+    font-size: var(--font-size--medium);
+  }
+}
+
+/* Program List */
+
+.ProgramList {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  margin-top: 64px;
+}
+
+.ProgramList__Item {
+  border-radius: var(--border-radius);
+  background-color: var(--palette-light);
+  padding: 24px 24px 32px 24px;
+}
+
+.ProgramList__Item h3 {
+  font-weight: 300;
+  margin-bottom: 24px;
+  & strong {
+    font-weight: 700;
+  }
+}
+
+.ProgramList__Item .Lead {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: solid 1px var(--light-grey);
+}
+
+.ProgramList__Price {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: solid 1px var(--light-grey);
+  padding-bottom: 12px;
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .ProgramList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ProgramList__Item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ProgramList__Price {
+    margin-top: minmax(24px, auto);
   }
 }

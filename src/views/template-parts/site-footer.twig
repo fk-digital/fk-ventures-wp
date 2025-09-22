@@ -1,40 +1,36 @@
 <footer class="Footer" aria-label="Footer" id="site-footer" data-appear>
   <div class="Container FooterContainer">
-    <a href="{{ site.url }}" class="Footer__Logo">
-      {{ source(directory ~ 'images/logo-stacked.svg') }}
+    <a href="{{ site.url }}" class="Footer__Logo h3">
+      Everything you need. Nothing you don’t.
     </a>
 
-    <p class="Footer__Contact Footer__Contact--ben">
-      <span class="Footer__Name">Ben Mott</span>
-      <span class="Footer__JobTitle">Founder</span>
-      <a class="Footer__Tel" href="tel:+447825439704">+44 (0)7825 439704</a>
+    <div class="Footer__Contact">
+      <h3>Contact</h3>
+      <p class="Footer__Name">
+        Ben Mott
+      </p>
       <a class="Footer__Email" href="mailto:ben.mott@futurekings.co.uk">
         ben.mott@futurekings.co.uk
       </a>
-    </p>
-
-    <p class="Footer__Contact Footer__Contact--ben">
-      <span class="Footer__Name">Harry Bailey</span>
-      <span class="Footer__JobTitle">Founder</span>
-      <a class="Footer__Tel" href="tel:+447843136613">+44 (0)7843 136613</a>
+      <p class="Footer__Name">
+        Harry Bailey
+      </p>
       <a class="Footer__Email" href="mailto:harry.bailey@futurekings.co.uk">
         harry.bailey@futurekings.co.uk
       </a>
-    </p>
+    </div>
 
     <ul class="Footer__Menu">
       {% for item in footer_menu.items %}
         {% include 'nav-items.twig' with {
-          item_classes: 'FooterMenu__Link SmallCaps',
+          item_classes: 'FooterMenu__Link',
           type: 'footer'
         } %}
       {% endfor %}
     </ul>
 
-    {# <nav class="Social">
-      {% include 'partials/social-nav.twig' %}
-    </nav> #}
-
-    <small class="Footer__Legal">&copy; FK Bristol {{ 'now'|date('Y') }}</small>
+    <small class="Footer__Legal">
+      &copy; FutureKings Ventures Ltd {{ 'now'|date('Y') }}
+    </small>
   </div>
 </footer>

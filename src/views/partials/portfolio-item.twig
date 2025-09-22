@@ -1,13 +1,14 @@
-<li class="PortfolioItem">
+<li class="PortfolioItem" id="{{ name|slugify }}">
+  <style>
+    #{{ name|slugify }} { --itemTextColour: {{ textColor
+      ? textColor
+      : 'var(--palette-dark)' }}; }
+  </style>
+
   <a
     href="{{ url }}"
     target="_blank"
-    style="
-  background-color: {{
-    backgroundColour
-    }};
-  {% if textColor %}color: {{ textColor }};{% endif %}
-  "
+    style="background-color: {{ backgroundColour }};"
   >
     <h3 class="PortfolioItem__Logo">
       <span class="sr-only">{{ name }}</span>

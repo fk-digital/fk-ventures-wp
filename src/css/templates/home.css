@@ -66,7 +66,7 @@
 .HomeSection__Heading {
   font-family: var(--typeface-heading);
   font-weight: 700;
-  font-size: var(--font-size--jumbo);
+  font-size: var(--font-size--mega);
   line-height: 1.2;
   & b,
   & strong {
@@ -74,7 +74,7 @@
     color: var(--palette-action);
   }
   @media (--mq-landscape-tablet-and-up) {
-    font-size: var(--font-size--mega);
+    font-size: var(--font-size--super-mega);
   }
 }
 

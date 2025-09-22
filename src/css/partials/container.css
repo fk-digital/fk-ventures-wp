@@ -12,6 +12,14 @@
   }
 }
 
+/* Thin */
+
+.Container--thin {
+  @media (--mq-landscape-tablet-and-up) {
+    max-width: var(--max-width--thin);
+  }
+}
+
 /* Tablet Only */
 .ContainerTabletOnly {
   display: block;

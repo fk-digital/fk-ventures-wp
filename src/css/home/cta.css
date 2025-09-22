@@ -1,0 +1,37 @@
+.HomeSection--cta {
+  min-height: auto;
+  padding: 96px 0;
+}
+
+.Cta__Link {
+  border: solid 1px var(--dark-grey);
+  display: block;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 96px 96px;
+  color: var(--palette-light);
+  text-decoration: none;
+  &:hover {
+    color: var(--palette-light);
+    & .Cta__Button {
+      background-color: var(--palette-action);
+      color: var(--palette-dark);
+    }
+  }
+}
+
+.Cta__SubTitle {
+  margin: 0 !important;
+}
+
+.Cta__Title {
+  padding: 24px 0 32px 0;
+  font-size: var(--font-size--jumbo);
+  line-height: 1.2;
+}
+.Cta__Button {
+}
