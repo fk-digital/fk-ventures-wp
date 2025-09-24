@@ -1,7 +1,7 @@
 <svg id="SpiralBG" width="1127" height="1127" viewBox="0 0 1127 1127" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 
-<g class="spiral-wrap spiral-wrap--inner">
+<g id="wrapInner">
   <g id="inner">
 
 <path d="M349.88 378.17L378.31 350.04L477.67 449.4L449.39 477.68L349.88 378.17Z" fill="currentColor"/>
@@ -20,7 +20,7 @@
 </g>
 </g>
 
-<g class="spiral-wrap spiral-wrap--mid">
+<g id="wrapMid">
 
  <g id="mid">
 <path d="M290.15 240.27L321.97 216.04L407.55 327.57L375.82 351.91L290.15 240.27Z" fill="currentColor"/>
@@ -37,7 +37,7 @@
 <path d="M436.83 815.39L473.78 830.7L419.93 960.71L383.03 945.27L436.83 815.39Z" fill="currentColor"/>
 </g>
 </g>
-<g class="spiral-wrap spiral-wrap--outer">
+<g id="wrapOuter">
 
  <g id="outer">
 <path d="M353.15 196.49L319.42 217.99L243.77 99.33L277.5 77.83L353.15 196.49Z" fill="currentColor"/>

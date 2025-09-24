@@ -1,33 +1,19 @@
 /* CaseStudy */
 
+.CaseStudyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
 .CaseStudy {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
   padding: 44px;
   border: 2px solid var(--dark-grey);
   border-radius: var(--border-radius);
   max-width: 725px;
   margin: 0;
   position: relative;
-}
-
-/* Layout: content left, images right */
-.CaseStudyGrid {
-  display: grid;
-  grid-template-columns: 1fr minmax(280px, 420px);
-  gap: 48px;
-  align-items: stretch;
-}
-
-@media (max-width: 900px) {
-  .CaseStudyGrid {
-    grid-template-columns: 1fr;
-  }
-  .CaseStudy__Media {
-    display: none;
-  }
 }
 
 .CaseStudy__BlockQuote {
@@ -88,6 +74,11 @@
   }
 }
 
+.StatsList {
+  display: flex;
+  width: 100%;
+}
+
 .StatsList__ItemStat {
   font-weight: 700;
   font-size: var(--font-size--jumbo);
@@ -98,6 +89,12 @@
 .StatsList__Desc {
   margin: 12px 0 0 0;
   padding: 0;
+}
+
+.CaseStudyLink {
+  border-top: solid 1px var(--dark-grey);
+  padding-top: 28px;
+  margin-top: 28px;
 }
 
 /* Right column image carousel */
@@ -130,6 +127,8 @@
   border-radius: var(--border-radius);
 }
 
-.CaseStudy__ImageItem.is-center {
-  /* retained for graceful degradation if JS off */
+@media (--mq-landscape-tablet-and-up) {
+  .CaseStudyGrid {
+    grid-template-columns: 725px 1fr;
+  }
 }

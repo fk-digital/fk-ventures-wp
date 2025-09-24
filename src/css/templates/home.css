@@ -12,6 +12,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  transition: opacity var(--bgTransition);
 }
 
 .HomeSection {
@@ -104,6 +105,33 @@
   min-height: calc(100vh - var(--spacing--xxl) - var(--spacing--xxl));
 }
 
+/* Yllow sections */
+.HomeSection[data-bg='yellow'] {
+  background-color: var(--palette-action);
+  color: var(--palette-dark);
+  z-index: 999;
+  position: relative;
+  & a {
+    color: var(--palette-dark);
+    text-decoration-color: transparent;
+    &:hover {
+      color: var(--palette-dark);
+      text-decoration-color: var(--palette-dark);
+    }
+  }
+
+  & a.Button {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+    &:hover {
+      background-color: var(--palette-light);
+      border-color: var(--palette-light);
+      color: var(--palette-dark);
+    }
+  }
+}
+
 /* Background BG */
 body {
   transition: all var(--bgTransition);
@@ -113,19 +141,19 @@ body {
   }
 
   &[data-bg='yellow'] {
-    background-color: var(--palette-action);
-    color: var(--palette-dark);
+    /* background-color: var(--palette-action); */
+    /* color: var(--palette-dark); */
 
-    & a {
+    /* & a {
       color: var(--palette-dark);
       text-decoration-color: transparent;
       &:hover {
         color: var(--palette-dark);
         text-decoration-color: var(--palette-dark);
       }
-    }
+    } */
 
-    a.Button {
+    /* a.Button {
       background-color: var(--palette-dark);
       border-color: var(--palette-dark);
       color: var(--palette-light);
@@ -134,15 +162,15 @@ body {
         border-color: var(--palette-light);
         color: var(--palette-dark);
       }
-    }
+    } */
 
     & .Header__Progress {
       background-color: var(--palette-dark);
     }
-
+    /*
     & #SpiralBG {
-      fill: var(--palette-dark);
-    }
+      opacity: 0;
+    } */
 
     & .Subnav__Menu a {
       color: #11111130 !important;
@@ -152,8 +180,11 @@ body {
       }
     }
 
-    & svg .logo-ventures {
+    & svg .logo-fk {
       fill: var(--palette-light) !important;
+    }
+    & svg .logo-ventures {
+      fill: var(--palette-dark) !important;
     }
   }
 }

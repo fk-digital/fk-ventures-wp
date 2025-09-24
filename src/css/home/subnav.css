@@ -45,7 +45,7 @@
 }
 
 .Subnav__Heading {
-  font-size: 38px;
+  font-size: var(--font-size--jumbo);
   line-height: 120%;
 }
 

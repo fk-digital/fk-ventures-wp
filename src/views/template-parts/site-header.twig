@@ -5,10 +5,12 @@
       class="Header__Title"
       aria-label="{{ site.title }}"
     >
+      {{ source(directory ~ 'images/logo-mini.svg') }}
+      {{ source(directory ~ 'images/logo-short.svg') }}
       {{ source(directory ~ 'images/logo.svg') }}
     </a>
 
-    <a href="/apply" class="Button Button--hollow">Apply now</a>
+    <a href="/apply" class="Button Button--hollow">Register interest</a>
   </div>
 
   <b class="Header__Progress"></b>

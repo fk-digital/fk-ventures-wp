@@ -1,12 +1,12 @@
 <div
   class="HomeSection HomeSection--centered"
-  id="funded"
-  data-bg="black"
+  id="{{ id }}"
+  data-bg="{{ color ? color : 'black' }}"
   data-appear
 >
   <div class="Container Container--thin">
     <p class="HomeSection__Heading AppearFadeMoveIn">
-      Through our funded<br /><strong>brand programmes</strong>
+      {{ text }}
     </p>
   </div>
 </div>

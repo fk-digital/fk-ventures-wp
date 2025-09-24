@@ -6,14 +6,11 @@ export default function () {
 
   const portfolioSections = gsap.utils.toArray('.HomeSection--portfolio')
 
-  // Hoizontal Scroll of Portfolio
-  const portfolioContainer = document.querySelector('.HomeSection--portfolio')
-  const portfolioWrapper = document.querySelector('.HomePortfolio')
-  if (portfolioWrapper) {
-    const scrollAmount = portfolioWrapper.offsetWidth - window.innerWidth
-  }
-
   portfolioSections.forEach((section) => {
+    // Hoizontal Scroll of Portfolio
+    const portfolioWrapper = section.querySelector('.HomePortfolio')
+    const scrollAmount = portfolioWrapper.offsetWidth - window.innerWidth
+
     const portfolioTl = gsap.timeline({
       scrollTrigger: {
         id: section.id,

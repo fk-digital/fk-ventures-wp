@@ -25,14 +25,10 @@
         <span class="PortfolioItem__Heading">Sector:</span> {{ sector }}
       </p>
     {% endif %}
-    {% if program %}
-      <p class="PortfolioItem__Programme SmallCaps">
-        <span class="PortfolioItem__Heading">Programme:</span> {{ program }}
-      </p>
-    {% endif %}
     {% if success %}
-      <p class="PortfolioItem__Success SmallCaps">
-        <span class="PortfolioItem__Heading">Success:</span> {{ success }}
+      <p class="PortfolioItem__Success">
+        <span class="PortfolioItem__Heading SmallCaps">Success:</span>
+        <span class="PortfolioItem__SuccessDetail">{{ success }}</span>
       </p>
     {% endif %}
   </a>

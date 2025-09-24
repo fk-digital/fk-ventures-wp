@@ -1,23 +1,79 @@
 {% extends 'base.twig' %}
 {% block content %}
-  {% include 'home/help.twig' %}
+  {% include 'home/centered.twig' with {
+    id: 'help',
+    text: 'We help founders get organised, secure funding and scale.'
+  } %}
+
+  {% include 'home/centered.twig' with {
+    id: 'building-brand',
+    text: 'By building your brand when you need it most.'
+  } %}
+
+  {% include 'home/centered.twig' with {
+    id: 'funded',
+    text: 'Using our <strong>funded</strong> brand programmes.'
+  } %}
 
   {% include 'home/investment.twig' %}
 
-  {% include 'home/funded.twig' %}
-
   {% include 'home/portfolio.twig' %}
+
+  {% include 'home/centered.twig' with {
+    id: 'soon',
+    text: 'Applications are opening soon for our third.'
+  } %}
 
   {% include 'home/what.twig' %}
 
   {% include 'home/why.twig' %}
 
   {% include 'home/case-study.twig' with {
+    id: 'heidi',
+    client: 'Heidi',
+    sector: 'Travel',
+    program: 'minimum viable brand',
+    logo: 'heidi/heidi.svg',
+    name: 'Marcus Blunt',
+    linkedin: 'https://www.linkedin.com/in/marcus-blunt-b8b07422/',
+    qoute: '"We found FutureKings at a critical time for the business, we knew we had built something disruptive, but the brand wasn&apos;t telling the story - both to investors and to customers. This programme changed that."',
+    jobTitle: 'co-founder, Heidi',
+    stat1Prefix: '£',
+    stat1Number: '5.6',
+    stat1Sufix: 'm',
+    stat1Desc: 'VC funding secured',
+    stat2Number: '300',
+    stat2Sufix: '%',
+    stat2Desc: 'Revenue increase',
+    caseStudyLink: '/case-studies/heidi',
+    images: [
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-1.png',
+        alt: 'One'
+      },
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-2.png',
+        alt: 'two'
+      },
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-3.png',
+        alt: 'three'
+      },
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-4.png',
+        alt: 'four'
+      }
+    ]
+  } %}
+
+  {% include 'home/about.twig' %}
+
+  {% include 'home/case-study.twig' with {
     id: 'vern-carifit',
     client: 'Carifit',
     sector: 'Health & Wellbeing',
     program: 'Organise for Growth',
-    logo: 'carifit.png',
+    logo: 'carifit/carifit.png',
     name: 'Vern Hill',
     linkedin: 'https://www.linkedin.com/in/vern-hill-1b081950/',
     qoute: '"Carifit was my baby and the thought of someone dismantling years of organic growth and hard work was very stressful. But for a Founder it’s emotional, challenging and ultimately game-changing."',
@@ -45,38 +101,13 @@
     ]
   } %}
 
-  {% include 'home/about.twig' %}
-
   {% include 'home/power.twig' %}
 
   {% include 'home/cta.twig' with {
-    id: 'apply-now',
+    id: 'Register Interest',
     url: '/apply',
     subtitle: 'apply',
-    title: 'Applications for the third Ventures fund are opening soon, please check back on 1st October.',
-    buttonText: 'Apply now'
+    title: 'There are six places up for grabs as part of our third fund. Applications will open in October.',
+    buttonText: 'Register Interest'
   } %}
-
-  {# {% include 'home/who.twig' %} #}
-
-  {# {% include 'home/quote.twig' with {
-    id: 'vern-carifit',
-    client: 'Carifit',
-    sector: 'HealthTech',
-    program: 'OFG',
-    success: 'Crowdfund + Seed - 1m',
-    logo: 'carifit.png',
-    name: 'Vern Hill',
-    quote: 'Investors said no until I got a logo. This gave me a logo. Then I started winning. Get a logo, loser.',
-    jobTitle: 'founder, Carifit',
-    url: 'https://futurekings.co.uk/work/carifit/',
-    image1: 'quote-carifit-1.png',
-    image2: 'quote-carifit-2.png',
-    image3: 'quote-carifit-3.png',
-    image4: 'quote-carifit-4.png'
-  } %} #}
-
-  {# {% include 'home/about.twig' %} #}
-
-  {# {% include 'home/how.twig' %} #}
 {% endblock %}

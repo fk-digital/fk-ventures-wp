@@ -4,13 +4,13 @@
   data-bg="black"
   data-appear
 >
-  <div class="Container">
+  <div class="Container Container--thin">
     <div class="CaseStudyGrid">
       <div class="CaseStudy">
         <div class="CaseStudy__Header">
           {% if logo and client %}
             <img
-              src="{{ theme.link }}/assets/images/logos/{{ logo }}"
+              src="{{ theme.link }}/assets/images/{{ logo }}"
               alt="{{ client }}"
               loading="lazy"
               width="100"
@@ -44,7 +44,7 @@
         </blockquote>
 
         <ul class="StatsList">
-          {% if stat1Prefix or stat1Number or stat1suffix or stat1Desc %}
+          {% if stat1Prefix or stat1Number or stat1Sufix or stat1Desc %}
             <li class="StatsList__Item">
               <span class="StatsList__ItemStat">
                 {{ stat1Prefix ? stat1Prefix }}<span
@@ -52,7 +52,7 @@
                   data-number="{{ stat1Number }}"
                 >
                   0
-                </span>{{ stat1suffix ? stat1suffix }}
+                </span>{{ stat1Sufix ? stat1Sufix }}
               </span>
 
               {% if stat1Desc %}
@@ -62,7 +62,34 @@
               {% endif %}
             </li>
           {% endif %}
+
+          {% if stat2Prefix or stat2Number or stat2Sufix or stat2Desc %}
+            <li class="StatsList__Item">
+              <span class="StatsList__ItemStat">
+                {{ stat2Prefix ? stat2Prefix }}<span
+                  class="CountUp__Number"
+                  data-number="{{ stat2Number }}"
+                >
+                  0
+                </span>{{ stat2Sufix ? stat2Sufix }}
+              </span>
+
+              {% if stat2Desc %}
+                <div class="SmallCaps StatsList__Desc">
+                  {{ stat2Desc }}
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
         </ul>
+
+        {% if caseStudyLink %}
+          <div class="CaseStudyLink">
+            <a href="{{ caseStudyLink }}" class="Button Button--hollow">
+              Read the full case study
+            </a>
+          </div>
+        {% endif %}
       </div>
 
       {% set caseStudyImages = images|default([]) %}
