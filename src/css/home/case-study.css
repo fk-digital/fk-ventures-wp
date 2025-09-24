@@ -1,0 +1,135 @@
+/* CaseStudy */
+
+.CaseStudy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 44px;
+  border: 2px solid var(--dark-grey);
+  border-radius: var(--border-radius);
+  max-width: 725px;
+  margin: 0;
+  position: relative;
+}
+
+/* Layout: content left, images right */
+.CaseStudyGrid {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 420px);
+  gap: 48px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .CaseStudyGrid {
+    grid-template-columns: 1fr;
+  }
+  .CaseStudy__Media {
+    display: none;
+  }
+}
+
+.CaseStudy__BlockQuote {
+  border-top: solid 1px var(--dark-grey);
+  border-bottom: solid 1px var(--dark-grey);
+  padding: 32px 0;
+  margin: 32px 0;
+}
+
+.CaseStudy__Qoute {
+  font-weight: 700;
+  font-size: var(--font-size--extra-large);
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+.CaseStudy__Author {
+  font-weight: 700;
+  font-size: var(--font-size--large);
+  font-style: normal;
+  display: block;
+  color: var(--palette-action);
+  margin: 32px 0 0 0;
+  padding: 0;
+  text-decoration: none;
+  &:hover {
+    color: var(--palette-light);
+  }
+}
+
+.CaseStudy__JobTitle {
+  display: block;
+  margin: 12px 0 0 0;
+  padding: 0;
+}
+
+.CaseStudy__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.CaseStudy__Header img {
+  width: 133px;
+  height: auto;
+}
+
+.CaseStudy__Header div {
+  text-align: right;
+  & p.SmallCaps {
+    margin: 0;
+    color: var(--palette-light);
+    & span {
+      opacity: 0.5;
+    }
+  }
+}
+
+.StatsList__ItemStat {
+  font-weight: 700;
+  font-size: var(--font-size--jumbo);
+  color: var(--palette-action);
+  display: block;
+}
+
+.StatsList__Desc {
+  margin: 12px 0 0 0;
+  padding: 0;
+}
+
+/* Right column image carousel */
+.CaseStudy__Media {
+  position: relative;
+  overflow: hidden;
+}
+
+.CaseStudy__Images {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.CaseStudy__ImageItem {
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.CaseStudy__ImageItem img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.CaseStudy__ImageItem.is-center {
+  /* retained for graceful degradation if JS off */
+}

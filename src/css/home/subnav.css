@@ -1,7 +1,3 @@
-.HomeSection--subnav {
-  /* outline: solid 1px blue; */
-}
-
 .Subnav__Grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -114,22 +110,22 @@
   }
 }
 
-/* Program List */
+/* Programme List */
 
-.ProgramList {
+.ProgrammeList {
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr;
   margin-top: 64px;
 }
 
-.ProgramList__Item {
+.ProgrammeList__Item {
   border-radius: var(--border-radius);
   background-color: var(--palette-light);
   padding: 24px 24px 32px 24px;
 }
 
-.ProgramList__Item h3 {
+.ProgrammeList__Item h3 {
   font-weight: 300;
   margin-bottom: 24px;
   & strong {
@@ -137,13 +133,13 @@
   }
 }
 
-.ProgramList__Item .Lead {
+.ProgrammeList__Item .Lead {
   margin-bottom: 24px;
   padding-bottom: 24px;
   border-bottom: solid 1px var(--light-grey);
 }
 
-.ProgramList__Price {
+.ProgrammeList__Price {
   margin-top: 24px;
   padding-top: 24px;
   border-top: solid 1px var(--light-grey);
@@ -151,17 +147,17 @@
 }
 
 @media (--mq-landscape-tablet-and-up) {
-  .ProgramList {
+  .ProgrammeList {
     grid-template-columns: repeat(2, 1fr);
   }
-  .ProgramList__Item {
+  .ProgrammeList__Item {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .ProgramList__Price {
+  .ProgrammeList__Price {
     margin-top: minmax(24px, auto);
   }
 }

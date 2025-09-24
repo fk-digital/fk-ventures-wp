@@ -1,0 +1,134 @@
+.CaseStudySingle__Container {
+  margin-top: 164px;
+  margin-bottom: 0px;
+  border-radius: var(--border-radius);
+  border: solid 1px var(--dark-grey);
+  padding: 28px 28px;
+}
+
+.CaseStudySingle__Header {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+
+.CaseStudySingle__Header img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.CaseStudySingle__Sector,
+.CaseStudySingle__Programme {
+  margin: 0;
+  padding: 0;
+  color: var(--palette-light);
+}
+
+.CaseStudySingle__MetaHeading {
+  opacity: 0.5;
+}
+
+.StatsList--singleCaseStudy {
+  padding: 28px 0 0 0;
+  margin-top: 28px;
+  border-top: solid 1px var(--dark-grey);
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
+}
+
+.CaseStudySingle__Problem,
+.CaseStudySingle__Solution,
+.CaseStudySingle__GalleryWrapper,
+.CaseStudySingle__Qoute {
+  padding: 28px 0 0 0;
+  margin-top: 28px;
+  border-top: solid 1px var(--dark-grey);
+}
+
+.CaseStudySingle__Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.CaseStudySingle__ProblemHeading,
+.CaseStudySingle__SolutionHeading {
+  color: var(--palette-action);
+  line-height: 1.2;
+}
+
+.CaseStudySingle__Deliverables {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.Gallery {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.CaseStudySingle__ProblemGallery {
+  aspect-ratio: 426 / 260;
+}
+.CaseStudySingle__Gallery {
+  aspect-ratio: 932 / 525;
+}
+
+@media (--mq-landscape-tablet-and-up) {
+  .CaseStudySingle__Container {
+    margin-top: 230px;
+    margin-bottom: 164px;
+    padding: 96px 64px;
+  }
+
+  .CaseStudySingle__Header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .CaseStudySingle__Header img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .CaseStudySingle__Meta {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .CaseStudySingle__Heading {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  .StatsList--singleCaseStudy {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .StatsList--singleCaseStudy .StatsList__Item {
+    flex: 1 1 auto;
+  }
+
+  .CaseStudySingle__Grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+}

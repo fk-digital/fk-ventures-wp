@@ -9,7 +9,9 @@ export default function () {
   // Hoizontal Scroll of Portfolio
   const portfolioContainer = document.querySelector('.HomeSection--portfolio')
   const portfolioWrapper = document.querySelector('.HomePortfolio')
-  const scrollAmount = portfolioWrapper.offsetWidth - window.innerWidth
+  if (portfolioWrapper) {
+    const scrollAmount = portfolioWrapper.offsetWidth - window.innerWidth
+  }
 
   portfolioSections.forEach((section) => {
     const portfolioTl = gsap.timeline({

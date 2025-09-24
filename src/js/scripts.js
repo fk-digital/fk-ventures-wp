@@ -8,11 +8,14 @@ import scrollCentered from './modules/scroll-centered'
 import scrollPortfolio from './modules/scroll-portfolio'
 import scrollSubnav from './modules/scroll-subnav'
 import scrollQuote from './modules/scroll-quote'
+import scrollCaseStudy from './modules/scroll-case-study'
+import gallery from './modules/gallery'
 
 skipLinkFocusFix()
 smooth()
 spiral()
 countup()
+gallery()
 
 // Scroll
 scrollBg()
@@ -20,3 +23,4 @@ scrollCentered()
 scrollPortfolio()
 scrollSubnav()
 scrollQuote()
+scrollCaseStudy()

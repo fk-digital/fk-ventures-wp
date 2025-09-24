@@ -18,13 +18,13 @@
   min-height: 100vh;
   position: relative;
   z-index: 2;
-  /* outline: solid 1px blue; */
 }
 
 .HomeSection--centered,
 .HomeSection--text,
 .HomeSection--portfolio,
-.HomeSection--quote {
+.HomeSection--quote,
+.HomeSection--case-study {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,11 +32,13 @@
 }
 
 .HomeSection--portfolio,
-.HomeSection--text {
+.HomeSection--text,
+.HomeSection--case-study {
   justify-content: flex-start;
 }
 
-.HomeSection--quote {
+.HomeSection--quote,
+.HomeSection--case-study {
   text-align: left;
 }
 

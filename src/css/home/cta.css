@@ -1,6 +1,6 @@
 .HomeSection--cta {
   min-height: auto;
-  padding: 96px 0;
+  padding: 48px 0;
 }
 
 .Cta__Link {
@@ -12,7 +12,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  padding: 96px 96px;
+  padding: 28px;
   color: var(--palette-light);
   text-decoration: none;
   &:hover {
@@ -33,5 +33,13 @@
   font-size: var(--font-size--jumbo);
   line-height: 1.2;
 }
-.Cta__Button {
+
+@media (--mq-landscape-tablet-and-up) {
+  .HomeSection--cta {
+    padding: 96px 0;
+  }
+
+  .Cta__Link {
+    padding: 96px 96px;
+  }
 }

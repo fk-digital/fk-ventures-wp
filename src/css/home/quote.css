@@ -40,16 +40,19 @@
   transform: translate(50%, 85%);
 }
 
-.Quote__Quote {
+.QuoteQuote {
   font-weight: 700;
   font-size: var(--font-size--extra-large);
   line-height: 120%;
+}
+
+.Quote__Quote {
   border-top: solid 1px var(--dark-grey);
   margin-top: 32px;
   padding-top: 32px;
 }
 
-.Quote__Author {
+.QuoteAuthor {
   font-weight: 700;
   font-size: var(--font-size--large);
   font-style: normal;
@@ -57,10 +60,11 @@
   color: var(--palette-action);
   margin-top: 32px;
 }
-.Quote__JobTitle {
+
+.QuoteJobTitle.SmallCaps {
   display: block;
-  margin-top: 0;
-  margin-top: var(--spacing--xs);
+  margin: 0 0 0 0;
+  padding: 0;
 }
 
 .Quote__Header {
@@ -86,10 +90,10 @@
 }
 
 @media (--mq-max-width-and-up) {
-  .Quote__Quote {
+  .QuoteQuote {
     font-size: var(--font-size--jumbo);
   }
-  .Quote__Author {
+  .QuoteAuthor {
     font-size: var(--font-size--extra-large);
   }
 }

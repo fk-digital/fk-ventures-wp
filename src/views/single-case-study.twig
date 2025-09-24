@@ -1,0 +1,126 @@
+{% extends 'base.twig' %}
+{% block content %}
+  <div class="Container Container--thin CaseStudySingle__Container">
+    <div class="CaseStudySingle__Header">
+      {% include 'partials/responsive-image.twig' with {
+        image_id: post.meta('logo').id,
+        alt: post.title
+      } %}
+
+      <h1 class="CaseStudySingle__Heading h3">{{ post.meta('heading') }}</h1>
+
+      <div class="CaseStudySingle__Meta">
+        {% if post.meta('sector') %}
+          <p class="CaseStudySingle__Sector SmallCaps">
+            <span class="CaseStudySingle__MetaHeading">Sector:</span>
+            {{ post.meta('sector') }}
+          </p>
+        {% endif %}
+        {% if post.meta('program') %}
+          <p class="CaseStudySingle__Programme SmallCaps">
+            <span class="CaseStudySingle__MetaHeading">Programme:</span>
+            {{ post.meta('program') }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <ul class="StatsList StatsList--singleCaseStudy">
+      {% for result in post.meta('results') %}
+        <li class="StatsList__Item">
+          <span class="StatsList__ItemStat">
+            {{ result.prefix ? result.prefix }}<span
+              class="CountUp__Number"
+              data-number="{{ result.number }}"
+            >
+              0
+            </span>{{ result.suffix ? result.suffix }}
+          </span>
+
+          {% if result.description %}
+            <div class="SmallCaps StatsList__Desc">
+              {{ result.description }}
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="CaseStudySingle__Problem">
+      <h2 class="h4">The Problem</h2>
+      <h3 class="CaseStudySingle__ProblemHeading h5">
+        {{ post.meta('problem_heading') }}
+      </h3>
+      <div class="CaseStudySingle__Grid">
+        <div class="CaseStudySingle__Cell ugc">
+          {{ post.meta('the_problem') }}
+        </div>
+
+        <div class="CaseStudySingle__Cell">
+          <div class="CaseStudySingle__ProblemGallery Gallery">
+            {% for image in post.meta('problem_images') %}
+              {% include 'partials/responsive-image.twig' with {
+                image_id: image.id
+              } %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="CaseStudySingle__Solution">
+      <h2 class="h4">The Solution</h2>
+      <h3 class="CaseStudySingle__SolutionHeading h5">
+        {{ post.meta('solution_heading') }}
+      </h3>
+      <div class="CaseStudySingle__Grid">
+        <div class="CaseStudySingle__Cell ugc">
+          {{ post.meta('the_solution') }}
+        </div>
+
+        <div class="CaseStudySingle__Cell">
+          <ul class="CaseStudySingle__Deliverables">
+            {% for deliverable in post.meta('deliverables') %}
+              <li>
+                <sapn class="Tag Tag--filled">
+                  {{ deliverable.item }}
+                </sapn>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="CaseStudySingle__GalleryWrapper">
+      <div class="CaseStudySingle__Gallery Gallery">
+        {% for image in post.meta('gallery') %}
+          {% include 'partials/responsive-image.twig' with {
+            image_id: image.id
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <blockquote class="CaseStudySingle__Qoute">
+      <p class="QuoteQuote">
+        {{ post.meta('qoute') }}
+      </p>
+      <footer>
+        <cite class="CaseStudySingle__Author QuoteAuthor">
+          {{ post.meta('author') }}
+        </cite><span class="CaseStudySingle__JobTitle QuoteJobTitle SmallCaps">
+          {{ post.meta('job_title') }}
+        </span>
+      </footer>
+    </blockquote>
+  </div>
+
+  {% include 'home/cta.twig' with {
+    id: 'Register Interest',
+    url: '/apply',
+    subtitle: 'apply',
+    title: 'There are six places up for grabs as part of our third fund. Applications will open in October.',
+    buttonText: 'Register Interest'
+  } %}
+{% endblock %}

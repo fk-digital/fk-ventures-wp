@@ -1,0 +1,84 @@
+<div
+  class="HomeSection HomeSection--case-study"
+  id="{{ id }}"
+  data-bg="black"
+  data-appear
+>
+  <div class="Container">
+    <div class="CaseStudyGrid">
+      <div class="CaseStudy">
+        <div class="CaseStudy__Header">
+          {% if logo and client %}
+            <img
+              src="{{ theme.link }}/assets/images/logos/{{ logo }}"
+              alt="{{ client }}"
+              loading="lazy"
+              width="100"
+              height="100"
+            />
+          {% endif %}
+          <div>
+            {% if sector %}
+              <p class="Qoute__Sector SmallCaps">
+                <span class="Qoute__Heading">Sector:</span> {{ sector }}
+              </p>
+            {% endif %}
+            {% if program %}
+              <p class="Qoute__Programme SmallCaps">
+                <span class="Qoute__Heading">Programme:</span> {{ program }}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+
+        <blockquote class="CaseStudy__BlockQuote">
+          <p class="CaseStudy__Qoute">
+            {{ qoute }}
+          </p>
+          <footer>
+            <a class="CaseStudy__Author" href="{{ linkedin }}" target="_blank">
+              {{ name }}
+            </a>
+            <span class="CaseStudy__JobTitle SmallCaps">{{ jobTitle }}</span>
+          </footer>
+        </blockquote>
+
+        <ul class="StatsList">
+          {% if stat1Prefix or stat1Number or stat1suffix or stat1Desc %}
+            <li class="StatsList__Item">
+              <span class="StatsList__ItemStat">
+                {{ stat1Prefix ? stat1Prefix }}<span
+                  class="CountUp__Number"
+                  data-number="{{ stat1Number }}"
+                >
+                  0
+                </span>{{ stat1suffix ? stat1suffix }}
+              </span>
+
+              {% if stat1Desc %}
+                <div class="SmallCaps StatsList__Desc">
+                  {{ stat1Desc }}
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      {% set caseStudyImages = images|default([]) %}
+      {% if caseStudyImages is not empty %}
+        <aside class="CaseStudy__Media">
+          <ul class="CaseStudy__Images" aria-label="Case study images carousel">
+            {% for image in caseStudyImages %}
+              {% set src = image.src|default(image.url|default(image)) %}
+              {% set alt = image.alt|default('Case study image') %}
+              <li class="CaseStudy__ImageItem">
+                <img src="{{ src }}" alt="{{ alt }}" loading="lazy" />
+              </li>
+            {% endfor %}
+          </ul>
+        </aside>
+      {% endif %}
+    </div>
+  </div>
+</div>

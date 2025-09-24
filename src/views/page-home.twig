@@ -12,6 +12,39 @@
 
   {% include 'home/why.twig' %}
 
+  {% include 'home/case-study.twig' with {
+    id: 'vern-carifit',
+    client: 'Carifit',
+    sector: 'Health & Wellbeing',
+    program: 'Organise for Growth',
+    logo: 'carifit.png',
+    name: 'Vern Hill',
+    linkedin: 'https://www.linkedin.com/in/vern-hill-1b081950/',
+    qoute: '"Carifit was my baby and the thought of someone dismantling years of organic growth and hard work was very stressful. But for a Founder it’s emotional, challenging and ultimately game-changing."',
+    jobTitle: 'Founder',
+    stat1Prefix: '£',
+    stat1Number: '1000000',
+    stat1Desc: 'Seed funding secured',
+    images: [
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-1.png',
+        alt: 'One'
+      },
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-2.png',
+        alt: 'two'
+      },
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-3.png',
+        alt: 'three'
+      },
+      {
+        src: theme.link ~ '/assets/images/quote-carifit-4.png',
+        alt: 'four'
+      }
+    ]
+  } %}
+
   {% include 'home/about.twig' %}
 
   {% include 'home/power.twig' %}
@@ -23,4 +56,27 @@
     title: 'Applications for the third Ventures fund are opening soon, please check back on 1st October.',
     buttonText: 'Apply now'
   } %}
+
+  {# {% include 'home/who.twig' %} #}
+
+  {# {% include 'home/quote.twig' with {
+    id: 'vern-carifit',
+    client: 'Carifit',
+    sector: 'HealthTech',
+    program: 'OFG',
+    success: 'Crowdfund + Seed - 1m',
+    logo: 'carifit.png',
+    name: 'Vern Hill',
+    quote: 'Investors said no until I got a logo. This gave me a logo. Then I started winning. Get a logo, loser.',
+    jobTitle: 'founder, Carifit',
+    url: 'https://futurekings.co.uk/work/carifit/',
+    image1: 'quote-carifit-1.png',
+    image2: 'quote-carifit-2.png',
+    image3: 'quote-carifit-3.png',
+    image4: 'quote-carifit-4.png'
+  } %} #}
+
+  {# {% include 'home/about.twig' %} #}
+
+  {# {% include 'home/how.twig' %} #}
 {% endblock %}
