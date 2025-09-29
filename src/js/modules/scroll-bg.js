@@ -13,13 +13,16 @@ export default function () {
       scrollTrigger: {
         id: section.id,
         trigger: section,
-        start: 'top center',
-        end: 'bottom center',
+        start: 'top 100px',
+        end: 'bottom bottom-=100px',
         onEnter: () => {
           setBackgroundColour(section.dataset.bg)
         },
         onEnterBack: () => {
           setBackgroundColour(section.dataset.bg)
+        },
+        onLeaveBack: () => {
+          setBackgroundColourReverse(section.dataset.bg)
         },
       },
     })

@@ -7,11 +7,11 @@ export default function () {
     CountUpNumbers.forEach((CountUpNumber) => {
       const CountUpNumberTarget = CountUpNumber.dataset.number
       const countUp = new CountUp(CountUpNumber, CountUpNumberTarget, {
-        duration: 2.5,
+        duration: 2,
         decimalPlaces: 0,
         enableScrollSpy: true,
-        scrollSpyDelay: 400,
-        scrollSpyOnce: true,
+        scrollSpyDelay: 300,
+        scrollSpyOnce: false,
       })
     })
   }

@@ -1,3 +1,7 @@
+.HomeSection--subnav {
+  padding: 230px 0;
+}
+
 .Subnav__Grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -11,11 +15,11 @@
 
 .Subnav__Section {
   min-height: 100vh;
-  padding-top: 250px;
+  padding-top: 130px;
 }
 
 .Subnav__Menu {
-  padding: 60px 0;
+  padding-bottom: 230px;
 }
 
 .Subnav__Menu a {

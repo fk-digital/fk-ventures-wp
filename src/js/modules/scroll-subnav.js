@@ -28,11 +28,46 @@ export default function () {
 
     // Update menu active state per subsection
     sectionSubSections.forEach((sectionSubSection) => {
+      // gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: sectionSubSection,
+      //     start: 'top center',
+      //     end: 'bottom center',
+      //     onEnter: () => {
+      //       const sectionSubSectionId = sectionSubSection.id
+      //       sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
+      //         if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
+      //           sectionSubMenuLink.classList.add('active')
+      //         } else {
+      //           sectionSubMenuLink.classList.remove('active')
+      //         }
+      //       })
+      //     },
+      //     onEnterBack: () => {
+      //       const sectionSubSectionId = sectionSubSection.id
+      //       sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
+      //         if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
+      //           sectionSubMenuLink.classList.add('active')
+      //         } else {
+      //           sectionSubMenuLink.classList.remove('active')
+      //         }
+      //       })
+      //     },
+      //   },
+      // })
+
       gsap.timeline({
         scrollTrigger: {
           trigger: sectionSubSection,
-          start: 'top center',
+          start: 'top top',
           end: 'bottom center',
+          pin: true,
+          pinSpacer: true,
+          snap: {
+            snapTo: 1 / (sectionSubSection.length - 1),
+            duration: { min: 0.3, max: 3 },
+            inertia: false,
+          },
           onEnter: () => {
             const sectionSubSectionId = sectionSubSection.id
             sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
@@ -61,11 +96,10 @@ export default function () {
     gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: 'top 230px',
-        end: 'bottom center',
+        start: 'top top',
+        end: 'bottom 0',
         pin: sectionSubMenu,
         pinSpacing: false,
-        anticipatePin: 1,
       },
     })
   })

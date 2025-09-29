@@ -13,12 +13,11 @@ export default function () {
       scrollTrigger: {
         id: section.id,
         trigger: section,
-        pin: true,
-        pinSpacer: true,
         start: 'center center',
         end: 'bottom center',
         scrub: true,
-        // markers: true,
+        pin: true,
+        pinSpacer: true,
         snap: {
           snapTo: 1 / (centeredSections.length - 1),
           duration: { min: 0.3, max: 3 },

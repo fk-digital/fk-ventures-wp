@@ -17,6 +17,9 @@ export default function () {
       (headerProgress.style.width = `${Math.round(self.progress * 100)}%`),
   })
 
+  // Parallax
+  // smoother.effects('.CaseStudy__Images', { speed: 1.5, lag: 0 })
+
   // Fix Anchor Links
   const anchorLinks = document.querySelectorAll("a[href^='#']")
   anchorLinks.forEach((anchorLink) => {

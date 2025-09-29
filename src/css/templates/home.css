@@ -8,7 +8,7 @@
   width: 125%;
   height: auto;
   position: fixed;
-  top: 50%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -120,7 +120,7 @@
     }
   }
 
-  & a.Button {
+  /* & a.Button {
     background-color: var(--palette-dark);
     border-color: var(--palette-dark);
     color: var(--palette-light);
@@ -129,7 +129,7 @@
       border-color: var(--palette-light);
       color: var(--palette-dark);
     }
-  }
+  } */
 }
 
 /* Background BG */
@@ -141,36 +141,20 @@ body {
   }
 
   &[data-bg='yellow'] {
-    /* background-color: var(--palette-action); */
-    /* color: var(--palette-dark); */
-
-    /* & a {
-      color: var(--palette-dark);
-      text-decoration-color: transparent;
-      &:hover {
-        color: var(--palette-dark);
-        text-decoration-color: var(--palette-dark);
-      }
-    } */
-
-    /* a.Button {
-      background-color: var(--palette-dark);
+    & a.Button {
+      background-color: transparent;
       border-color: var(--palette-dark);
-      color: var(--palette-light);
+      color: var(--palette-dark);
       &:hover {
-        background-color: var(--palette-light);
-        border-color: var(--palette-light);
-        color: var(--palette-dark);
+        background-color: var(--palette-dark);
+        border-color: var(--palette-dark);
+        color: var(--palette-light);
       }
-    } */
+    }
 
     & .Header__Progress {
       background-color: var(--palette-dark);
     }
-    /*
-    & #SpiralBG {
-      opacity: 0;
-    } */
 
     & .Subnav__Menu a {
       color: #11111130 !important;

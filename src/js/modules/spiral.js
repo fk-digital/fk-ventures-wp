@@ -21,42 +21,41 @@ export default function () {
   })
 
   // Add Scroll
-  // const timeline = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: document.querySelector('body'),
-  //     start: 'top bottom',
-  //     end: 'bottom top',
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  // })
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: document.querySelector('body'),
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
 
   // Scroll-driven base rotation on wrappers (wobble continues inside)
-  // timeline.to(innerWrap, { rotation: 10, ease: 'power4.out' }, 0)
-  // timeline.to(midWrap, { rotation: -10, ease: 'power3.out' }, 0)
-  // timeline.to(outerWrap, { rotation: 10, ease: 'power2.out' }, 0)
+  timeline.to(innerWrap, { rotation: 260 }, 0)
+  timeline.to(midWrap, { rotation: -220 }, 0)
+  timeline.to(outerWrap, { rotation: 180 }, 0)
 
   // Continuous subtle wobble (-10deg to 10deg)
-  gsap.set([inner, mid, outer], { rotation: -5 })
-  gsap.to(inner, {
-    rotation: 5,
-    duration: 3,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut',
-  })
-  gsap.to(mid, {
-    rotation: 5,
-    duration: 2.6,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut',
-  })
-  gsap.to(outer, {
-    rotation: 5,
-    duration: 3.4,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut',
-  })
+  //   gsap.set([inner, mid, outer], { rotation: -5 })
+  //   gsap.to(inner, {
+  //     rotation: 5,
+  //     duration: 3,
+  //     repeat: -1,
+  //     yoyo: true,
+  //     ease: 'sine.inOut',
+  //   })
+  //   gsap.to(mid, {
+  //     rotation: 5,
+  //     duration: 2.6,
+  //     repeat: -1,
+  //     yoyo: true,
+  //     ease: 'sine.inOut',
+  //   })
+  //   gsap.to(outer, {
+  //     rotation: 5,
+  //     duration: 3.4,
+  //     repeat: -1,
+  //     yoyo: true,
+  //     ease: 'sine.inOut',
+  //   })
 }

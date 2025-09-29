@@ -3,10 +3,7 @@
   gap: var(--spacing--m);
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 0 var(--page-padding);
-  @media (--mq-max-width-and-up) {
-    padding: 0 calc(50vw - (var(--max-width) / 2));
-  }
+  padding: 0;
 }
 
 .PortfolioItem a {

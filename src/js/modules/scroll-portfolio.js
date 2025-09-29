@@ -7,9 +7,11 @@ export default function () {
   const portfolioSections = gsap.utils.toArray('.HomeSection--portfolio')
 
   portfolioSections.forEach((section) => {
-    // Hoizontal Scroll of Portfolio
     const portfolioWrapper = section.querySelector('.HomePortfolio')
-    const scrollAmount = portfolioWrapper.offsetWidth - window.innerWidth
+    const scrollAmountCards = portfolioWrapper.offsetWidth
+    const scrollAmount = 5000
+
+    gsap.set(portfolioWrapper, { xPercent: 100 })
 
     const portfolioTl = gsap.timeline({
       scrollTrigger: {
@@ -18,7 +20,7 @@ export default function () {
         pin: true,
         pinSpacer: true,
         start: 'center center',
-        end: `+=${scrollAmount}`,
+        end: `+=${scrollAmount} center`,
         scrub: true,
         snap: {
           snapTo: 1 / (portfolioSections.length - 1),
@@ -32,7 +34,7 @@ export default function () {
     })
 
     portfolioTl.to(portfolioWrapper, {
-      x: -scrollAmount,
+      xPercent: -100,
     })
   })
 }

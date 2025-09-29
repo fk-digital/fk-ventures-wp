@@ -5,86 +5,78 @@ export default function () {
   gsap.registerPlugin(ScrollTrigger)
 
   const caseStudySections = gsap.utils.toArray('.HomeSection--case-study')
+  const finalScale = 1
 
   caseStudySections.forEach((section) => {
-    const imagesList = section.querySelector('.CaseStudy__Images')
-    const imageItems = imagesList
-      ? gsap.utils.toArray('.CaseStudy__ImageItem', imagesList)
-      : []
+    const imageColumn = section.querySelector('.CaseStudy__Images')
+    const mediaEl = section.querySelector('.CaseStudy__Media')
+    const imageItems = section.querySelectorAll('.CaseStudy__ImageItem')
+    gsap.set(imageColumn, { yPercent: '100' })
 
-    gsap.from(section, {
+    // Ensure images scale from center
+    if (imageItems && imageItems.length) {
+      gsap.set(imageItems, { transformOrigin: '50% 50%' })
+    }
+    // let scrollAmount = window.innerHeight * 2
+    const scrollAmount = 4000
+
+    const CaseStudyTl = gsap.timeline({
       scrollTrigger: {
         id: section.id,
         trigger: section,
         pin: true,
         pinSpacer: true,
         start: 'center center',
-        end: () =>
-          `+=${imageItems.length > 0 ? imageItems.length * 500 : 1000}`,
+        end: `+=${scrollAmount}`,
         scrub: true,
-        // markers: true,
+        snap: {
+          snapTo: 1 / (caseStudySections.length - 1),
+          duration: { min: 0.3, max: 3 },
+          inertia: false,
+        },
         onEnter: () => {
           section.classList.add('is-visible')
         },
       },
     })
 
-    if (imagesList && imageItems.length > 0) {
-      // Vertical translate of the list based on scroll to simulate carousel
-      const itemGap = 24 // must match CSS gap
-      const itemHeights = imageItems.map((el) => el.offsetHeight)
-      const avgItemHeight =
-        itemHeights.reduce((a, b) => a + b, 0) / imageItems.length || 0
-      const step = avgItemHeight + itemGap
-      const totalTravel = step * imageItems.length
+    CaseStudyTl.to(imageColumn, {
+      yPercent: '-100',
+    })
 
-      const wrapY = gsap.utils.wrap(-totalTravel, 0)
+    // Scale items based on proximity to the media column's vertical center (coverflow-like)
+    const updateScaleByCenter = () => {
+      if (!mediaEl || !imageItems || !imageItems.length) return
+      const mediaRect = mediaEl.getBoundingClientRect()
+      const centerY = mediaRect.top + mediaRect.height / 2
+      const maxDistance = mediaRect.height / 2 || 1
 
-      gsap.to(imagesList, {
-        y: () => -totalTravel,
-        ease: 'none',
-        modifiers: {
-          y: (y) => wrapY(parseFloat(y)) + 'px',
-        },
-        scrollTrigger: {
-          trigger: section,
-          start: 'center center',
-          end: () => `+=${imageItems.length * 500}`,
-          scrub: true,
-        },
+      imageItems.forEach((item) => {
+        const itemRect = item.getBoundingClientRect()
+        const itemCenter = itemRect.top + itemRect.height / 2
+        // Once an item reaches/passes the center line, keep it at max scale
+        if (itemCenter <= centerY) {
+          gsap.set(item, { scale: finalScale, filter: 'blur(0)' })
+          return
+        }
+        const distance = itemCenter - centerY
+        const t = Math.min(distance / maxDistance, 1)
+        // finalScale at center → 0.75 at far edge
+        const scale = finalScale - 0.25 * t
+        const blur = 4 * t
+        gsap.set(item, { scale, filter: `blur(${blur}px)` })
       })
-
-      // Continuous focus/scale/blur based on distance to the media column's center
-      const mediaEl = section.querySelector('.CaseStudy__Media') || imagesList
-      const updateCenterState = () => {
-        const mediaRect = mediaEl.getBoundingClientRect()
-        const centerY = mediaRect.top + mediaRect.height / 2
-        const maxDistance = mediaRect.height / 2
-
-        imageItems.forEach((item) => {
-          const itemRect = item.getBoundingClientRect()
-          const itemCenter = itemRect.top + itemRect.height / 2
-          const distance = Math.abs(itemCenter - centerY)
-          const t = Math.min(distance / maxDistance, 1)
-          const scale = 1 - 0.2 * t // 1 at center → 0.8 at edges
-          const blur = 6 * t // 0px at center → 6px at edges
-
-          gsap.set(item, {
-            transformOrigin: '50% 50%',
-            filter: `blur(${blur}px)`,
-          })
-        })
-      }
-
-      ScrollTrigger.create({
-        trigger: section,
-        start: 'top bottom',
-        end: 'bottom top',
-        onUpdate: updateCenterState,
-        onRefresh: updateCenterState,
-      })
-      // Initial call after layout
-      requestAnimationFrame(updateCenterState)
     }
+
+    ScrollTrigger.create({
+      trigger: imageColumn,
+      start: 'top bottom',
+      end: 'bottom top',
+      onUpdate: updateScaleByCenter,
+      onRefresh: updateScaleByCenter,
+    })
+
+    // initial call post layout
+    requestAnimationFrame(updateScaleByCenter)
   })
 }
