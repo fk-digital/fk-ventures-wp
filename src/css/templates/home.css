@@ -5,7 +5,7 @@
 #SpiralBG {
   fill: var(--palette-light);
   opacity: 0.05;
-  width: 125%;
+  width: 435%;
   height: auto;
   position: fixed;
   top: 100%;
@@ -13,6 +13,9 @@
   transform: translate(-50%, -50%);
   z-index: 1;
   transition: opacity var(--bgTransition);
+  @media (--mq-landscape-tablet-and-up) {
+    width: 125%;
+  }
 }
 
 .HomeSection {

@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function () {
   gsap.registerPlugin(ScrollTrigger)
+  ScrollTrigger.normalizeScroll(true)
 
   const sections = gsap.utils.toArray('.HomeSection--subnav')
 

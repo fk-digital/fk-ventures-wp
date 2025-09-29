@@ -11,18 +11,17 @@ export default function () {
   colorSections.forEach((section) => {
     gsap.from(section, {
       scrollTrigger: {
-        id: section.id,
+        // id: section.id,
         trigger: section,
         start: 'top 100px',
         end: 'bottom bottom-=100px',
+        // markers: true,
         onEnter: () => {
+          // console.log(`Enter ID: ${section.id} - Color: ${section.dataset.bg}`)
           setBackgroundColour(section.dataset.bg)
         },
         onEnterBack: () => {
           setBackgroundColour(section.dataset.bg)
-        },
-        onLeaveBack: () => {
-          setBackgroundColourReverse(section.dataset.bg)
         },
       },
     })
