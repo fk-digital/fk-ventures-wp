@@ -69,7 +69,7 @@
 .HomeSection__Heading {
   font-family: var(--typeface-heading);
   font-weight: 700;
-  font-size: var(--font-size--mega);
+  font-size: var(--font-size--jumbo);
   line-height: 1.2;
   & b,
   & strong {
@@ -82,8 +82,11 @@
 }
 
 .HomeSection__Huge {
-  font-size: calc((194 / 16) * 1rem);
+  font-size: var(--font-size--super-mega);
   display: block;
+  @media (--mq-landscape-tablet-and-up) {
+    font-size: calc((194 / 16) * 1rem);
+  }
 }
 
 /* Pannels */
@@ -105,31 +108,12 @@
   min-height: calc(100vh - var(--spacing--xxl) - var(--spacing--xxl));
 }
 
-/* Yllow sections */
+/* Yellow sections */
 .HomeSection[data-bg='yellow'] {
   background-color: var(--palette-action);
   color: var(--palette-dark);
   z-index: 999;
   position: relative;
-  & a {
-    color: var(--palette-dark);
-    text-decoration-color: transparent;
-    &:hover {
-      color: var(--palette-dark);
-      text-decoration-color: var(--palette-dark);
-    }
-  }
-
-  /* & a.Button {
-    background-color: var(--palette-dark);
-    border-color: var(--palette-dark);
-    color: var(--palette-light);
-    &:hover {
-      background-color: var(--palette-light);
-      border-color: var(--palette-light);
-      color: var(--palette-dark);
-    }
-  } */
 }
 
 /* Background BG */
@@ -154,14 +138,6 @@ body {
 
     & .Header__Progress {
       background-color: var(--palette-dark);
-    }
-
-    & .Subnav__Menu a {
-      color: #11111130 !important;
-      &:hover,
-      &.active {
-        color: var(--palette-dark) !important;
-      }
     }
 
     & svg .logo-fk {

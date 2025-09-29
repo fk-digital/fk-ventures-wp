@@ -13,7 +13,7 @@ import gallery from './modules/gallery'
 
 skipLinkFocusFix()
 smooth()
-spiral()
+
 countup()
 gallery()
 
@@ -24,3 +24,6 @@ scrollPortfolio()
 scrollSubnav()
 scrollQuote()
 scrollCaseStudy()
+
+// Set Spiral Last
+spiral()

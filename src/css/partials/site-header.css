@@ -93,11 +93,12 @@ body.is-scrolled {
 }
 
 .Header__Progress {
-  width: 100%;
+  width: 0;
   height: 5px;
   position: fixed;
   top: 0;
   left: 0;
   background-color: var(--palette-action);
-  transition: all linear 100ms;
+  transition: all var(--global-transition);
+  transform-origin: 0 0;
 }

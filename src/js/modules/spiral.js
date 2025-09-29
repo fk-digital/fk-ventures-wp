@@ -8,7 +8,8 @@ export default function () {
   const spiralSvg = document.querySelector('#SpiralBG')
   if (!spiralSvg) return
 
-  const innerWrap = spiralSvg.querySelector('#wrapInner'),
+  const body = document.querySelector('body'),
+    innerWrap = spiralSvg.querySelector('#wrapInner'),
     midWrap = spiralSvg.querySelector('#wrapMid'),
     outerWrap = spiralSvg.querySelector('#wrapOuter'),
     inner = spiralSvg.querySelector('#inner'),
@@ -23,7 +24,8 @@ export default function () {
   // Add Scroll
   const timeline = gsap.timeline({
     scrollTrigger: {
-      trigger: document.querySelector('body'),
+      id: 'spiral',
+      trigger: body,
       start: 'top bottom',
       end: 'bottom top',
       scrub: true,
@@ -34,28 +36,4 @@ export default function () {
   timeline.to(innerWrap, { rotation: 260 }, 0)
   timeline.to(midWrap, { rotation: -220 }, 0)
   timeline.to(outerWrap, { rotation: 180 }, 0)
-
-  // Continuous subtle wobble (-10deg to 10deg)
-  //   gsap.set([inner, mid, outer], { rotation: -5 })
-  //   gsap.to(inner, {
-  //     rotation: 5,
-  //     duration: 3,
-  //     repeat: -1,
-  //     yoyo: true,
-  //     ease: 'sine.inOut',
-  //   })
-  //   gsap.to(mid, {
-  //     rotation: 5,
-  //     duration: 2.6,
-  //     repeat: -1,
-  //     yoyo: true,
-  //     ease: 'sine.inOut',
-  //   })
-  //   gsap.to(outer, {
-  //     rotation: 5,
-  //     duration: 3.4,
-  //     repeat: -1,
-  //     yoyo: true,
-  //     ease: 'sine.inOut',
-  //   })
 }

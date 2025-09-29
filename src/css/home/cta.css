@@ -30,13 +30,17 @@
 
 .Cta__Title {
   padding: 24px 0 32px 0;
-  font-size: var(--font-size--jumbo);
+  font-size: var(--font-size--extra-large);
   line-height: 1.2;
 }
 
 @media (--mq-landscape-tablet-and-up) {
   .HomeSection--cta {
     padding: 96px 0;
+  }
+
+  .Cta__Title {
+    font-size: var(--font-size--jumbo);
   }
 
   .Cta__Link {

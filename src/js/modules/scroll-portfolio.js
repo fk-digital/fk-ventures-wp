@@ -22,11 +22,6 @@ export default function () {
         start: 'center center',
         end: `+=${scrollAmount} center`,
         scrub: true,
-        snap: {
-          snapTo: 1 / (portfolioSections.length - 1),
-          duration: { min: 0.3, max: 3 },
-          inertia: false,
-        },
         onEnter: () => {
           section.classList.add('is-visible')
         },

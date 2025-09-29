@@ -29,11 +29,6 @@ export default function () {
         start: 'center center',
         end: `+=${scrollAmount}`,
         scrub: true,
-        snap: {
-          snapTo: 1 / (caseStudySections.length - 1),
-          duration: { min: 0.3, max: 3 },
-          inertia: false,
-        },
         onEnter: () => {
           section.classList.add('is-visible')
         },

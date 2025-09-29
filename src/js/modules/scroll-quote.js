@@ -19,11 +19,11 @@ export default function () {
         start: 'center center',
         end: `+=3000`,
         scrub: true,
-        snap: {
-          snapTo: 1 / (qouteSections.length - 1),
-          duration: { min: 0.3, max: 3 },
-          inertia: false,
-        },
+        // snap: {
+        //   snapTo: 1 / (qouteSections.length - 1),
+        //   duration: { min: 0.3, max: 3 },
+        //   inertia: false,
+        // },
         onEnter: () => {
           section.classList.add('is-visible')
         },
