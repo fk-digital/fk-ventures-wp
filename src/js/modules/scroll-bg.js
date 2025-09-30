@@ -11,13 +11,10 @@ export default function () {
   colorSections.forEach((section) => {
     gsap.from(section, {
       scrollTrigger: {
-        // id: section.id,
         trigger: section,
-        start: 'top 100px',
-        end: 'bottom bottom-=100px',
-        // markers: true,
+        start: 'top center',
+        end: 'bottom center',
         onEnter: () => {
-          // console.log(`Enter ID: ${section.id} - Color: ${section.dataset.bg}`)
           setBackgroundColour(section.dataset.bg)
         },
         onEnterBack: () => {
@@ -33,14 +30,6 @@ export default function () {
       body.dataset.bg = 'yellow'
     } else {
       body.dataset.bg = 'black'
-    }
-  }
-
-  function setBackgroundColourReverse(bg) {
-    if (bg == 'yellow') {
-      body.dataset.bg = 'black'
-    } else {
-      body.dataset.bg = 'yellow'
     }
   }
 }
