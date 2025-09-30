@@ -18,11 +18,6 @@ export default function () {
         scrub: true,
         pin: true,
         pinSpacer: true,
-        // snap: {
-        //   snapTo: 1 / (centeredSections.length - 1),
-        //   duration: { min: 0.3, max: 3 },
-        //   inertia: false,
-        // },
         onEnter: () => {
           section.classList.add('is-visible')
         },

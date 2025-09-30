@@ -117,6 +117,16 @@
   color: var(--palette-dark);
   z-index: 999;
   position: relative;
+  & a.Button {
+    background-color: transparent;
+    border-color: var(--palette-dark);
+    color: var(--palette-dark);
+    &:hover {
+      background-color: var(--palette-dark);
+      border-color: var(--palette-dark);
+      color: var(--palette-light);
+    }
+  }
 }
 
 /* Background BG */
@@ -128,7 +138,7 @@ body {
   }
 
   &[data-bg='yellow'] {
-    & a.Button {
+    & .Header a.Button {
       background-color: transparent;
       border-color: var(--palette-dark);
       color: var(--palette-dark);

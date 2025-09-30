@@ -10,6 +10,7 @@ import scrollSubnav from './modules/scroll-subnav'
 import scrollQuote from './modules/scroll-quote'
 import scrollCaseStudy from './modules/scroll-case-study'
 import gallery from './modules/gallery'
+import scrollHeadings from './modules/scroll-headings'
 
 skipLinkFocusFix()
 smooth()
@@ -24,6 +25,8 @@ scrollPortfolio()
 scrollSubnav()
 scrollQuote()
 scrollCaseStudy()
+
+scrollHeadings()
 
 // Set Spiral Last
 spiral()
