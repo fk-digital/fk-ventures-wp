@@ -118,28 +118,24 @@
 
 /* Right column image carousel */
 .CaseStudy__Media {
-  position: relative;
-  height: 100vh;
+  padding: 60px 0;
+  overflow: visible;
 }
 
 .CaseStudy__Images {
-  position: absolute;
-  top: 0%;
-  right: 0;
-  width: 350px;
-  height: auto;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   gap: 24px;
-  transform: translateY(100%);
 }
 
 .CaseStudy__ImageItem {
   display: grid;
   place-items: center;
+  flex: 0 0 80%;
 }
 
 .CaseStudy__ImageItem img {
@@ -154,5 +150,18 @@
   }
   .CaseStudy__Media {
     display: block;
+    position: relative;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .CaseStudy__Images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: auto;
+    flex-direction: column;
+    transform: translateY(100%);
   }
 }

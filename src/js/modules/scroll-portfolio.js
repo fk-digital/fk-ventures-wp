@@ -8,7 +8,6 @@ export default function () {
 
   portfolioSections.forEach((section) => {
     const portfolioWrapper = section.querySelector('.HomePortfolio')
-    const scrollAmountCards = portfolioWrapper.offsetWidth
     const scrollAmount = 5000
 
     gsap.set(portfolioWrapper, { xPercent: 100 })

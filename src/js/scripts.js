@@ -14,7 +14,6 @@ import scrollHeadings from './modules/scroll-headings'
 
 skipLinkFocusFix()
 smooth()
-
 countup()
 gallery()
 
