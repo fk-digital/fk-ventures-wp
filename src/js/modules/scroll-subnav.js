@@ -69,7 +69,7 @@ export default function () {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: 'bottom center',
+        end: 'bottom 75%',
         pin: sectionSubMenu,
         pinSpacing: false,
       },

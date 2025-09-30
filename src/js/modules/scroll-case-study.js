@@ -31,6 +31,7 @@ export default function () {
         scrub: true,
         onEnter: () => {
           section.classList.add('is-visible')
+          window.dispatchEvent(new Event('resize')) // Resize event to trigger layout bug fixes
         },
       },
     })

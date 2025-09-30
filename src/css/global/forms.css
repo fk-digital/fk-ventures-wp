@@ -1,5 +1,10 @@
 /* Graviuty Forms Overwrites */
 
+form {
+  --gf-ctrl-outline-color-focus: var(--palette-action);
+  --gf-ctrl-font-size: 18px !important;
+}
+
 /* Labels */
 .gform-field-label:not(.gform-field-label--type-sub),
 .gform_button.button,

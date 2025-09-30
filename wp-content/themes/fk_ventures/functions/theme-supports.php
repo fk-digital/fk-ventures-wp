@@ -112,7 +112,7 @@ add_filter( 'gform_default_styles', function( $styles ) {
   return '{
   "theme":"",
   "inputSize":"lg",
-  "inputBorderRadius":"8px",
+  "inputBorderRadius":"8",
   "inputBorderColor":"#ffffff",
   "inputBackgroundColor":"transparent",
   "inputColor":"#ffffff",

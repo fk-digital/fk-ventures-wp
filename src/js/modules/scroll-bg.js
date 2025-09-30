@@ -16,6 +16,7 @@ export default function () {
         end: 'bottom center',
         onEnter: () => {
           setBackgroundColour(section.dataset.bg)
+          // window.dispatchEvent(new Event('resize')) // Resize event to trigger layout bug fixes
         },
         onEnterBack: () => {
           setBackgroundColour(section.dataset.bg)
