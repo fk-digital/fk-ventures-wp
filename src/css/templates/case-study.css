@@ -25,6 +25,10 @@
   color: var(--palette-light);
 }
 
+.CaseStudySingle__Programme {
+  padding-top: 10px;
+}
+
 .CaseStudySingle__MetaHeading {
   opacity: 0.5;
 }

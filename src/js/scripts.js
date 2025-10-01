@@ -7,7 +7,6 @@ import scrollBg from './modules/scroll-bg'
 import scrollCentered from './modules/scroll-centered'
 import scrollPortfolio from './modules/scroll-portfolio'
 import scrollSubnav from './modules/scroll-subnav'
-import scrollQuote from './modules/scroll-quote'
 import scrollCaseStudy from './modules/scroll-case-study'
 import gallery from './modules/gallery'
 import scrollHeadings from './modules/scroll-headings'
@@ -20,12 +19,10 @@ gallery()
 // Scroll
 scrollBg()
 scrollCentered()
+scrollHeadings()
 scrollPortfolio()
 scrollSubnav()
-scrollQuote()
 scrollCaseStudy()
-
-scrollHeadings()
 
 // Set Spiral Last
 spiral()

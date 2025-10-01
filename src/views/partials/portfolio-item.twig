@@ -10,7 +10,10 @@
     target="_blank"
     style="background-color: {{ backgroundColour }};"
   >
-    <h3 class="PortfolioItem__Logo">
+    <h3
+      class="PortfolioItem__Logo"
+      {{ imageStyle ? 'style="' ~ imageStyle ~ '"' }}
+    >
       <span class="sr-only">{{ name }}</span>
       <img
         src="{{ theme.link }}/assets/images/logos/{{ logo }}"

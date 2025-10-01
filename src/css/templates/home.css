@@ -27,7 +27,6 @@
 .HomeSection--centered,
 .HomeSection--text,
 .HomeSection--portfolio,
-.HomeSection--quote,
 .HomeSection--case-study {
   display: flex;
   justify-content: center;
@@ -41,7 +40,6 @@
   justify-content: flex-start;
 }
 
-.HomeSection--quote,
 .HomeSection--case-study {
   text-align: left;
 }

@@ -55,7 +55,7 @@
 
 .CaseStudy__JobTitle {
   display: block;
-  margin: 12px 0 0 0;
+  margin: 10px 0 0 0;
   padding: 0;
 }
 
@@ -79,6 +79,10 @@
   }
 }
 
+.Qoute__Programme {
+  padding: 10px 0 0 0;
+}
+
 .CaseStudy__Header img {
   width: 133px;
   height: auto;
@@ -98,6 +102,11 @@
 .StatsList {
   display: flex;
   width: 100%;
+  justify-content: flex-start;
+}
+
+.StatsList__Item {
+  flex: 0 0 50%;
 }
 
 .StatsList__ItemStat {
@@ -167,5 +176,9 @@
     width: 350px;
     height: auto;
     flex-direction: column;
+  }
+
+  .CaseStudy__Sector {
+    text-align: right;
   }
 }
