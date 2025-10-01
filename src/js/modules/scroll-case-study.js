@@ -42,13 +42,16 @@ export default function () {
 
           CaseStudyTl.to(caseStudyBlock, {
             scrollTrigger: {
-              id: `${section.id}-block`,
               start: 'top top',
               end: 'bottom bottom',
               trigger: caseStudyCol,
               pin: true,
+              anticipatePin: 1,
               pinSpacer: false,
               pinSpacing: false,
+              onEnter: () => {
+                window.dispatchEvent(new Event('resize'))
+              },
             },
           })
 
@@ -61,6 +64,8 @@ export default function () {
                 start: 'top bottom',
                 end: 'bottom center',
                 scrub: true,
+                invalidateOnRefresh: true,
+                // markers: true,
               },
             })
           })

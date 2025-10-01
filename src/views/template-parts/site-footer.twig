@@ -22,10 +22,11 @@
 
     <ul class="Footer__Menu">
       {% for item in footer_menu.items %}
-        {% include 'nav-items.twig' with {
-          item_classes: 'FooterMenu__Link',
-          type: 'footer'
-        } %}
+        <li class="FooterMenu__Link">
+          <a class="{{ item.classes|join(' ') }}" href="{{ item.link }}">
+            {{ item.title }}
+          </a>
+        </li>
       {% endfor %}
     </ul>
 
