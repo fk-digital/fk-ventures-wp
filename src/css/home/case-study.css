@@ -28,7 +28,8 @@
   margin: 32px 0;
 }
 
-.CaseStudy__Qoute {
+.CaseStudy__Qoute,
+.CaseStudySingle__QouteQoute {
   font-weight: 700;
   font-size: var(--font-size--large);
   line-height: 1.2;
@@ -39,7 +40,8 @@
   }
 }
 
-.CaseStudy__Author {
+.CaseStudy__Author,
+.CaseStudySingle__Author {
   font-weight: 700;
   font-size: var(--font-size--large);
   font-style: normal;
@@ -53,7 +55,8 @@
   }
 }
 
-.CaseStudy__JobTitle {
+.CaseStudy__JobTitle,
+.CaseStudySingle__JobTitle {
   display: block;
   margin: 10px 0 0 0;
   padding: 0;
