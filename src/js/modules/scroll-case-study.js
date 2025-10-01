@@ -19,10 +19,12 @@ export default function () {
       let { isDesktop, isMobile } = context.conditions
 
       caseStudySections.forEach((section) => {
+        const caseStudyCol = section.querySelector('.CaseStudy')
+        const caseStudyBlock = section.querySelector('.CaseStudy__Block')
         const imageColumn = section.querySelector('.CaseStudy__Images')
         const mediaEl = section.querySelector('.CaseStudy__Media')
-        const imageItems = gsap.utils.toArray('.CaseStudy__ImageItem')
-        const scrollAmount = 4000
+        const imageItems = gsap.utils.toArray('.CaseStudy__ImageItem img')
+        // const scrollAmount = 4000
 
         if (isDesktop) {
           // If Desktop
@@ -36,20 +38,17 @@ export default function () {
             })
           }
 
-          gsap.set(imageColumn, { yPercent: '100' })
+          const CaseStudyTl = gsap.timeline()
 
-          const CaseStudyTl = gsap.timeline({
+          CaseStudyTl.to(caseStudyBlock, {
             scrollTrigger: {
-              id: section.id,
-              trigger: section,
-              pin: isDesktop ? true : false,
-              pinSpacer: isDesktop ? true : false,
-              start: 'center center',
-              end: `+=${scrollAmount}`,
-              scrub: true,
-              onEnter: () => {
-                section.classList.add('is-visible')
-              },
+              id: `${section.id}-block`,
+              start: 'top top',
+              end: 'bottom bottom',
+              trigger: caseStudyCol,
+              pin: true,
+              pinSpacer: false,
+              pinSpacing: false,
             },
           })
 
@@ -64,10 +63,6 @@ export default function () {
                 scrub: true,
               },
             })
-          })
-
-          CaseStudyTl.to(imageColumn, {
-            yPercent: '-110',
           })
         } else {
           // If Mobile

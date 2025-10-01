@@ -8,12 +8,14 @@
 }
 
 .CaseStudy {
+}
+
+.CaseStudy__Block {
+  max-width: 725px;
+  position: relative;
   padding: 24px;
   border: 2px solid var(--dark-grey);
   border-radius: var(--border-radius);
-  max-width: 725px;
-  margin: 44px 0;
-  position: relative;
   @media (--mq-landscape-tablet-and-up) {
     padding: 44px;
   }
@@ -145,23 +147,25 @@
 }
 
 @media (--mq-landscape-tablet-and-up) {
+  .CaseStudy__Block {
+    margin-top: 130px;
+  }
+
   .CaseStudyGrid {
     grid-template-columns: 725px 1fr;
+    align-items: stretch;
   }
+
   .CaseStudy__Media {
     display: block;
     position: relative;
-    height: 100vh;
     padding: 0;
+    padding: 100vh 0 100vh 0;
   }
 
   .CaseStudy__Images {
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 350px;
     height: auto;
     flex-direction: column;
-    transform: translateY(100%);
   }
 }
