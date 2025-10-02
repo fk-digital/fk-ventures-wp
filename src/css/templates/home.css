@@ -40,6 +40,10 @@
   justify-content: flex-start;
 }
 
+.HomeSection.HomeSection--portfolio {
+  min-height: 0;
+}
+
 .HomeSection--case-study {
   text-align: left;
 }

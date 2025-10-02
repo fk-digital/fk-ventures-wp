@@ -10,17 +10,17 @@ export default function () {
     const portfolioWrapper = section.querySelector('.HomePortfolio')
     const scrollAmount = 5000
 
-    gsap.set(portfolioWrapper, { xPercent: 100 })
+    gsap.set(portfolioWrapper, { x: () => window.innerWidth })
 
     const portfolioTl = gsap.timeline({
       scrollTrigger: {
         id: section.id,
         trigger: section,
         pin: true,
-        pinSpacer: true,
         start: 'center center',
         end: `+=${scrollAmount} center`,
         scrub: true,
+        invalidateOnRefresh: true,
         onEnter: () => {
           section.classList.add('is-visible')
         },
@@ -28,7 +28,7 @@ export default function () {
     })
 
     portfolioTl.to(portfolioWrapper, {
-      xPercent: -100,
+      x: () => -(portfolioWrapper.scrollWidth + window.innerWidth * 0.01),
     })
   })
 }
