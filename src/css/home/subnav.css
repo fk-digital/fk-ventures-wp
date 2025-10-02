@@ -11,6 +11,7 @@
 
 .Subnav__Section {
   min-height: 100vh;
+  line-height: 1.2;
 }
 
 .Subnav__Main {
@@ -24,6 +25,9 @@
 .Subnav__Heading {
   font-size: var(--font-size--extra-large);
   line-height: 120%;
+  & + .Subnav__Heading {
+    margin-top: 10px;
+  }
 }
 
 @media (--mq-landscape-tablet-and-up) {
