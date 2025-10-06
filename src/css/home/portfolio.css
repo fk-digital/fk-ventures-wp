@@ -4,7 +4,19 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0;
-  overflow: hidden;
+  margin: 0;
+}
+
+.PortfolioItem {
+  height: 100vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PortfolioItem--spacer {
+  width: 100vw;
 }
 
 .PortfolioItem a {

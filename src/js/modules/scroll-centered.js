@@ -20,7 +20,7 @@ export default function (section) {
       pinSpacer: true,
       onEnter: () => {
         section.classList.add('is-visible')
-        console.log(`${section.id} background: ${section.dataset.bg}`)
+        // console.log(`${section.id} background: ${section.dataset.bg}`)
         document.body.dataset.bg = section.dataset.bg
       },
       onEnterBack: () => {

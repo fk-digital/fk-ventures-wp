@@ -5,6 +5,8 @@
   data-appear
 >
   <ul class="HomePortfolio">
+    <li class="PortfolioItem PortfolioItem--spacer" arai-hidden></li>
+
     {% include 'partials/portfolio-item.twig' with {
       name: 'Chetwood',
       logo: 'chetwood-bank.svg',
@@ -80,5 +82,7 @@
       success: 'Seed - 500k',
       imageStyle: 'max-width: 100px;'
     } %}
+
+    <li class="PortfolioItem PortfolioItem--spacer" arai-hidden></li>
   </ul>
 </div>
