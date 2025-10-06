@@ -56,11 +56,6 @@ class FutureKingsSite extends Timber\Site {
     add_action( 'wp_enqueue_scripts',  array( $this, 'fk_ventures_theme_enqueue_scripts' ) );
 
 
-    //  Blocks
-    require_once(get_template_directory() . '/functions/blocks/blocks.php');
-    require_once(get_template_directory() . '/functions/blocks/render.php');
-    require_once(get_template_directory() . '/functions/blocks/setup.php');
-
     // Construct
 		parent::__construct();
 	}

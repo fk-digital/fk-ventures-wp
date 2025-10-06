@@ -1,5 +1,5 @@
 .HomeSection--subnav {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .Subnav__Grid {
@@ -36,20 +36,29 @@
   }
 
   .HomeSection--subnav {
-    padding: 230px 0;
+    padding: 100vh 0 230px 0;
+  }
+
+  .Subnav__Section {
+    min-height: 100vh;
+    line-height: 1.2;
+    padding-top: 130px;
   }
 
   .Subnav__Grid {
     grid-template-columns: 266px 1fr;
     gap: 80px;
   }
+
   .Subnav__Menu {
     display: block;
     padding-bottom: 230px;
   }
 
-  .Subnav__Menu ul {
+  .Subnav__MenuList {
     display: block;
+    position: sticky;
+    top: 230px;
     margin: 0;
     padding: 0;
     & li {

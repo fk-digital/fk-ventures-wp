@@ -1,32 +1,32 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import Lenis from 'lenis'
 
 export default function () {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+  gsap.registerPlugin(ScrollTrigger)
 
   const headerProgress = document.querySelector('.Header__Progress')
 
-  // create the smooth scroller FIRST!
-  const smoother = ScrollSmoother.create({
-    wrapper: '#smooth-wrapper',
-    content: '#smooth-content',
-    smooth: 2,
-    effects: false,
-    normalizeScroll: true,
-    smoothTouch: 0.1,
-    onUpdate: (self) => {
-      headerProgress.style.width = `${Math.round(self.progress * 100)}%`
-    },
+  // Initialize a new Lenis instance for smooth scrolling
+  const lenis = new Lenis({
+    anchors: true,
   })
 
-  // Fix Anchor Links
-  const anchorLinks = document.querySelectorAll("a[href^='#']")
-  anchorLinks.forEach((anchorLink) => {
-    const href = anchorLink.getAttribute('href')
-    anchorLink.addEventListener('click', (e) => {
-      e.preventDefault()
-      smoother.scrollTo(`${href}`, true, 'top 100px')
-    })
+  // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+  lenis.on('scroll', ScrollTrigger.update)
+
+  // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+  // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000) // Convert time from seconds to milliseconds
+  })
+
+  // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+  gsap.ticker.lagSmoothing(0)
+
+  // Progress
+  // Listen for the scroll event and log the event data
+  lenis.on('scroll', (e) => {
+    headerProgress.style.width = `${(lenis.progress * 100).toFixed(2)}%`
   })
 }

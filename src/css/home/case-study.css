@@ -17,9 +17,6 @@
   padding: 24px;
   border: 2px solid var(--dark-grey);
   border-radius: var(--border-radius);
-  @media (--mq-landscape-tablet-and-up) {
-    padding: 44px;
-  }
 }
 
 .CaseStudy__BlockQuote {
@@ -160,8 +157,15 @@
 }
 
 @media (--mq-landscape-tablet-and-up) {
+  .CaseStudy {
+    position: relative;
+  }
+
   .CaseStudy__Block {
-    margin-top: 130px;
+    position: sticky;
+    top: 130px;
+    margin: 130px 0;
+    padding: 44px;
   }
 
   .CaseStudyGrid {

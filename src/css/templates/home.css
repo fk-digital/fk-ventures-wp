@@ -40,6 +40,12 @@
   justify-content: flex-start;
 }
 
+.HomeSection.HomeSection--centered,
+.HomeSection.HomeSection--portfolio,
+.HomeSection.HomeSection--text {
+  overflow: hidden;
+}
+
 .HomeSection.HomeSection--portfolio {
   min-height: 0;
 }

@@ -1,34 +1,35 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export default function () {
+export default function (section) {
   gsap.registerPlugin(ScrollTrigger)
 
-  const portfolioSections = gsap.utils.toArray('.HomeSection--portfolio')
+  // portfolioSections.forEach((section) => {
+  const portfolioWrapper = section.querySelector('.HomePortfolio')
+  const scrollAmount = 5000
 
-  portfolioSections.forEach((section) => {
-    const portfolioWrapper = section.querySelector('.HomePortfolio')
-    const scrollAmount = 5000
+  gsap.set(portfolioWrapper, { x: () => window.innerWidth })
 
-    gsap.set(portfolioWrapper, { x: () => window.innerWidth })
-
-    const portfolioTl = gsap.timeline({
-      scrollTrigger: {
-        id: section.id,
-        trigger: section,
-        pin: true,
-        start: 'center center',
-        end: `+=${scrollAmount} center`,
-        scrub: true,
-        invalidateOnRefresh: true,
-        onEnter: () => {
-          section.classList.add('is-visible')
-        },
+  const portfolioTl = gsap.timeline({
+    scrollTrigger: {
+      id: section.id,
+      trigger: section,
+      pin: true,
+      start: 'center center',
+      end: `+=${scrollAmount} center`,
+      scrub: true,
+      onEnter: () => {
+        console.log(`${section.id} background: ${section.dataset.bg}`)
+        document.body.dataset.bg = section.dataset.bg
       },
-    })
-
-    portfolioTl.to(portfolioWrapper, {
-      x: () => -(portfolioWrapper.scrollWidth + window.innerWidth * 0.01),
-    })
+      onEnterBack: () => {
+        document.body.dataset.bg = section.dataset.bg
+      },
+    },
   })
+
+  portfolioTl.to(portfolioWrapper, {
+    x: () => -(portfolioWrapper.scrollWidth + window.innerWidth * 0.01),
+  })
+  // })
 }
