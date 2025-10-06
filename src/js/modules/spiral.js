@@ -29,7 +29,6 @@ export default function () {
       start: 'top bottom',
       end: () => 'bottom+=48000 top',
       scrub: true,
-      markers: true,
     },
   })
 
