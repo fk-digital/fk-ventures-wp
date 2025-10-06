@@ -40,6 +40,12 @@
   justify-content: flex-start;
 }
 
+.HomeSection.HomeSection--centered,
+.HomeSection.HomeSection--portfolio,
+.HomeSection.HomeSection--text {
+  overflow: hidden;
+}
+
 .HomeSection.HomeSection--portfolio {
   min-height: 0;
 }
@@ -162,4 +168,12 @@ body {
       fill: var(--palette-dark) !important;
     }
   }
+}
+
+/* Kern fix on split text */
+
+.AnimatedHeading {
+  opacity: 0;
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
 }

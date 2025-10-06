@@ -1,77 +1,67 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export default function () {
+export default function (section) {
   gsap.registerPlugin(ScrollTrigger)
-  ScrollTrigger.normalizeScroll(true)
 
-  const sections = gsap.utils.toArray('.HomeSection--subnav')
+  const sectionSubMenuLinks = section.querySelectorAll('.Subnav__MenuList a')
+  const sectionSubSections = section.querySelectorAll('.Subnav__Section')
 
-  sections.forEach((section) => {
-    gsap.from(section, {
+  gsap.from(section, {
+    scrollTrigger: {
+      id: section.id,
+      trigger: section,
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: () => {
+        section.classList.add('is-visible')
+        // console.log(`${section.id} background: ${section.dataset.bg}`)
+        document.body.dataset.bg = section.dataset.bg
+      },
+      onEnterBack: () => {
+        document.body.dataset.bg = section.dataset.bg
+      },
+    },
+  })
+
+  // Update menu active state per subsection
+  sectionSubSections.forEach((sectionSubSection) => {
+    gsap.set(sectionSubSection, { alpha: 0, x: 10 })
+
+    gsap.from(sectionSubSection, {
       scrollTrigger: {
-        id: section.id,
-        trigger: section,
-        start: 'center center',
+        id: sectionSubSection.id,
+        trigger: sectionSubSection,
+        start: 'top center',
         end: 'bottom center',
         scrub: true,
-      },
-    })
+        onEnter: () => {
+          gsap.to(sectionSubSection, {
+            alpha: 1,
+            ease: 'power1.out',
+            duration: 0.5,
+          })
 
-    const sectionSubMenu = section.querySelector('.Subnav__Menu')
-    const sectionSubMenuLinks = sectionSubMenu.querySelectorAll('a')
-    const sectionSubSections = section.querySelectorAll('.Subnav__Section')
-
-    // Update menu active state per subsection
-    sectionSubSections.forEach((sectionSubSection) => {
-      gsap.timeline({
-        scrollTrigger: {
-          id: sectionSubSection.id,
-          trigger: sectionSubSection,
-          start: 'top center',
-          end: 'bottom center',
-          onEnter: () => {
-            sectionSubSection.classList.add('is-visible')
-            const sectionSubSectionId = sectionSubSection.id
-            sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
-              if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
-                sectionSubMenuLink.classList.add('active')
-              } else {
-                sectionSubMenuLink.classList.remove('active')
-              }
-            })
-          },
-          onEnterBack: () => {
-            sectionSubSection.classList.add('is-visible')
-            const sectionSubSectionId = sectionSubSection.id
-            sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
-              if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
-                sectionSubMenuLink.classList.add('active')
-              } else {
-                sectionSubMenuLink.classList.remove('active')
-              }
-            })
-          },
+          const sectionSubSectionId = sectionSubSection.id
+          sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
+            if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
+              sectionSubMenuLink.classList.add('active')
+            } else {
+              sectionSubMenuLink.classList.remove('active')
+            }
+          })
         },
-      })
-
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionSubSection,
-          start: 'top top',
-          end: 'bottom center',
+        onEnterBack: () => {
+          sectionSubSection.classList.add('is-visible')
+          const sectionSubSectionId = sectionSubSection.id
+          sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
+            if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
+              sectionSubMenuLink.classList.add('active')
+            } else {
+              sectionSubMenuLink.classList.remove('active')
+            }
+          })
         },
-      })
-    })
-
-    // Pin Menu within its subnav section bounds
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: 'top top',
-        end: 'bottom 75%',
-        pin: sectionSubMenu,
-        pinSpacing: false,
       },
     })
   })

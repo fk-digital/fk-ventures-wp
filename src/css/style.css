@@ -1,6 +1,9 @@
 /* Normalise */
 @import '../../node_modules/normalize.css/normalize.css';
 
+/* Lenis */
+@import '../../node_modules/lenis/dist/lenis.css';
+
 /* Global */
 @import 'global/settings';
 @import 'global/base';

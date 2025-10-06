@@ -1,34 +1,59 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export default function () {
+export default function (section) {
   gsap.registerPlugin(ScrollTrigger)
 
-  const portfolioSections = gsap.utils.toArray('.HomeSection--portfolio')
+  const portfolioWrapper = section.querySelector('.HomePortfolio')
+  const portfolioItems = gsap.utils.toArray(
+    section.querySelectorAll('.PortfolioItem--item'),
+  )
 
-  portfolioSections.forEach((section) => {
-    const portfolioWrapper = section.querySelector('.HomePortfolio')
-    const scrollAmount = 5000
+  // Scale Each item
+  portfolioItems.forEach((item) => {
+    gsap.set(item, { scale: 0.5, opacity: 0.5 })
+  })
 
-    gsap.set(portfolioWrapper, { x: () => window.innerWidth })
+  const portfolioTl = gsap.timeline({
+    scrollTrigger: {
+      id: section.id,
+      trigger: section,
+      pin: true,
+      start: 'center center',
+      end: () =>
+        `+=${Math.max(0, portfolioWrapper.scrollWidth - section.clientWidth)}`,
+      scrub: true,
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        document.body.dataset.bg = section.dataset.bg
+      },
+      onEnterBack: () => {
+        document.body.dataset.bg = section.dataset.bg
+      },
+    },
+  })
 
-    const portfolioTl = gsap.timeline({
+  portfolioTl.to(portfolioWrapper, {
+    x: () => -Math.max(0, portfolioWrapper.scrollWidth - section.clientWidth),
+    ease: 'none',
+  })
+
+  portfolioItems.forEach((item) => {
+    gsap.to(item, {
+      scale: 1,
+      opacity: 1,
+      ease: 'none',
       scrollTrigger: {
-        id: section.id,
-        trigger: section,
-        pin: true,
-        start: 'center center',
-        end: `+=${scrollAmount} center`,
+        trigger: item,
+        start: 'left right',
+        end: 'right center',
+        horizontal: true,
         scrub: true,
         invalidateOnRefresh: true,
-        onEnter: () => {
-          section.classList.add('is-visible')
-        },
+        containerAnimation: portfolioTl,
       },
     })
-
-    portfolioTl.to(portfolioWrapper, {
-      x: () => -(portfolioWrapper.scrollWidth + window.innerWidth * 0.01),
-    })
   })
+
+  ScrollTrigger.refresh()
 }
