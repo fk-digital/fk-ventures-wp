@@ -8,7 +8,7 @@ export default function () {
   const spiralSvg = document.querySelector('#SpiralBG')
   if (!spiralSvg) return
 
-  const body = document.querySelector('body'),
+  const body = document.body,
     innerWrap = spiralSvg.querySelector('#wrapInner'),
     midWrap = spiralSvg.querySelector('#wrapMid'),
     outerWrap = spiralSvg.querySelector('#wrapOuter'),
@@ -22,18 +22,20 @@ export default function () {
   })
 
   // Add Scroll
-  const timeline = gsap.timeline({
+  const spiralTimeline = gsap.timeline({
     scrollTrigger: {
       id: 'spiral',
       trigger: body,
       start: 'top bottom',
-      end: 'bottom top',
+      end: () => 'bottom+=48000 top',
       scrub: true,
+      markers: true,
     },
   })
 
-  // Scroll-driven base rotation on wrappers (wobble continues inside)
-  timeline.to(innerWrap, { rotation: 260 }, 0)
-  timeline.to(midWrap, { rotation: -220 }, 0)
-  timeline.to(outerWrap, { rotation: 180 }, 0)
+  // Scroll-driven base rotation on wrappers
+  spiralTimeline.to(innerWrap, { rotation: 260 }, 0)
+  spiralTimeline.to(midWrap, { rotation: -220 }, 0)
+  spiralTimeline.to(outerWrap, { rotation: 180 }, 0)
+  ScrollTrigger.refresh()
 }
