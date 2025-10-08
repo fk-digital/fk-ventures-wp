@@ -31,14 +31,3 @@ select {
     outline: 0;
   }
 }
-
-.skip-link {
-  position: fixed;
-  top: -200px;
-  left: -200px;
-  &:focus {
-    top: 37px;
-    left: 0px;
-    z-index: 20;
-  }
-}

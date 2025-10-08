@@ -16,6 +16,7 @@
                 loading="lazy"
                 width="100"
                 height="100"
+                fetchpriority="high"
               />
             {% endif %}
             <div>
@@ -106,7 +107,14 @@
               {% set src = image.src|default(image.url|default(image)) %}
               {% set alt = image.alt|default('Case study image') %}
               <li class="CaseStudy__ImageItem">
-                <img src="{{ src }}" alt="{{ alt }}" loading="lazy" />
+                <img
+                  src="{{ src }}"
+                  alt="{{ alt }}"
+                  width="882"
+                  height="496"
+                  loading="lazy"
+                  fetchpriority="high"
+                />
               </li>
             {% endfor %}
           </ul>

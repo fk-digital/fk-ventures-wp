@@ -126,8 +126,13 @@ add_filter( 'gform_default_styles', function( $styles ) {
 
 
 // Gutenberg Editor Styles
-add_theme_support('editor-styles');
-add_editor_style(get_template_directory_uri() . '/assets/editor.min.css');
+// add_theme_support('editor-styles');
+// add_editor_style(get_template_directory_uri() . '/assets/editor.min.css');
 
 
+// Remove Block libary styles
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+}
 

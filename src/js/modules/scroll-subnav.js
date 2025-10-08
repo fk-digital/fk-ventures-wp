@@ -15,7 +15,6 @@ export default function (section) {
       end: 'bottom center',
       onEnter: () => {
         section.classList.add('is-visible')
-        // console.log(`${section.id} background: ${section.dataset.bg}`)
         document.body.dataset.bg = section.dataset.bg
       },
       onEnterBack: () => {
@@ -26,7 +25,7 @@ export default function (section) {
 
   // Update menu active state per subsection
   sectionSubSections.forEach((sectionSubSection) => {
-    gsap.set(sectionSubSection, { alpha: 0, x: 10 })
+    gsap.set(sectionSubSection, { alpha: 0 })
 
     gsap.from(sectionSubSection, {
       scrollTrigger: {

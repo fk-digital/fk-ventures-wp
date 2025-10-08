@@ -1,7 +1,6 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import skipLinkFocusFix from './modules/skip-link-focus-fix'
 import spiral from './modules/spiral'
 import smooth from './modules/smooth'
 import countup from './modules/count-up'
@@ -15,7 +14,6 @@ import scrollBG from './modules/scroll-bg'
 
 gsap.registerPlugin(ScrollTrigger)
 
-skipLinkFocusFix()
 smooth()
 
 spiral()

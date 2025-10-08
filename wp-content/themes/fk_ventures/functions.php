@@ -74,8 +74,7 @@ class FutureKingsSite extends Timber\Site {
     }
 
     // Scripts
-    wp_register_script('lottie', 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', array(), '5.12.2', true); // Lottie
-    wp_enqueue_script( 'fk_ventures-js', get_template_directory_uri() . '/assets/scripts.min.js', array("lottie"), $fk_utilities->get_app_js_version(), true );
+    wp_enqueue_script( 'fk_ventures-js', get_template_directory_uri() . '/assets/scripts.min.js', null, $fk_utilities->get_app_js_version(), true );
   }
 
   // Add to Context

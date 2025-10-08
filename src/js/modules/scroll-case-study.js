@@ -4,8 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 export default function (section) {
   gsap.registerPlugin(ScrollTrigger)
 
-  const caseStudySections = gsap.utils.toArray('.HomeSection--case-study')
-
   let mm = gsap.matchMedia(),
     breakPoint = 960
 
@@ -25,7 +23,6 @@ export default function (section) {
           end: 'bottom center',
           onEnter: () => {
             section.classList.add('is-visible')
-            // console.log(`${section.id} background: ${section.dataset.bg}`)
             document.body.dataset.bg = section.dataset.bg
           },
           onEnterBack: () => {
@@ -34,15 +31,11 @@ export default function (section) {
         },
       })
 
-      // caseStudySections.forEach((section) => {
-      const caseStudyCol = section.querySelector('.CaseStudy')
-      const caseStudyBlock = section.querySelector('.CaseStudy__Block')
       const imageColumn = section.querySelector('.CaseStudy__Images')
       const mediaEl = section.querySelector('.CaseStudy__Media')
       const imageItems = gsap.utils.toArray(
         section.querySelectorAll('.CaseStudy__ImageItem img'),
       )
-      // const scrollAmount = 4000
 
       if (isDesktop) {
         // If Desktop
@@ -96,7 +89,6 @@ export default function (section) {
           x: () => -getMobileScrollAmount(),
         })
       }
-      // })
     },
   )
 }

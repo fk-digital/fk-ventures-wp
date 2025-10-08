@@ -27,7 +27,6 @@
 @import 'templates/case-study';
 
 /* Sections */
-@import 'home/who';
 @import 'home/portfolio';
 @import 'home/subnav';
 @import 'home/form';
