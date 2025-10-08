@@ -1,5 +1,9 @@
 /* CaseStudy */
 
+.HomeSection--case-study {
+  overflow: hidden;
+}
+
 .CaseStudyGrid {
   display: grid;
   grid-template-columns: 1fr;

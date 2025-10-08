@@ -39,7 +39,9 @@ export default function (section) {
       const caseStudyBlock = section.querySelector('.CaseStudy__Block')
       const imageColumn = section.querySelector('.CaseStudy__Images')
       const mediaEl = section.querySelector('.CaseStudy__Media')
-      const imageItems = gsap.utils.toArray('.CaseStudy__ImageItem img')
+      const imageItems = gsap.utils.toArray(
+        section.querySelectorAll('.CaseStudy__ImageItem img'),
+      )
       // const scrollAmount = 4000
 
       if (isDesktop) {
@@ -71,6 +73,10 @@ export default function (section) {
         })
       } else {
         // If Mobile
+
+        if (!imageColumn || !mediaEl) {
+          return
+        }
 
         const getMobileScrollAmount = () =>
           Math.max(0, imageColumn.scrollWidth - mediaEl.clientWidth)
