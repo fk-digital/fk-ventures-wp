@@ -1,0 +1,31 @@
+{% extends 'block-layout.twig' %}
+{% block block_content %}
+  <div class="Container">
+    {% if fields.sections %}
+      <div class="Grid">
+        <div class="Sidebar__Nav">
+          <nav class="Sidebar__NavWrapper">
+            <p class="Sidebar__NavTitle SmallCaps">
+              Jump To
+            </p>
+            {% for section in fields.sections %}
+              <a href="#{{ section.heading|slugify }}">{{ section.heading }}</a>
+            {% endfor %}
+          </nav>
+        </div>
+
+        <div class="Sidebar__Main">
+          {% for section in fields.sections %}
+            <section
+              id="{{ section.heading|slugify }}"
+              class="Sidebar__Section ugc AppearFadeIn Delay"
+            >
+              <h2 class="Sidebar__SectionHeading">{{ section.heading }}</h2>
+              {{ section.copy }}
+            </section>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

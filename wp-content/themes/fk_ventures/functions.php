@@ -46,6 +46,13 @@ class FutureKingsSite extends Timber\Site {
     require_once( get_template_directory() . '/functions/theme-supports.php' );
     require_once( get_template_directory() . '/functions/menus.php' );
 
+
+   //  Register Blocks
+   register_block_type( __DIR__ . '/functions/blocks/register/sidebar-block.json' );
+
+   require_once(get_template_directory() . '/functions/blocks/render.php');
+   require_once(get_template_directory() . '/functions/blocks/setup.php');
+
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
     add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 

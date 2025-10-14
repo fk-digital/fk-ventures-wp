@@ -15,6 +15,9 @@
 @import 'global/forms';
 @import 'global/grid';
 
+/* blocks */
+@import 'blocks/sidebar';
+
 /* Partials */
 @import 'partials/container';
 @import 'partials/site-header';

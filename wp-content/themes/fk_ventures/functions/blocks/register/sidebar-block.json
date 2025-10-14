@@ -1,0 +1,27 @@
+{
+  "name": "acf/sidebar",
+  "title": "Sidebar",
+  "description": "Adds a sidebar section with navigation",
+  "category": "future-kings-blocks",
+  "icon": "cover-image",
+  "apiVersion": 2,
+  "keywords": [
+      "sidebar",
+      "future-kings"
+  ],
+  "acf": {
+      "mode": "edit",
+      "renderCallback": "future_kings_acf_block_render_callback"
+  },
+  "supports": {
+      "align": false,
+      "anchor": true,
+      "alignContent": false,
+      "alignText": false,
+      "defaultStylePicker": false,
+      "color": {
+        "background": false,
+        "text": false
+      }
+  }
+}

@@ -1,5 +1,11 @@
 {% extends 'base.twig' %}
 {% block content %}
+  <h1 class="sr-only">
+    We help founders get organised, secure funding and scale. By building your
+    brand when you need it most. Using our <strong>funded</strong> brand programmes.
+    Over the last 2 funds we've helped our clients secure $195m in funding.
+  </h1>
+
   {% include 'home/centered.twig' with {
     id: 'help',
     text: 'We help founders get organised, secure funding and scale.'
@@ -45,7 +51,7 @@
     stat2Number: '300',
     stat2Sufix: '%',
     stat2Desc: 'Revenue increase',
-    caseStudyLink: '/case-studies/heidi',
+    caseStudyLink: '/case-studies/heidi/',
     images: [
       {
         src: theme.link ~ '/assets/images/heidi/1.png',
@@ -121,7 +127,7 @@
 
   {% include 'home/cta.twig' with {
     id: 'register-interest',
-    url: '/apply',
+    url: '/apply/',
     subtitle: 'apply',
     title: 'There are six places up for grabs as part of our third fund. Applications will open in October.',
     buttonText: 'Register Interest'
