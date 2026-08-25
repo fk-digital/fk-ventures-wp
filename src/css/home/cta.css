@@ -13,10 +13,10 @@
   text-align: center;
   flex-direction: column;
   padding: 28px;
-  color: var(--palette-light);
+  color: var(--palette-dark);
   text-decoration: none;
   &:hover {
-    color: var(--palette-light);
+    color: var(--palette-dark);
     & .Cta__Button {
       background-color: var(--palette-action);
       color: var(--palette-dark);

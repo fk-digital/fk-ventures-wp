@@ -15,7 +15,7 @@ a.Footer__Logo {
   position: relative;
   z-index: 2;
   display: block;
-  color: var(--palette-light);
+  color: var(--palette-dark);
   text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ a.Footer__Logo {
 .Footer__Email {
   text-decoration-color: transparent;
   &:hover {
-    color: var(--palette-light);
+    color: var(--palette-dark);
     text-decoration-color: var(--palette-action);
   }
 }
@@ -45,7 +45,7 @@ a.Footer__Logo {
   & a {
     text-decoration-color: transparent;
     &:hover {
-      color: var(--palette-light);
+      color: var(--palette-dark);
       text-decoration-color: var(--palette-action);
     }
   }

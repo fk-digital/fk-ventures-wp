@@ -2,7 +2,7 @@
   --bgTransition: cubic-bezier(0.72, 0, 0.28, 1) 300ms;
 }
 
-#SpiralBG {
+/* #SpiralBG {
   fill: var(--palette-light);
   opacity: 0.05;
   width: 435%;
@@ -16,7 +16,7 @@
   @media (--mq-landscape-tablet-and-up) {
     width: 125%;
   }
-}
+} */
 
 .HomeSection {
   min-height: 100vh;
@@ -114,7 +114,7 @@
 .HomePannel {
   height: 100%;
   border-radius: var(--border-radius);
-  border: solid 1px var(--palette-light);
+  border: solid 1px var(--palette-dark);
   padding: var(--spacing--m);
   min-height: calc(100vh - var(--spacing--xxl) - var(--spacing--xxl));
 }
@@ -132,7 +132,7 @@
     &:hover {
       background-color: var(--palette-dark);
       border-color: var(--palette-dark);
-      color: var(--palette-light);
+      color: var(--palette-dark);
     }
   }
 }
@@ -153,7 +153,7 @@ body {
       &:hover {
         background-color: var(--palette-dark);
         border-color: var(--palette-dark);
-        color: var(--palette-light);
+        color: var(--palette-dark);
       }
     }
 
@@ -162,7 +162,7 @@ body {
     }
 
     & svg .logo-fk {
-      fill: var(--palette-light) !important;
+      fill: var(--palette-dark) !important;
     }
     & svg .logo-ventures {
       fill: var(--palette-dark) !important;

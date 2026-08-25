@@ -115,7 +115,7 @@ small,
 .Tag--filled {
   background-color: var(--dark-grey);
   border-color: var(--dark-grey);
-  color: var(--palette-light);
+  color: var(--palette-dark);
 }
 
 .Tag--yellow {

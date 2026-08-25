@@ -160,7 +160,7 @@
 
 .ProgrammeList__Item {
   border-radius: var(--border-radius);
-  background-color: var(--palette-light);
+  background-color: var(--palette-dark);
   padding: 24px 24px 32px 24px;
 }
 

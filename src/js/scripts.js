@@ -1,7 +1,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import spiral from './modules/spiral'
+// import spiral from './modules/spiral'
 import smooth from './modules/smooth'
 import countup from './modules/count-up'
 
@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 smooth()
 
-spiral()
+// spiral()
 
 countup()
 gallery()

@@ -64,7 +64,7 @@ form {
 .gform-theme--framework .gform_validation_errors ol,
 .gform-theme--framework .gform_validation_errors ol a,
 .gform-icon.gform-icon--circle-error {
-  color: var(--palette-light) !important;
+  color: var(--palette-dark) !important;
 }
 
 .gform-theme--framework .gform_validation_errors ol a:hover {
@@ -72,7 +72,7 @@ form {
 }
 
 .gform-icon.gform-icon--circle-error {
-  border-color: var(--palette-light) !important;
+  border-color: var(--palette-dark) !important;
 }
 
 /* Requiered */

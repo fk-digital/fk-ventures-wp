@@ -106,7 +106,7 @@ hr {
 }
 
 mark {
-  color: var(--palette-light);
+  color: var(--palette-dark);
   background-color: transparent;
 }
 
@@ -116,7 +116,7 @@ mark {
 }
 
 /* Base */
-svg.Body__BG {
+/* svg.Body__BG {
   display: block;
   position: fixed;
   top: 50%;
@@ -127,4 +127,4 @@ svg.Body__BG {
   opacity: 0.2;
   color: var(--palette-light);
   z-index: 1;
-}
+} */

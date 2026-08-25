@@ -53,7 +53,7 @@
   padding: 0;
   text-decoration: none;
   &:hover {
-    color: var(--palette-light);
+    color: var(--palette-dark);
   }
 }
 
@@ -97,7 +97,7 @@
   text-align: left;
   & p.SmallCaps {
     margin: 0;
-    color: var(--palette-light);
+    color: var(--palette-dark);
     & span {
       opacity: 0.5;
     }
