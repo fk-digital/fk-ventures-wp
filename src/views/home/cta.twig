@@ -1,12 +1,20 @@
-<div
-  class="HomeSection HomeSection--cta"
-  id="{{ id }}"
-  data-bg="black"
+<section
   data-appear
+  id="{{ id }}"
+  class="HomeSection FramedCta HomeSection--framedcta is-visible"
+  data-bg="yellow"
 >
-  <a href="{{ url }}" class="Container Cta__Link">
-    <span class="Cta__SubTitle SmallCaps">{{ subtitle }}</span>
-    <h3 class="Cta__Title h3">{{ title }}</h3>
-    <span class="Cta__Button Button Button--hollow">{{ buttonText }}</span>
-  </a>
-</div>
+  <div class="Container">
+    <div class="FramedCTA__Copy">
+      <div class="FramedCTA__Heading Heading">
+        <span class="FramedCTA__SubTitle SmallCaps">{{ subtitle }}</span>
+        <p>
+          {{ title }}
+        </p>
+        <a class="Button Button--black Button--large" href="{{ url }}">
+          {{ buttonText }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

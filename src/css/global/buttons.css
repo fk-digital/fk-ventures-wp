@@ -1,9 +1,13 @@
 .Button,
-.wp-block-button__link {
-  border: solid var(--border-width) var(--palette-action);
-  background-color: var(--palette-action);
+.wp-block-button__link,
+input[type='submit'],
+.gform_button {
+  border: solid 1px var(--palette-action);
   color: var(--palette-dark);
-  padding: 0 var(--spacing--s);
+  background-color: var(--palette-action);
+  transition: all var(--global-transition);
+  padding: 12px 20px;
+  border-radius: 9999em;
   appearance: none;
   cursor: pointer;
   display: inline-flex;
@@ -11,28 +15,41 @@
   align-items: center;
   position: relative;
   text-decoration: none;
-  line-height: 1;
-  height: 40px;
-  transition: all var(--global-transition);
-  border-radius: 9999em;
-
-  & svg {
-    transition: all var(--global-transition);
-  }
-
-  &:hover {
-    background-color: var(--palette-dark);
-    border-color: var(--palette-dark);
-    color: var(--palette-light);
+  font-family: var(--typeface-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--font-size--small);
+  line-height: 17px;
+  leading-trim: both;
+  text-edge: cap;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  outline: 0;
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--palette-dark);
+      background-color: var(--palette-dark);
+      color: var(--palette-light);
+    }
   }
 
   &:focus {
     outline: 0;
+    border-color: transparent;
+  }
+
+  & svg,
+  & span {
+    transition: all var(--global-transition);
+    position: relative;
   }
 }
 
-/* Hollow Button */
-.Button--arrow {
+/* Arrow Button */
+.Button.Button--arrow {
   gap: 0.5rem;
   & svg {
     width: 16px;
@@ -48,12 +65,95 @@
 /* Hollow Button */
 .Button.Button--hollow {
   background-color: transparent;
-  border-color: var(--palette-action);
-  color: var(--palette-light);
   &:hover {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+}
+
+.Button.Button--hollow-on-yellow {
+  background-color: transparent;
+  border-color: var(--palette-dark);
+  color: var(--palette-dark);
+  &:hover {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+}
+
+/* White Button */
+.Button.Button--white {
+  background-color: var(--white);
+  border-color: var(--white);
+  &:hover {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+}
+
+/* Black Button */
+.Button.Button--black {
+  background-color: var(--palette-dark);
+  border-color: var(--palette-dark);
+  color: var(--white);
+  &:hover {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--palette-dark);
+  }
+}
+
+/* Transparent Buttons */
+.Button.Button--trans {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--text-color);
+  &:hover,
+  &:active {
     background-color: var(--palette-action);
     border-color: var(--palette-action);
     color: var(--palette-dark);
+  }
+}
+
+.Button--trans-on-yellow {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--text-color);
+  &:hover,
+  &:active {
+    background-color: var(--palette-dark);
+    border-color: var(--palette-dark);
+    color: var(--palette-light);
+  }
+}
+
+/* Small */
+.Button.Button--small {
+  padding: 6px 12px;
+  font-size: var(--font-size--tiny);
+}
+
+/* Big */
+.Button.Button--big {
+  padding: 20px 30px;
+  font-size: var(--font-size--small);
+}
+
+/* Disabled */
+.Button.Button--disabled,
+buttonp[disabled].Button {
+  background-color: var(--black-100);
+  border-color: var(--black-100);
+  color: var(--black-200);
+  cursor: not-allowed;
+  &:hover {
+    background-color: var(--black-100);
+    border-color: var(--black-100);
+    color: var(--black-200);
   }
 }
 
@@ -62,7 +162,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: var(--spacing--s);
+  gap: var(--gap);
   flex-wrap: wrap;
   .Button {
     margin: 0;

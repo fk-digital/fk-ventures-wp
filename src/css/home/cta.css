@@ -1,49 +1,96 @@
-.HomeSection--cta {
-  min-height: auto;
-  padding: 48px 0;
+.FramedCta {
+  overflow: hidden;
+  padding: var(--flow) 0;
 }
 
-.Cta__Link {
-  border: solid 1px var(--dark-grey);
-  display: block;
-  border-radius: var(--border-radius);
+.FramedCta .Container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.FramedCTA__Copy {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  gap: var(--spacing--m);
   flex-direction: column;
-  padding: 28px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: 1 / -1;
+  grid-row: 1;
+
+  & p {
+    font-size: var(--font-size--super-mega);
+  }
+
+  & p,
+  & div {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.FramedCTA__Heading {
+  position: relative;
+}
+
+.FramedCta .Button {
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 200%);
+}
+
+.LetterF,
+.LetterK {
+  height: 100%;
+  max-height: 200px;
+  width: auto;
+  pointer-events: none;
+  z-index: -1;
   color: var(--palette-dark);
-  text-decoration: none;
-  &:hover {
-    color: var(--palette-dark);
-    & .Cta__Button {
-      background-color: var(--palette-action);
-      color: var(--palette-dark);
-    }
-  }
+  --letter-shift: 0vw;
 }
 
-.Cta__SubTitle {
-  margin: 0 !important;
+.LetterF {
+  grid-column: 1;
+  grid-row: 1;
+  transform: translateX(-20%) translateX(var(--letter-shift));
 }
 
-.Cta__Title {
-  padding: 24px 0 32px 0;
-  font-size: var(--font-size--extra-large);
-  line-height: 1.2;
+.LetterK {
+  grid-column: 3;
+  grid-row: 1;
+  transform: translateX(20%) translateX(var(--letter-shift));
+  text-align: right;
 }
 
-@media (--mq-landscape-tablet-and-up) {
-  .HomeSection--cta {
-    padding: 96px 0;
+@media (--mq-tablet-and-up) {
+  .FramedCta .Container {
+    --letter-width: calc((var(--col-width) * 2) + (var(--gap) * 2));
+    grid-template-columns: var(--letter-width) 1fr var(--letter-width);
+    min-height: 280px;
+    align-items: stretch;
+    position: relative;
   }
 
-  .Cta__Title {
-    font-size: var(--font-size--jumbo);
+  .FramedCTA__Copy {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .Cta__Link {
-    padding: 96px 96px;
+  .LetterF,
+  .LetterK {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 280px;
+    max-height: none;
+    transform: translate(0, -50%) translateX(var(--letter-shift));
+  }
+
+  .LetterK {
+    left: auto;
+    right: 0;
   }
 }

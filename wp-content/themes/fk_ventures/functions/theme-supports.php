@@ -112,15 +112,15 @@ add_filter( 'gform_default_styles', function( $styles ) {
   return '{
   "theme":"",
   "inputSize":"lg",
-  "inputBorderRadius":"8",
+  "inputBorderRadius":"3",
   "inputBorderColor":"#ffffff",
-  "inputBackgroundColor":"transparent",
-  "inputColor":"#ffffff",
-  "inputPrimaryColor":"#ffd95a",
-  "labelColor":"#ffffff",
-  "descriptionColor":"#83878B",
-  "buttonPrimaryBackgroundColor":"transparent",
-  "buttonPrimaryColor":"#ffffff"
+  "inputBackgroundColor":"#ffffff",
+  "inputColor":"#282623",
+  "inputPrimaryColor":"#fafa6e",
+  "labelColor":"#282623",
+  "descriptionColor":"#3d3c39",
+  "buttonPrimaryBackgroundColor":"#fafa6e",
+  "buttonPrimaryColor":"#282623"
   }';
 } );
 
@@ -128,7 +128,6 @@ add_filter( 'gform_default_styles', function( $styles ) {
 // Gutenberg Editor Styles
 // add_theme_support('editor-styles');
 // add_editor_style(get_template_directory_uri() . '/assets/editor.min.css');
-
 
 // Remove Block libary styles
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );

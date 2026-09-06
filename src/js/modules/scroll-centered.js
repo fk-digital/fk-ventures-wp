@@ -9,13 +9,12 @@ export default function (section) {
 
   gsap.from(section, {
     scrollTrigger: {
-      id: section.id,
       trigger: section,
       start: 'center center',
-      end: 'bottom+=3000 center',
+      end: 'bottom+=1000 center',
       scrub: true,
       pin: true,
-      pinSpacer: true,
+      // pinSpacer: true,
       snap: {
         snapTo: 1,
         duration: 0.02,
@@ -23,13 +22,9 @@ export default function (section) {
       },
       onEnter: () => {
         section.classList.add('is-visible')
-        document.body.dataset.bg = section.dataset.bg
         if (sectionHeading != null) {
           scrollHeading(sectionHeading)
         }
-      },
-      onEnterBack: () => {
-        document.body.dataset.bg = section.dataset.bg
       },
     },
   })

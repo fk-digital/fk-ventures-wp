@@ -81,11 +81,7 @@
         <div class="CaseStudySingle__Cell">
           <ul class="CaseStudySingle__Deliverables">
             {% for deliverable in post.meta('deliverables') %}
-              <li>
-                <sapn class="Tag Tag--filled">
-                  {{ deliverable.item }}
-                </sapn>
-              </li>
+              <li class="Tag">{{ deliverable.item }}</li>
             {% endfor %}
           </ul>
         </div>

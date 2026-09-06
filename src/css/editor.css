@@ -17,7 +17,7 @@
 }
 
 .wp-block-button__link {
-  background-color: var(--mid-grey);
+  background-color: var(--palette-dark);
   color: var(--palette-dark);
   padding: var(--spacing--xxs);
   border-radius: 0;

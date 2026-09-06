@@ -1,82 +1,188 @@
-/* Graviuty Forms Overwrites */
-
-form {
-  --gf-ctrl-outline-color-focus: var(--palette-action);
-  --gf-ctrl-font-size: 18px !important;
+fieldset {
+  border: 0;
+  display: block;
+  padding: 0;
 }
 
-/* Labels */
-.gform-field-label:not(.gform-field-label--type-sub),
-.gform_button.button,
-.gform_button_select_files.button {
-  font-family: var(--typeface-body) !important;
-  font-style: normal !important;
-  font-weight: 700 !important;
-  font-size: 12px !important;
-  line-height: 14px !important;
-  leading-trim: both !important;
-  text-edge: cap !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase !important;
-  color: var(--palette-mid) !important;
+label {
+  display: block;
 }
 
-/* Fields */
-.gfield input,
-.gfield select {
-  border-radius: var(--border-radius) !important;
-}
-
-/* Buttons */
-.gform_button.button,
-.gform_button_select_files.button {
-  background-color: transparent !important;
-  border: solid var(--border-width) var(--palette-action) !important;
-  color: var(--palette-action) !important;
-  padding: 0 var(--spacing--s) !important;
-  height: 40px !important;
-  transition: all var(--global-transition) !important;
-  border-radius: 9999em !important;
-
-  &:hover {
-    background-color: var(--palette-action) !important;
-    border-color: var(--palette-action) !important;
-    color: var(--palette-dark) !important;
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='range'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  border: solid 1px transparent;
+  border-radius: 0;
+  background-color: var(--white);
+  transition: border var(--global-transition);
+  color: var(--palette-dark);
+  font-size: var(--font-size--medium);
+  font-weight: 300;
+  font-family: var(--typeface-body);
+  min-height: 51px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--spacing--xs);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  outline: 0;
+  &:focus {
+    border-color: var(--palette-mid);
+    outline: 0;
   }
 }
 
-.gform_button_select_files.button {
-  border: solid var(--border-width) var(--palette-dark) !important;
+textarea {
+  min-height: 6.25rem;
+}
+
+/* Search */
+input::-webkit-search-button,
+input::-webkit-search-results-button,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Gravity Forms */
+
+.gfield_required {
+  color: var(--palette-error);
+}
+
+.gform_required_legend,
+.gform_title {
+  display: none;
+}
+
+.gfield {
+  margin-bottom: var(--spacing--m);
+}
+
+.gfield_label {
+  margin-bottom: var(--spacing--xs);
+}
+
+.gform-field-label--type-sub,
+.ginput_counter_message {
+  margin-bottom: var(--spacing--xxs) !important;
+  font-size: var(--font-size--tiny) !important;
   color: var(--palette-dark) !important;
-  &:hover {
-    background-color: var(--palette-action) !important;
-    border-color: var(--palette-action) !important;
-    color: var(--palette-dark) !important;
-  }
 }
 
-/* Errors */
-.gform-theme--framework .gform_validation_errors {
-  background: #c02b0a50 !important;
-}
-
-.gform-theme--framework .gform_validation_errors .gform_submission_error,
-.gform-theme--framework .gform_validation_errors ol,
-.gform-theme--framework .gform_validation_errors ol a,
-.gform-icon.gform-icon--circle-error {
-  color: var(--palette-dark) !important;
-}
-
-.gform-theme--framework .gform_validation_errors ol a:hover {
-  text-decoration-color: transparent !important;
-}
-
-.gform-icon.gform-icon--circle-error {
-  border-color: var(--palette-dark) !important;
-}
-
-/* Requiered */
-.gform_required_legend {
-  text-align: right;
+.gfield_description {
+  display: block;
+  margin-bottom: var(--spacing--xxs);
   font-size: var(--font-size--tiny);
+  display: block;
+}
+
+.ginput_counter.gfield_description {
+  margin-top: var(--spacing--xxs);
+}
+
+.gform_page_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gform Grid */
+.gform-grid-row {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+  @media (--mq-phablet-and-up) {
+    &.gf_name_has_2,
+    &.ginput_container_email {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* Error */
+
+.gfield_error [aria-invalid='true'] {
+  border-color: var(--palette-error);
+}
+
+.gfield_validation_message {
+  color: var(--palette-error);
+  display: block;
+  font-size: var(--font-size--tiny);
+}
+
+.gform_confirmation_actions {
+  display: none !important;
+}
+
+.gform_validation_errors {
+  background-color: var(--palette-error);
+  border-radius: 0;
+  padding: var(--spacing--xs);
+  color: var(--palette-light);
+  margin-bottom: var(--spacing--m);
+  line-height: var(--line-height--body);
+}
+
+.gform_submission_error {
+  font-size: var(--font-size--medium);
+  color: var(--palette-light);
+  font-weight: 300;
+}
+
+.gform_validation_errors ol {
+  padding-left: 1em;
+  padding-top: 1em;
+  list-style-type: disc;
+}
+
+.gform_validation_errors ol li {
+  margin-bottom: 0.25em;
+}
+
+.gform_validation_errors ol li a {
+  text-decoration: none;
+  color: var(--palette-light);
+  &:hover {
+    color: var(--palette-dark);
+  }
+}
+
+.gform_ajax_spinner {
+  max-width: 24px;
+  width: 24px;
+  display: block;
+  margin: var(--spacing--xs) 0 0 0;
+}
+
+.gfield--type-honeypot,
+.gform_required_legend {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }

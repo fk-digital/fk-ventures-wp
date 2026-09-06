@@ -1,23 +1,20 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export default function (section) {
+export default function () {
   gsap.registerPlugin(ScrollTrigger)
 
-  gsap.from(section, {
-    scrollTrigger: {
-      id: section.id,
-      trigger: section,
-      start: 'top center',
-      end: 'bottom center',
-      onEnter: () => {
-        section.classList.add('is-visible')
-        // console.log(`${section.id} background: ${section.dataset.bg}`)
-        document.body.dataset.bg = section.dataset.bg
-      },
-      onEnterBack: () => {
-        document.body.dataset.bg = section.dataset.bg
-      },
-    },
+  const elements = document.querySelectorAll('[data-bg]')
+
+  elements.forEach((el) => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 50%',
+      end: 'bottom 50%',
+      onEnter: () => (document.body.dataset.bg = el.dataset.bg),
+      onLeave: () => (document.body.dataset.bg = el.dataset.bg),
+      onEnterBack: () => (document.body.dataset.bg = el.dataset.bg),
+      onLeaveBack: () => (document.body.dataset.bg = el.dataset.bg),
+    })
   })
 }

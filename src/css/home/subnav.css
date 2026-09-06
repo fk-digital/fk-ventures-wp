@@ -64,7 +64,8 @@
     & li {
       display: block;
       padding: 40px 0;
-      border-top: solid 1px #11111120;
+      border-top: var(--border);
+      border-color: var(--black-200);
       &:first-child {
         border-top: 0;
       }
@@ -72,14 +73,12 @@
   }
 
   .Subnav__Menu a {
-    font-weight: 700;
     font-size: 24px;
     line-height: 120%;
     text-decoration: none;
-    color: #11111130;
-    &:hover,
-    &.active {
-      color: var(--palette-dark);
+    color: var(--palette-dark);
+    &:hover {
+      color: var(--palette-action);
     }
   }
 
@@ -114,6 +113,8 @@
   gap: 40px;
   grid-template-columns: 1fr;
   margin-top: 64px;
+  background-color: var(--white);
+  padding: 36px;
 }
 
 .IconList__Item svg {
@@ -137,7 +138,7 @@
       height: 100%;
       width: 1px;
       background-color: var(--palette-dark);
-      opacity: 0.2;
+      color: var(--palette-mid);
       pointer-events: none;
     }
     &:first-child::before {
@@ -160,29 +161,30 @@
 
 .ProgrammeList__Item {
   border-radius: var(--border-radius);
-  background-color: var(--palette-dark);
-  padding: 24px 24px 32px 24px;
+  background-color: var(--white);
+  padding: 36px 36px 36px 36px;
 }
 
 .ProgrammeList__Item h3 {
   font-weight: 300;
   margin-bottom: 24px;
-  & strong {
-    font-weight: 700;
-  }
 }
 
 .ProgrammeList__Item .Lead {
+  padding-top: 24px;
   margin-bottom: 24px;
   padding-bottom: 24px;
-  border-bottom: solid 1px var(--light-grey);
+  border-top: var(--border);
+  border-color: var(--black-50);
 }
 
 .ProgrammeList__Price {
+  border-top: var(--border);
   margin-top: 24px;
-  padding-top: 24px;
-  border-top: solid 1px var(--light-grey);
   padding-bottom: 12px;
+  padding-top: 24px;
+  width: 100%;
+  border-color: var(--black-50);
 }
 
 @media (--mq-landscape-tablet-and-up) {

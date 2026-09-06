@@ -20,13 +20,17 @@ h5,
 .h5,
 h6,
 .h6 {
+  color: var(--palette-body);
   font-family: var(--typeface-body);
-  font-weight: 700;
-  line-height: 1;
+  font-weight: 300;
   margin: 0;
+  text-wrap: balance;
+  text-wrap: pretty;
+  line-height: var(--line-height--heading);
+
   & b,
   & strong {
-    font-weight: 700;
+    font-weight: 500;
   }
   & span {
     color: var(--palette-action);
@@ -77,45 +81,42 @@ small,
 }
 
 .SmallCaps,
-.Tag,
-.Button,
-.gfield_label,
-.gform-field-label,
-.gfield_label.gform-field-label {
-  font-family: var(--typeface-body);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
+.Tag {
+  font-size: var(--font-size--tiny);
+  font-size: 0.75rem;
   leading-trim: both;
   text-edge: cap;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--palette-mid);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.gfield_label,
+.gform-field-label,
+.gfield_label.gform-field-label {
+  font-size: var(--font-size--tiny) !important;
+  font-size: 0.75rem !important;
+  leading-trim: both !important;
+  text-edge: cap !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
 }
 
 .Tag {
-  line-height: 12px;
-  border: var(--border);
-  padding: 0 15px;
-  background-color: transparent;
-  border-radius: 999em;
-  display: inline-block;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
+  font-size: 10px !important;
+  padding: 10px 12px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  border: 0.5px solid var(--black-200);
+  background-color: var(--white);
+  color: var(--palette-dark);
 }
 
 .SmallCaps {
   margin-bottom: var(--spacing--xs);
-}
-
-.Tag--filled {
-  background-color: var(--dark-grey);
-  border-color: var(--dark-grey);
-  color: var(--palette-dark);
 }
 
 .Tag--yellow {
@@ -141,8 +142,8 @@ small,
 .Tag.active,
 a.Tag.active,
 a.Tag.active:hover {
-  background-color: var(--dark-grey);
-  border-color: var(--dark-grey);
+  background-color: var(--palette-dark);
+  border-color: var(--palette-mid);
   color: var(--theme-foreground);
 }
 
@@ -203,12 +204,17 @@ blockquote {
   position: relative;
   margin: 0;
   padding: 0;
-  font-family: var(--typeface-body);
+  font-family: var(--typeface-heading);
   font-style: normal;
+  font-weight: 300;
+  leading-trim: both;
+  text-edge: cap;
+  font-style: normal;
+
   & p {
     font-style: normal;
-    font-size: var(--font-size--extra-large);
-    line-height: 1.2;
+    font-size: 25px;
+    line-height: 120%; /* 30px */
     + p {
       margin-top: 1em;
     }
@@ -216,7 +222,6 @@ blockquote {
 
   cite {
     font-size: var(--font-size--large);
-    font-weight: 700;
   }
 }
 
@@ -272,3 +277,5 @@ b {
     font-size: var(--font-size--default);
   }
 }
+
+/* Tags */

@@ -1,24 +1,15 @@
 {% extends 'base.twig' %}
 {% block content %}
-  <h1 class="sr-only">
-    We help founders get organised, secure funding and scale. By building your
-    brand when you need it most. Using our <strong>funded</strong> brand programmes.
-    Over the last 2 funds we've helped our clients secure $195m in funding.
-  </h1>
+  <h1 class="sr-only">FutureKings Ventures, Brand-led venture investing</h1>
 
   {% include 'home/centered.twig' with {
-    id: 'help',
-    text: 'We help founders get organised, secure funding and scale.'
+    id: 'brand-led',
+    text: 'Brand-led <strong>venture investing</strong>'
   } %}
 
   {% include 'home/centered.twig' with {
-    id: 'building-brand',
-    text: 'By building your brand when you need it most.'
-  } %}
-
-  {% include 'home/centered.twig' with {
-    id: 'funded',
-    text: 'Using our <strong>funded</strong> brand programmes.'
+    id: 'fund',
+    text: 'We fund <strong>high-impact</strong> brand programmes for carefully selected startups in exchange for equity.'
   } %}
 
   {% include 'home/investment.twig' %}
@@ -27,7 +18,7 @@
 
   {% include 'home/centered.twig' with {
     id: 'soon',
-    text: 'Applications are opening soon for our third.'
+    text: 'Applications are <strong>opening soon</strong> for our third.'
   } %}
 
   {% include 'home/what.twig' %}
@@ -82,54 +73,13 @@
 
   {% include 'home/about.twig' %}
 
-  {% include 'home/case-study.twig' with {
-    id: 'carifit',
-    client: 'Carifit',
-    sector: 'Health & Wellbeing',
-    program: 'Organise for Growth',
-    logo: 'logos/carifit.svg',
-    name: 'Vern Hill',
-    linkedin: 'https://www.linkedin.com/in/vern-hill-1b081950/',
-    qoute: '"Carifit was my baby and the thought of someone dismantling years of organic growth and hard work was very stressful. But for a Founder it’s emotional, challenging and ultimately game-changing."',
-    jobTitle: 'Founder',
-    stat1Prefix: '£',
-    stat1Number: '1000000',
-    stat1Desc: 'Seed funding secured',
-    images: [
-      {
-        src: theme.link ~ '/assets/images/carifit/1.png',
-        alt: 'The Carifit App'
-      },
-      {
-        src: theme.link ~ '/assets/images/carifit/2.png',
-        alt: 'Carifits Organising Idea, "Stronger Together"'
-      },
-      {
-        src: theme.link ~ '/assets/images/carifit/3.png',
-        alt: 'Example Carifit Ad, saying "Ready for the ups and downs of parenting"'
-      },
-      {
-        src: theme.link ~ '/assets/images/carifit/4.png',
-        alt: 'The Carifit Packaging'
-      },
-      {
-        src: theme.link ~ '/assets/images/carifit/5.png',
-        alt: 'Example Carifit mailer '
-      },
-      {
-        src: theme.link ~ '/assets/images/carifit/6.png',
-        alt: 'Photo of the carifit carrier'
-      }
-    ]
-  } %}
-
   {% include 'home/power.twig' %}
 
   {% include 'home/cta.twig' with {
     id: 'register-interest',
     url: '/apply/',
     subtitle: 'apply',
-    title: 'There are six places up for grabs as part of our third fund. Applications will open in October.',
+    title: 'Applications will open soon.',
     buttonText: 'Register Interest'
   } %}
 {% endblock %}

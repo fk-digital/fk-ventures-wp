@@ -3,7 +3,7 @@
 }
 
 .FooterContainer {
-  border-top: solid var(--border-width) var(--mid-grey);
+  border-top: var(--border);
   padding-top: var(--spacing--m);
   display: grid;
   gap: var(--gap);
@@ -26,7 +26,6 @@ a.Footer__Logo {
 }
 
 .Footer__Name {
-  font-weight: 700;
   margin-top: 32px;
 }
 
@@ -44,6 +43,7 @@ a.Footer__Logo {
   font-size: var(--font-size--tiny);
   & a {
     text-decoration-color: transparent;
+    color: var(--palette-dark);
     &:hover {
       color: var(--palette-dark);
       text-decoration-color: var(--palette-action);

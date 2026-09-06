@@ -9,7 +9,6 @@ export default function (section) {
 
   gsap.from(section, {
     scrollTrigger: {
-      id: section.id,
       trigger: section,
       start: 'top center',
       end: 'bottom center',
@@ -29,7 +28,6 @@ export default function (section) {
 
     gsap.from(sectionSubSection, {
       scrollTrigger: {
-        id: sectionSubSection.id,
         trigger: sectionSubSection,
         start: 'top center',
         end: 'bottom center',
@@ -42,25 +40,25 @@ export default function (section) {
           })
 
           const sectionSubSectionId = sectionSubSection.id
-          sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
-            if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
-              sectionSubMenuLink.classList.add('active')
-            } else {
-              sectionSubMenuLink.classList.remove('active')
-            }
-          })
+          // sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
+          //   // if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
+          //   //   sectionSubMenuLink.classList.add('active')
+          //   // } else {
+          //   //   sectionSubMenuLink.classList.remove('active')
+          //   // }
+          // })
         },
-        onEnterBack: () => {
-          sectionSubSection.classList.add('is-visible')
-          const sectionSubSectionId = sectionSubSection.id
-          sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
-            if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
-              sectionSubMenuLink.classList.add('active')
-            } else {
-              sectionSubMenuLink.classList.remove('active')
-            }
-          })
-        },
+        // onEnterBack: () => {
+        //   sectionSubSection.classList.add('is-visible')
+        //   const sectionSubSectionId = sectionSubSection.id
+        //   sectionSubMenuLinks.forEach((sectionSubMenuLink) => {
+        //     if (sectionSubMenuLink.dataset.section == sectionSubSectionId) {
+        //       sectionSubMenuLink.classList.add('active')
+        //     } else {
+        //       sectionSubMenuLink.classList.remove('active')
+        //     }
+        //   })
+        // },
       },
     })
   })

@@ -18,7 +18,7 @@
   display: block;
   height: var(--spacing--m);
   width: auto;
-  color: var(--palette-light);
+  color: var(--palette-dark);
   & svg {
     height: 100%;
     width: auto;
@@ -58,7 +58,7 @@
     display: block;
     height: var(--spacing--m);
     width: auto;
-    color: var(--palette-light);
+    color: var(--palette-dark);
     & svg {
       height: 100%;
       width: auto;
@@ -79,16 +79,16 @@
 body.is-scrolled {
   & .Header {
     background-color: var(--palette-dark);
-    color: var(--palette-light);
+    color: var(--palette-dark);
     padding: var(--spacing--xs) 0;
   }
 
   .Header__Title {
-    color: var(--palette-light);
+    color: var(--palette-dark);
   }
 
   .MenuToggle b {
-    background-color: var(--palette-light);
+    background-color: var(--palette-dark);
   }
 }
 
@@ -98,7 +98,7 @@ body.is-scrolled {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--palette-action);
+  background-color: var(--palette-dark);
   transition: all var(--global-transition);
   transform-origin: 0 0;
 }

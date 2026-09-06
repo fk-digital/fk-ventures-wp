@@ -28,13 +28,13 @@
   aspect-ratio: 250 / 320;
   text-decoration: none;
   color: var(--palette-dark);
-  padding: var(--spacing--s);
+  padding: var(--spacing--m);
   flex: 0 0 250px;
   width: 250px;
 }
 
 .PortfolioItem__Heading {
-  opacity: 0.5;
+  color: var(--black-600);
 }
 
 .PortfolioItem__Logo {
@@ -52,6 +52,9 @@
 .PortfolioItem .SmallCaps {
   color: var(--itemTextColour);
   text-align: left;
+  & .PortfolioItem__Heading {
+    color: var(--itemTextColour);
+  }
 }
 
 .PortfolioItem__Sector {
@@ -66,9 +69,12 @@
 }
 
 .PortfolioItem__SuccessDetail {
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 25.2px */
   display: block;
-  font-weight: 700;
-  font-size: var(--font-size--medium);
-  line-height: 120%;
   color: var(--itemTextColour);
 }

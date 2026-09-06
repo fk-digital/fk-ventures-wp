@@ -29,7 +29,7 @@
 .Who__JobTitle {
   font-size: var(--font-size--small) !important;
   margin: 0 !important;
-  opacity: 0.3;
+  color: var(--palette-mid);
   padding: 10px 0 0 0;
 }
 

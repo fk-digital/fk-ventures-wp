@@ -19,7 +19,7 @@
   --palette-hover: var(--black-600);
 
   --palette-light: var(--black-50);
-  --palette-mid: var(--black-600);
+  --palette-mid: var(--black-100);
   --palette-dark: var(--black-1000);
 
   --palette-success: #0da440;
@@ -46,14 +46,14 @@
 
   /* Borders */
   --border-width: 1px;
-  --border: solid var(--border-width) var(--black-100);
+  --border: solid var(--border-width) var(--black-600);
 
   /* Border Radius */
   --border-radius: 3px;
 
   /* A11y */
   --a11y-outline: dashed 1px var(--palette-light);
-  --a11y-outline-light: dashed 1px var(--palette-mid);
+  --a11y-outline-light: dashed 1px var(--black-600);
 
   /* Type */
   --typeface-heading: 'ParaSupreme', serif;
@@ -77,7 +77,7 @@
   --line-height--body: 1.2;
 
   /* Transitions */
-  --global-timing: cubic-bezier(0.2, 1, 0.3, 1);
+  --global-timing: cubic-bezier(0.25, 0, 0.3, 1);
   --global-duration: 0.5s;
   --global-transition: var(--global-duration) var(--global-timing);
 

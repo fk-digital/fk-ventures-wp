@@ -24,7 +24,7 @@
 }
 
 .Sidebar__SectionHeading {
-  color: var(--color-mid-grey);
+  color: var(--palette-dark);
   padding-bottom: 1em;
 }
 

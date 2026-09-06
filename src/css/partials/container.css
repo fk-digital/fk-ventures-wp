@@ -36,3 +36,15 @@
     width: calc(100% - var(--page-padding) - var(--page-padding));
   }
 }
+
+.Cutout {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 57px,
+    18px 39.5px,
+    0 22px
+  );
+}

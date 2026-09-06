@@ -26,6 +26,9 @@ body {
   position: relative;
   font-size: var(--font-size--default);
   font-weight: 300;
+  transition:
+    background-color var(--global-transition),
+    color var(--global-transition);
 }
 
 .Header,
@@ -59,16 +62,17 @@ button {
 
 /* Links */
 a {
-  color: var(--palette-action);
+  color: var(--palette-dark);
   transition: all var(--global-transition);
   text-decoration: underline;
+  text-decoration-color: var(--palette-action);
   cursor: pointer;
   & svg {
     transition: fill var(--global-transition);
   }
   &:hover {
     outline: 0;
-    color: var(--palette-action);
+    color: var(--palette-dark);
     text-decoration-color: transparent;
   }
   &:focus {
@@ -114,17 +118,3 @@ mark {
   background-color: var(--palette-action);
   color: var(--palette-dark);
 }
-
-/* Base */
-/* svg.Body__BG {
-  display: block;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: auto;
-  opacity: 0.2;
-  color: var(--palette-light);
-  z-index: 1;
-} */

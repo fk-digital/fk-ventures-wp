@@ -16,7 +16,6 @@ export default function (section) {
 
   const portfolioTl = gsap.timeline({
     scrollTrigger: {
-      id: section.id,
       trigger: section,
       pin: true,
       start: 'center center',
@@ -24,12 +23,6 @@ export default function (section) {
         `+=${Math.max(0, portfolioWrapper.scrollWidth - section.clientWidth)}`,
       scrub: true,
       invalidateOnRefresh: true,
-      onEnter: () => {
-        document.body.dataset.bg = section.dataset.bg
-      },
-      onEnterBack: () => {
-        document.body.dataset.bg = section.dataset.bg
-      },
     },
   })
 
