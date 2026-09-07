@@ -113,16 +113,6 @@ body[data-bg='black'] {
 }
 
 body[data-bg='yellow'] {
-  /* & a.Button {
-    background-color: transparent;
-    border-color: var(--palette-dark);
-    color: var(--palette-dark);
-    &:hover {
-      background-color: var(--palette-dark);
-      border-color: var(--palette-dark);
-      color: var(--palette-dark);
-    }
-  } */
 }
 
 body[data-bg='black'] {
@@ -148,7 +138,7 @@ body {
   }
 
   &[data-bg='yellow'] {
-    & .Header a.Button {
+    & .Button {
       background-color: var(--palette-dark);
       border-color: var(--palette-dark);
       color: var(--palette-light);
@@ -172,7 +162,32 @@ body {
       fill: var(--palette-light) !important;
     }
     & svg .logo-ventures {
-      fill: var(--palette-light) !important;
+      fill: var(--black-600) !important;
+    }
+
+    & .Button {
+      background-color: var(--palette-action);
+      border-color: var(--palette-action);
+      color: var(--palette-dark);
+      &:hover {
+        background-color: var(--palette-light);
+        border-color: var(--palette-light);
+        color: var(--palette-dark);
+      }
+    }
+
+    & .CaseStudy__Author {
+      color: var(--palette-light);
+    }
+
+    & .CaseStudy__BlockQuote,
+    & .CaseStudy__Block,
+    & .CaseStudyLink {
+      border-color: var(--black-600);
+    }
+
+    .HomeSection--text h2.SmallCaps {
+      background-color: var(--palette-light);
     }
   }
 }

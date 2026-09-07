@@ -30,14 +30,11 @@
   }
 }
 
-@media (--mq-phablet-and-up) {
-  & #logo-mini,
-  & #logo {
-    display: none;
-  }
-  & #logo-short {
-    display: block;
-  }
+svg .logo-fk {
+  fill: var(--palette-dark);
+}
+svg .logo-ventures {
+  fill: var(--black-200);
 }
 
 @media (--mq-landscape-tablet-and-up) {
@@ -65,8 +62,7 @@
       display: none;
     }
 
-    & #logo-mini,
-    & #logo-short {
+    & #logo-mini {
       display: none;
     }
     & #logo {

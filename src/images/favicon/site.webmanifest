@@ -1,6 +1,6 @@
 {
   "name": "FutureKings Ventures",
-  "short_name": "FKV",
+  "short_name": "FK Ventures",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#121212",
-  "background_color": "#121212",
+  "theme_color": "#fafa6e",
+  "background_color": "#fafa6e",
   "display": "standalone"
 }

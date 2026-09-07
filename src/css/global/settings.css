@@ -46,7 +46,7 @@
 
   /* Borders */
   --border-width: 1px;
-  --border: solid var(--border-width) var(--black-600);
+  --border: solid var(--border-width) var(--black-100);
 
   /* Border Radius */
   --border-radius: 3px;

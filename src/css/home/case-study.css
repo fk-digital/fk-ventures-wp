@@ -19,7 +19,7 @@
   max-width: 725px;
   position: relative;
   padding: 24px;
-  border: 2px solid var(--black-600);
+  border: var(--border);
   border-radius: 0;
 }
 
@@ -32,7 +32,6 @@
 
 .CaseStudy__Qoute,
 .CaseStudySingle__QouteQoute {
-  color: var(--Black-1000, #282623);
   leading-trim: both;
   text-edge: cap;
   font-family: var(--Typography-Secondary-Typeface, 'Para Supreme');
@@ -57,9 +56,6 @@
   font-weight: 400;
   font-family: var(--typeface-body);
   color: var(--palette-dark);
-  &:hover {
-    color: var(--palette-dark);
-  }
 }
 
 .CaseStudy__JobTitle,
